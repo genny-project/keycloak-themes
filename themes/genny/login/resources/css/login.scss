@@ -1,0 +1,538 @@
+@import '../../../main.scss';
+
+
+    .login-pf body {
+        background-image: url("../img/internmatch-bg.jpg");
+        background-size: cover;
+    }
+
+    .alert-error {
+        background-color: #ffffff;
+        border-color: #cc0000;
+        color: #333333;
+        margin-bottom: 0;
+    }
+
+    #kc-locale ul {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        list-style: none;
+        right: 20px;
+        top: 30px;
+        width: 200px;
+        padding: 2px;
+    }
+
+    #kc-locale:hover ul {
+        display: block;
+        margin: 0;
+    }
+
+    #kc-locale ul li a {
+        display: block;
+        padding: 1px 11px;
+        color: #000 !important;
+        border: 1px solid #fff;
+        text-decoration: none;
+        display: block;
+        line-height: 20px;
+    }
+
+    #kc-locale ul li a:hover {
+        color: #4d5258;
+        background-color: #d4edfa;
+        border-color: #b3d3e7;
+    }
+
+    #kc-locale-dropdown a {
+        color: #fff;
+    }
+
+    #kc-locale-dropdown a:hover {
+        text-decoration: none;
+    }
+
+    a#kc-current-locale-link {
+        display: block;
+        padding: 5px;
+    }
+
+    a#kc-current-locale-link:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+
+    a#kc-current-locale-link::after {
+        content: "\2c5";
+        margin-left: 4px;
+    }
+
+    .login-pf .container {
+        padding-top: 40px;
+    }
+
+    .login-pf a:hover {
+        color: #0099d3;
+    }
+
+    #kc-logo {
+        width: 100%;
+    }
+
+    #kc-logo-wrapper {
+        /*background-image: url("../img/keycloak-logo.png");
+    background-repeat: no-repeat;*/
+        height: 57px;
+        width: 125px;
+    }
+
+    div.kc-logo-text {
+        background-image: url("../img/keycloak-logo-text.png");
+        background-repeat: no-repeat;
+        width: 250px;
+        height: 38px;
+    }
+
+    div.kc-logo-text span {
+        display: none;
+    }
+
+    #kc-header {
+        color: #fff;
+        overflow: visible;
+        padding-left: 80px;
+        white-space: nowrap;
+    }
+
+    #kc-header-wrapper {
+        font-size: 26px;
+        text-transform: uppercase;
+        line-height: 1.2em;
+        margin-bottom: 15px;
+    }
+
+    #kc-content {
+        position: relative;
+    }
+
+    #kc-content-wrapper {
+        overflow-y: hidden;
+    }
+
+    #kc-info {
+        padding-bottom: 200px;
+        margin-bottom: -200px;
+    }
+
+    #kc-info-wrapper {
+        font-size: 13px;
+    }
+
+    #kc-form-options span {
+        display: block;
+    }
+
+    #kc-terms-text {
+        margin-bottom: 20px;
+    }
+
+    #kc-registration {
+        margin-bottom: 15px;
+    }
+    /* TOTP */
+
+    ol#kc-totp-settings {
+        margin: 0;
+        padding: 0;
+    }
+
+    ol#kc-totp-settings li {
+        margin-top: 1em;
+    }
+
+    ol#kc-totp-settings li:first-of-type {
+        margin-top: 0;
+    }
+
+    #kc-totp-secret-qr-code {
+        max-width: 150px;
+        max-height: 150px;
+    }
+    /* OAuth */
+
+    #kc-oauth h3 {
+        margin-top: 0;
+    }
+
+    #kc-oauth ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    #kc-oauth ul li {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 12px;
+        padding: 10px 30px;
+    }
+
+    #kc-oauth ul li:first-of-type {
+        border-top: 0;
+    }
+
+    #kc-oauth .kc-role {
+        display: inline-block;
+        width: 50%;
+    }
+    /* Code */
+
+    #kc-code textarea {
+        width: 100%;
+        height: 8em;
+    }
+    /* Social */
+
+    .social-login>ul>li {
+        list-style: none;
+        float: left;
+    }
+
+    .facebook {
+        background-color: #3b5999 !important;
+    }
+
+    .facebook:hover {
+        background-color: #758ab7 !important;
+    }
+
+    .google {
+        background-color: #da4b42 !important;
+    }
+
+    .google:hover {
+        background-color: #e5817a !important;
+    }
+    .linkedin {
+        background-color: #007fb2 !important;
+    }
+
+    .linkedin:hover {
+        background-color: #4ca5c9 !important;
+    }
+    /* Copy of zocial windows classes to be used for microsoft's social provider button */
+
+    .zocial.microsoft {
+        background-color: #0052a4;
+        color: #fff;
+    }
+
+    .zocial.microsoft:before {
+        content: "\f15d";
+    }
+
+    @media (min-width: 768px) {
+        #kc-container-wrapper {
+            position: absolute;
+            top: 20%;
+            width: 100%;
+        }
+        #kc-logo-wrapper {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+        }
+        .login-pf .container {
+            padding-right: 80px;
+        }
+        #kc-locale {
+            position: relative;
+            width: 200px;
+            left: -230px;
+            text-align: right;
+            z-index: 9999;
+        }
+        #kc-social-providers ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        #kc-social-providers li {
+            height: 50px;
+            width: 100%;
+            margin-bottom: 15px;
+            margin-right: 10px;
+        }
+        #kc-social-providers li:last-child {
+            margin-right: 0px;
+        }
+
+        #kc-social-providers a {
+            display: block;
+            height: inherit;
+            width: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: 300ms ease;
+            color: #fff;
+        }
+
+        #kc-social-providers i {
+            margin-right: 10px;
+            font-size: 2rem !important;
+            color: #fff;
+        }
+        #kc-social-providers span {
+            text-transform: capitalize;
+            font-size: 1.4rem;
+        }
+    }
+
+    @media (max-width: 767px) {
+        #kc-logo-wrapper {
+            background-position: center;
+            width: 100%;
+            margin: 20px 0;
+        }
+        #kc-header {
+            padding-left: 15px;
+            padding-right: 15px;
+            float: none;
+            text-align: center;
+        }
+        #kc-form {
+            float: none;
+        }
+        #kc-info-wrapper {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 15px;
+            padding-top: 15px;
+            padding-left: 0px;
+            padding-right: 15px;
+        }
+        #kc-social-providers ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        #kc-social-providers li {
+            height: 50px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        #kc-social-providers li:first-child {
+            margin-right: 10px;
+        }
+        #kc-social-providers a {
+            display: block;
+            height: inherit;
+            width: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        #kc-social-providers i {
+            margin-right: 10px;
+            font-size: 1.5rem !important;
+        }
+        #kc-social-providers span {
+            text-transform: capitalize;
+            font-size: 1.4rem;
+        }
+        .login-pf .container {
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        #kc-locale {
+            position: absolute;
+            width: 200px;
+            top: 10px;
+            right: 0px;
+            text-align: right;
+            z-index: 9999;
+        }
+    }
+
+    
+
+    @media (max-height: 645px) {
+        #kc-container-wrapper {
+            padding-top: 50px;
+            top: 20%;
+        }
+    }
+    /* custom css */
+
+    .login-container {
+        position: relative;
+        margin: auto;
+        width: 500px;
+        height: 450px;
+        left: 38%;
+        background-color: white;
+        padding-top: 50px;
+        border-radius: 10px;
+    }
+
+    .project-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .project-logo {
+        background-image: url("../img/logo.png");
+        background-size: cover;
+        width: 60px;
+        height: 60px;
+        margin-right: 15px;
+    }
+    
+    .project-title p {
+        text-align: center;
+        color: $primary-color;
+        font-size: 36px;
+        margin-bottom: 0;
+    }
+
+    .title {
+        text-align: center;
+        font-size: 18px;
+        margin-top: 15px;
+        margin-bottom: 25px;
+        color: $secondary-color;
+    }
+
+
+    .input-detail i {
+        position: absolute;
+        right: 40px;
+        font-size: 18px;
+        color: $primary-color;
+    }
+
+    .input-email, .input-password {
+        display: flex;
+        align-items: center;
+        position: relative;
+        top: 0;
+        bottom: 0;
+        margin-bottom: 10px;
+    }
+
+
+    .input-email>input {
+        height: 40px;
+        width: 90%;
+        margin-left: 5%;
+
+        border: none;
+        border-radius: 3px;
+        background-color: #F1F1F1 !important;
+        color: #212121;
+        font-size: 12px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .input-email>input:focus {
+        border: 1px solid #55C669;
+        box-shadow: 0px 0px 5px #d3d3d3;
+        outline: none;
+        background-color: #ffffff !important;
+        color: #55C669;
+    }
+
+    .input-email>input:focus::placeholder {
+        color: #55C669;
+    }
+
+    .input-password>input {
+        height: 40px;
+        width: 90%;
+        margin-left: 5%;
+        border: none;
+        border-radius: 3px;
+        background-color: #F1F1F1;
+        color: #212121;
+        font-size: 12px;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .input-password>input:focus {
+        border: 1px solid #55C669;
+        box-shadow: 0px 0px 5px #d3d3d3;
+        outline: none;
+        background-color: #ffffff !important;
+        color: #55C669;
+    }
+
+    .input-password>input:focus::placeholder {
+        color: #55C669;
+    }
+
+    .input-submit>button {
+        margin-bottom: 20px;
+        margin-left: 5%;
+        width: 90%;
+        height: 40px;
+        border: none;
+        border-radius: 3px;
+        /*background-color: #55C669;*/
+        background-color: $primary-color;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .input-submit>button:hover,
+    .input-submit>button:active {
+        background-color: #4EB899;
+    }
+
+    .link {
+        display: flex;
+        margin-bottom: 30px;
+    }
+
+    .link>.forget-password {
+        width: 50%;
+        margin-left: 5%;
+        color: black;
+    }
+
+    .link>.register {
+        margin-left: 45%;
+        color: black;
+    }
+
+    .social-login {
+        margin-left: 5%;
+        margin-right: 5%;
+        color: black;
+    }
+
+    .social-login-title {
+        text-align: center !important;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus
+    input:-webkit-autofill 
+    {
+        -webkit-text-fill-color: #55C669 !important;
+        -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset !important;
+        transition: background-color 5000s ease-in-out 0s !important;
+        border: 1px solid #55C669;
+        color: #212121 !important;
+    }

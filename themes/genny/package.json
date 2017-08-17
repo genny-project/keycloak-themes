@@ -1,0 +1,16 @@
+{
+  "name": "genny-keycloak",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "node-sass login/resources/css/login.scss login/resources/css/login.css",
+    "watch": "node-sass --watch login/resources/css/login.scss login/resources/css/login.css"
+  },
+  "author": "conor",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "node-sass": "^4.5.3"
+  }
+}
