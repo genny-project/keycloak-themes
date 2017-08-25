@@ -38,6 +38,7 @@
     #kc-form {
         padding: 0;
         width: 500px;
+        margin-top: -10vh;
 
         >form{
             padding: 0;
@@ -140,7 +141,7 @@
         text-align: center;
         font-size: 18px;
         margin-top: 10px;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
         color: $secondary-color;
     }
 
@@ -155,19 +156,19 @@
         color: $primary-color;
     }
 
-    .input-email, .input-password {
+    .input-email, .input-password, .input-firstname, .input-lastname {
         display: flex;
         align-items: center;
         position: relative;
         top: 0;
         bottom: 0;
         margin-bottom: 10px;
+        
 
         >input, >input:-webkit-autofill {
             height: 50px;
             width: 80%;
             margin-left: 10%;
-            border: none;
             border-radius: 5px;
             color: $form-gray-dark;
             background-color: $form-gray-light;
@@ -175,10 +176,12 @@
             padding: 10px;
             box-sizing: border-box;
             text-align: center;
+            transition: 300ms ease !important;
+            border: 1px solid rgba(0, 0, 0, 0);
 
             &:hover {
                 -webkit-text-fill-color: $form-color !important;
-                -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset !important;
+                color: $form-color;
                 border: 1px solid $form-color;
             }
 
@@ -197,16 +200,23 @@
         }
     }
 
-    #username,  #password {
+    #username,  #password, #password-confirm, #email, #firstName, #lastName {
 
-        + #input-email-icon, + #input-password-icon {
+        + #input-email-icon, + #input-password-icon, + #input-passwordconfirm-icon, + #input-firstname-icon, + #input-lastname-icon {
             color: $form-gray-dark !important;
         }
         
         &:focus + #input-email-icon,
         &:focus + #input-password-icon,
+        &:focus + #input-passwordconfirm-icon,
+        &:focus + #input-firstname-icon,
+        &:focus + #input-lastname-icon,
         &:hover + #input-email-icon,
-        &:hover + #input-password-icon {
+        &:hover + #input-password-icon,
+        &:hover + #input-passwordconfirm-icon,
+        &:hover + #input-firstname-icon,
+        &:hover + #input-lastname-icon {
+            transition: 1000ms ease !important;
             color: $form-color !important;
         }
     }
@@ -222,28 +232,30 @@
         }
     }
 
-    .input-submit>button {
-        margin-bottom: 10px;
-        margin-left: 10%;
-        width: 80%;
-        height: 50px;
-        border: none;
-        border-radius: 3px;
-        //background-color: #55C669;
-        background-color: $primary-color;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-        outline: none;
-    }
+    .input-submit {
 
-    .input-submit>button, #kc-social-providers a {
-        transition: 300ms ease;
-        
-        &:hover, &:active {
-            box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+        >button {
+            margin-bottom: 10px;
+            margin-left: 10%;
+            width: 80%;
+            height: 50px;
+            border: none;
+            border-radius: 3px;
+            background-color: $primary-color;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            outline: none;
         }
-    } 
+
+        >button, #kc-social-providers a {
+            transition: 300ms ease;
+            
+            &:hover, &:active {
+                box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+            }
+        }
+    }
 
     //-------------------------------------------------------------//
     //      P A S S W O R D   +   S I G N   U P   S T Y L I NG     //
@@ -251,15 +263,30 @@
 
     .link {
         display: flex;
-        justify-content: space-between;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &.link-login, &.link-reset {
+            justify-content: space-between;
+
+            >.login {
+                margin-left: 10%;
+            }
+        }
+
+        &.link-register {
+            justify-content: flex-end;
+        }
 
         >.forget-password {
             width: 50%;
             margin-left: 10%;
         }
 
-        >.register {
+        >.register, >.login {
             margin-right: 10%;
         }
 
@@ -283,6 +310,15 @@
         }
     }
 
+    .social-login-title {
+        text-align: center;
+        font-size: 18px;
+        //margin-top: 10px;
+        margin-bottom: 10px;
+        color: $secondary-color;
+
+    }
+
     #kc-social-providers {
         
         ul {
@@ -296,6 +332,7 @@
         li {
             height: 50px;
             width: 100%;
+            max-width: 50%;
             margin-bottom: 0px;
             margin-right: 10px;
 
