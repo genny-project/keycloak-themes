@@ -8,12 +8,16 @@
     <#elseif section = "form">
         <#if realm.password>
             <form  action="${url.loginAction}" method="post">
+                
                 <div class="login-container">
+
                     <div class="project-title">
                         <div class="project-logo"></div>
-                        <p>GENNY</p>
+                        <p>${properties.themeTitle!}</p>
                     </div>
-                    <div class="title">LOGIN</div>
+
+                    <div class="title">LOGIN TO YOUR ACCOUNT</div>
+
                     <div class="input-detail">
 
                        <div class="input-email">
@@ -22,12 +26,12 @@
                             <#else>
                                 <input id="username"  name="username" value="${(login.username!'')?html}" type="text" placeholder="email address" autofocus autocomplete="off" />
                             </#if>
-                            <i id="input-email-icon" class="fa fa-envelope" aria-hidden="true"></i>
+                            <i id="input-email-icon" class="fa fa-fw fa-envelope" aria-hidden="true"></i>
                         </div>
 
                         <div class="input-password">
                             <input type="password" name="password" id="password" autocomplete="off" placeholder="password" />
-                            <i  id="input-password-icon" class="fa fa-lock" aria-hidden="true"></i>
+                            <i  id="input-password-icon" class="fa fa-fw fa-lock" aria-hidden="true"></i>
                         </div>
 
                          <div id="kc-form-options">
@@ -45,19 +49,24 @@
                         </div>
 
                         <div class="input-submit">
-                            <button type="submit">Email Log In</button>
+                            <button type="submit">Login</button>
                         </div>
-
                     </div>
-                    <div class="link">
-                           <#if realm.resetPasswordAllowed>
-                                   <span class="forget-password"> <a href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>
-                            </#if>
+
+                    <div class="link link-login">
+                        <#if realm.resetPasswordAllowed>
+                            <span class="forget-password"> <a href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>
+                        </#if>
+                        
                         <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
                             <span class="register"><a href="${url.registrationUrl}">Create an Account</a></span>
-                    </#if>
+                        </#if>
                     </div>
+
                     <div class="social-login">
+
+                        <div class="social-login-title">OR LOGIN WITH</div>
+
                         <#if realm.password && social.providers??>
                             <div id="kc-social-providers">
                                 <ul>
@@ -65,7 +74,7 @@
                                         <li>
                                             <a href="${p.loginUrl}" class=" ${p.providerId}">
                                                 <i class="fa fa-${p.providerId}" aria-hidden="true"></i>
-                                                <span>Login</span>
+                                                <span>${p.providerId}</span>
                                             </a>
                                         </li>
                                     </#list>
@@ -73,6 +82,7 @@
                             </div>
                         </#if>
                     </div>
+
                 </div>
             </form>
         </#if>
