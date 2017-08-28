@@ -1,18 +1,17 @@
 <#import "template.ftl" as layout>
 <@layout.mainLayout active='account' bodyClass='user'; section>
 
-    <div class="row">
-        <div class="col-md-10">
-            <h2>${msg("editAccountHtmlTitle")}</h2>
-        </div>
-        <div class="col-md-2 subtitle">
-            <span class="subtitle"><span class="required">*</span> ${msg("requiredFields")}</span>
-        </div>
+    <div class="page-title">
+        <h2>${msg("editAccountHtmlTitle")}</h2>
     </div>
 
-    <form action="${url.accountUrl}" class="form-horizontal" method="post">
+    <form action="${url.accountUrl}" class="input-detail" method="post">
 
         <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker?html}">
+
+        <#-- <div class="subtitle">
+            <span class="subtitle"><span class="required">*</span> ${msg("requiredFields")}</span>
+        </div> -->
 
         <#if !realm.registrationEmailAsUsername>
             <div class="form-group ${messagesPerField.printIfExists('username','has-error')}">
@@ -26,45 +25,54 @@
             </div>
         </#if>
 
-        <div class="form-group ${messagesPerField.printIfExists('email','has-error')}">
-            <div class="col-sm-2 col-md-2">
-            <label for="email" class="control-label">${msg("email")}</label> <span class="required">*</span>
-            </div>
-
-            <div class="col-sm-10 col-md-10">
-                <input type="text" class="form-control" id="email" name="email" autofocus value="${(account.email!'')?html}"/>
-            </div>
+        <div class="input-email ${messagesPerField.printIfExists('email','has-error')}">
+            <input id="email" name="email" value="${(account.email!'')?html}" type="text" placeholder="email address" autofocus />
+            <i id="input-email-icon" class="fa fa-fw fa-envelope" aria-hidden="true"></i>
         </div>
 
-        <div class="form-group ${messagesPerField.printIfExists('firstName','has-error')}">
-            <div class="col-sm-2 col-md-2">
-                <label for="firstName" class="control-label">${msg("firstName")}</label> <span class="required">*</span>
-            </div>
-
-            <div class="col-sm-10 col-md-10">
-                <input type="text" class="form-control" id="firstName" name="firstName" value="${(account.firstName!'')?html}"/>
-            </div>
+        <div class="input-firstname ${messagesPerField.printIfExists('firstName','has-error')}">
+            <input type="text" id="firstName" name="firstName" value="${(account.firstName!'')?html}" placeholder="first name" />
+            <i  id="input-firstname-icon" class="fa fa-fw fa-user" aria-hidden="true"></i>
         </div>
 
-        <div class="form-group ${messagesPerField.printIfExists('lastName','has-error')}">
-            <div class="col-sm-2 col-md-2">
-                <label for="lastName" class="control-label">${msg("lastName")}</label> <span class="required">*</span>
-            </div>
-
-            <div class="col-sm-10 col-md-10">
-                <input type="text" class="form-control" id="lastName" name="lastName" value="${(account.lastName!'')?html}"/>
-            </div>
+        <div class="input-lastname ${messagesPerField.printIfExists('lastName','has-error')}">
+            <input type="text" name="lastName" id="lastName" value="${(account.lastName!'')?html}" placeholder="last name" />
+            <i  id="input-lastname-icon" class="fa fa-fw fa-users" aria-hidden="true"></i>
         </div>
 
-        <div class="form-group">
-            <div id="kc-form-buttons" class="col-md-offset-2 col-md-10 submit">
-                <div class="">
-                    <#if url.referrerURI??><a href="${url.referrerURI}">${msg("backToApplication")}/a></#if>
-                    <button type="submit" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="submitAction" value="Save">${msg("doSave")}</button>
-                    <button type="submit" class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!} ${properties.kcButtonLargeClass!}" name="submitAction" value="Cancel">${msg("doCancel")}</button>
-                </div>
+
+
+        <div id="kc-form-buttons" class=" submit">
+            <div class="input-submit input-inline">
+                <#if url.referrerURI??><a href="${url.referrerURI}">${msg("backToApplication")}</a></#if>
+                <button type="submit" class="confirm" name="submitAction" value="Save">Save</button>
+                <button type="submit" class="cancel" name="submitAction" value="Cancel">Cancel</button>
             </div>
+        </div> 
+
+
+         <#-- 
+
+         <div class="input-email ${messagesPerField.printIfExists('email','has-error')}">
+            <input id="email" name="email" value="${(account.email!'')?html}" type="text" placeholder="email address" autofocus />
+            <i id="input-email-icon" class="fa fa-fw fa-envelope" aria-hidden="true"></i>
         </div>
+
+       <div class="input-firstname ${messagesPerField.printIfExists('firstName','has-error')}">
+            <input type="text" id="firstName" name="firstName" value="${(account.firstName!'')?html}" placeholder="first name" />
+            <i  id="input-firstname-icon" class="fa fa-fw fa-user" aria-hidden="true"></i>
+        </div>
+                    
+        <div class="input-lastname ${messagesPerField.printIfExists('lastName','has-error')}">
+            <input type="text" name="lastName" id="lastName" value="${(register.formData.lastName!'')?html}" placeholder="last name" />
+            <i  id="input-lastname-icon" class="fa fa-fw fa-users" aria-hidden="true"></i>
+        </div>
+
+       
+
+        -->
+
+
     </form>
 
 </@layout.mainLayout>
