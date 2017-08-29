@@ -1,3 +1,141 @@
+.input-detail i {
+  position: absolute;
+  right: 13%;
+  font-size: 18px;
+  color: #4EB9AA; }
+
+.input-email, .input-password, .input-firstname, .input-lastname {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  margin-bottom: 10px; }
+  .input-email > input, .input-email > input:-webkit-autofill, .input-password > input, .input-password > input:-webkit-autofill, .input-firstname > input, .input-firstname > input:-webkit-autofill, .input-lastname > input, .input-lastname > input:-webkit-autofill {
+    height: 50px;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 5px;
+    color: #212121;
+    background-color: #F1F1F1;
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: 300ms ease !important;
+    border: 1px solid transparent; }
+    .input-email > input:hover, .input-email > input:-webkit-autofill:hover, .input-password > input:hover, .input-password > input:-webkit-autofill:hover, .input-firstname > input:hover, .input-firstname > input:-webkit-autofill:hover, .input-lastname > input:hover, .input-lastname > input:-webkit-autofill:hover {
+      -webkit-text-fill-color: #404040 !important;
+      color: #404040;
+      border: 1px solid #404040; }
+    .input-email > input:focus, .input-email > input:-webkit-autofill:focus, .input-password > input:focus, .input-password > input:-webkit-autofill:focus, .input-firstname > input:focus, .input-firstname > input:-webkit-autofill:focus, .input-lastname > input:focus, .input-lastname > input:-webkit-autofill:focus {
+      border: 1px solid #404040;
+      box-shadow: 0px 0px 5px #d3d3d3;
+      outline: none;
+      background-color: white !important;
+      color: #404040;
+      -webkit-text-fill-color: #404040 !important; }
+      .input-email > input:focus::placeholder, .input-email > input:-webkit-autofill:focus::placeholder, .input-password > input:focus::placeholder, .input-password > input:-webkit-autofill:focus::placeholder, .input-firstname > input:focus::placeholder, .input-firstname > input:-webkit-autofill:focus::placeholder, .input-lastname > input:focus::placeholder, .input-lastname > input:-webkit-autofill:focus::placeholder {
+        color: #404040 !important; }
+
+#username + #input-email-icon, #username + #input-password-icon, #username + #input-passwordconfirm-icon, #username + #input-firstname-icon, #username + #input-lastname-icon, #password + #input-email-icon, #password + #input-password-icon, #password + #input-passwordconfirm-icon, #password + #input-firstname-icon, #password + #input-lastname-icon, #password-confirm + #input-email-icon, #password-confirm + #input-password-icon, #password-confirm + #input-passwordconfirm-icon, #password-confirm + #input-firstname-icon, #password-confirm + #input-lastname-icon, #email + #input-email-icon, #email + #input-password-icon, #email + #input-passwordconfirm-icon, #email + #input-firstname-icon, #email + #input-lastname-icon, #firstName + #input-email-icon, #firstName + #input-password-icon, #firstName + #input-passwordconfirm-icon, #firstName + #input-firstname-icon, #firstName + #input-lastname-icon, #lastName + #input-email-icon, #lastName + #input-password-icon, #lastName + #input-passwordconfirm-icon, #lastName + #input-firstname-icon, #lastName + #input-lastname-icon {
+  color: #212121 !important; }
+
+#username:focus + #input-email-icon,
+#username:focus + #input-password-icon,
+#username:focus + #input-passwordconfirm-icon,
+#username:focus + #input-firstname-icon,
+#username:focus + #input-lastname-icon,
+#username:hover + #input-email-icon,
+#username:hover + #input-password-icon,
+#username:hover + #input-passwordconfirm-icon,
+#username:hover + #input-firstname-icon,
+#username:hover + #input-lastname-icon, #password:focus + #input-email-icon,
+#password:focus + #input-password-icon,
+#password:focus + #input-passwordconfirm-icon,
+#password:focus + #input-firstname-icon,
+#password:focus + #input-lastname-icon,
+#password:hover + #input-email-icon,
+#password:hover + #input-password-icon,
+#password:hover + #input-passwordconfirm-icon,
+#password:hover + #input-firstname-icon,
+#password:hover + #input-lastname-icon, #password-confirm:focus + #input-email-icon,
+#password-confirm:focus + #input-password-icon,
+#password-confirm:focus + #input-passwordconfirm-icon,
+#password-confirm:focus + #input-firstname-icon,
+#password-confirm:focus + #input-lastname-icon,
+#password-confirm:hover + #input-email-icon,
+#password-confirm:hover + #input-password-icon,
+#password-confirm:hover + #input-passwordconfirm-icon,
+#password-confirm:hover + #input-firstname-icon,
+#password-confirm:hover + #input-lastname-icon, #email:focus + #input-email-icon,
+#email:focus + #input-password-icon,
+#email:focus + #input-passwordconfirm-icon,
+#email:focus + #input-firstname-icon,
+#email:focus + #input-lastname-icon,
+#email:hover + #input-email-icon,
+#email:hover + #input-password-icon,
+#email:hover + #input-passwordconfirm-icon,
+#email:hover + #input-firstname-icon,
+#email:hover + #input-lastname-icon, #firstName:focus + #input-email-icon,
+#firstName:focus + #input-password-icon,
+#firstName:focus + #input-passwordconfirm-icon,
+#firstName:focus + #input-firstname-icon,
+#firstName:focus + #input-lastname-icon,
+#firstName:hover + #input-email-icon,
+#firstName:hover + #input-password-icon,
+#firstName:hover + #input-passwordconfirm-icon,
+#firstName:hover + #input-firstname-icon,
+#firstName:hover + #input-lastname-icon, #lastName:focus + #input-email-icon,
+#lastName:focus + #input-password-icon,
+#lastName:focus + #input-passwordconfirm-icon,
+#lastName:focus + #input-firstname-icon,
+#lastName:focus + #input-lastname-icon,
+#lastName:hover + #input-email-icon,
+#lastName:hover + #input-password-icon,
+#lastName:hover + #input-passwordconfirm-icon,
+#lastName:hover + #input-firstname-icon,
+#lastName:hover + #input-lastname-icon {
+  transition: 1000ms ease !important;
+  color: #404040 !important; }
+
+.input-checkbox {
+  margin-bottom: 10px; }
+  .input-checkbox > label {
+    margin-left: 10%;
+    color: #005B4F;
+    margin-bottom: 0;
+    font-weight: normal !important; }
+
+.input-submit > button {
+  margin-bottom: 10px;
+  width: 80%;
+  height: 50px;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none; }
+  .input-submit > button:first-child {
+    margin-left: 10% !important; }
+  .input-submit > button:not(:last-child) {
+    margin-right: 2%; }
+  .input-submit > button:last-child {
+    margin-right: 10% !important; }
+  .input-submit > button.confirm {
+    background-color: #4EB9AA !important; }
+  .input-submit > button.cancel {
+    background-color: #D34545 !important; }
+
+.input-submit > button, .input-submit #kc-social-providers a {
+  transition: 300ms ease; }
+  .input-submit > button:hover, .input-submit > button:active, .input-submit #kc-social-providers a:hover, .input-submit #kc-social-providers a:active {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3); }
+
+.input-submit.input-inline {
+  display: flex; }
+
 html {
   height: 100%;
   width: 100%; }
@@ -5,7 +143,7 @@ html {
 .navbar {
   margin-bottom: 0;
   min-height: 50px;
-  background-color: #55C669 !important; }
+  background-color: #4EB9AA !important; }
 
 .navbar-nav > li {
   float: right !important; }
@@ -76,11 +214,11 @@ html {
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 10px;
-  color: #357a41; }
+  color: #005B4F; }
 
 /* Sidebar */
 .bs-sidebar {
-  background-color: #357a41;
+  background-color: #005B4F;
   padding-top: 44px;
   padding-right: 0;
   padding-left: 0;
@@ -191,144 +329,6 @@ html {
   #kc-form-buttons > .btn-primary {
     float: right;
     margin-left: 8px; }
-
-.input-detail i {
-  position: absolute;
-  right: 13%;
-  font-size: 18px;
-  color: #55C669; }
-
-.input-email, .input-password, .input-firstname, .input-lastname {
-  display: flex;
-  align-items: center;
-  position: relative;
-  top: 0;
-  bottom: 0;
-  margin-bottom: 10px; }
-  .input-email > input, .input-email > input:-webkit-autofill, .input-password > input, .input-password > input:-webkit-autofill, .input-firstname > input, .input-firstname > input:-webkit-autofill, .input-lastname > input, .input-lastname > input:-webkit-autofill {
-    height: 50px;
-    width: 80%;
-    margin-left: 10%;
-    border-radius: 5px;
-    color: #212121;
-    background-color: #F1F1F1;
-    font-size: 16px;
-    padding: 10px;
-    box-sizing: border-box;
-    text-align: center;
-    transition: 300ms ease !important;
-    border: 1px solid transparent; }
-    .input-email > input:hover, .input-email > input:-webkit-autofill:hover, .input-password > input:hover, .input-password > input:-webkit-autofill:hover, .input-firstname > input:hover, .input-firstname > input:-webkit-autofill:hover, .input-lastname > input:hover, .input-lastname > input:-webkit-autofill:hover {
-      -webkit-text-fill-color: #404040 !important;
-      color: #404040;
-      border: 1px solid #404040; }
-    .input-email > input:focus, .input-email > input:-webkit-autofill:focus, .input-password > input:focus, .input-password > input:-webkit-autofill:focus, .input-firstname > input:focus, .input-firstname > input:-webkit-autofill:focus, .input-lastname > input:focus, .input-lastname > input:-webkit-autofill:focus {
-      border: 1px solid #404040;
-      box-shadow: 0px 0px 5px #d3d3d3;
-      outline: none;
-      background-color: white !important;
-      color: #404040;
-      -webkit-text-fill-color: #404040 !important; }
-      .input-email > input:focus::placeholder, .input-email > input:-webkit-autofill:focus::placeholder, .input-password > input:focus::placeholder, .input-password > input:-webkit-autofill:focus::placeholder, .input-firstname > input:focus::placeholder, .input-firstname > input:-webkit-autofill:focus::placeholder, .input-lastname > input:focus::placeholder, .input-lastname > input:-webkit-autofill:focus::placeholder {
-        color: #404040 !important; }
-
-#username + #input-email-icon, #username + #input-password-icon, #username + #input-passwordconfirm-icon, #username + #input-firstname-icon, #username + #input-lastname-icon, #password + #input-email-icon, #password + #input-password-icon, #password + #input-passwordconfirm-icon, #password + #input-firstname-icon, #password + #input-lastname-icon, #password-confirm + #input-email-icon, #password-confirm + #input-password-icon, #password-confirm + #input-passwordconfirm-icon, #password-confirm + #input-firstname-icon, #password-confirm + #input-lastname-icon, #email + #input-email-icon, #email + #input-password-icon, #email + #input-passwordconfirm-icon, #email + #input-firstname-icon, #email + #input-lastname-icon, #firstName + #input-email-icon, #firstName + #input-password-icon, #firstName + #input-passwordconfirm-icon, #firstName + #input-firstname-icon, #firstName + #input-lastname-icon, #lastName + #input-email-icon, #lastName + #input-password-icon, #lastName + #input-passwordconfirm-icon, #lastName + #input-firstname-icon, #lastName + #input-lastname-icon {
-  color: #212121 !important; }
-
-#username:focus + #input-email-icon,
-#username:focus + #input-password-icon,
-#username:focus + #input-passwordconfirm-icon,
-#username:focus + #input-firstname-icon,
-#username:focus + #input-lastname-icon,
-#username:hover + #input-email-icon,
-#username:hover + #input-password-icon,
-#username:hover + #input-passwordconfirm-icon,
-#username:hover + #input-firstname-icon,
-#username:hover + #input-lastname-icon, #password:focus + #input-email-icon,
-#password:focus + #input-password-icon,
-#password:focus + #input-passwordconfirm-icon,
-#password:focus + #input-firstname-icon,
-#password:focus + #input-lastname-icon,
-#password:hover + #input-email-icon,
-#password:hover + #input-password-icon,
-#password:hover + #input-passwordconfirm-icon,
-#password:hover + #input-firstname-icon,
-#password:hover + #input-lastname-icon, #password-confirm:focus + #input-email-icon,
-#password-confirm:focus + #input-password-icon,
-#password-confirm:focus + #input-passwordconfirm-icon,
-#password-confirm:focus + #input-firstname-icon,
-#password-confirm:focus + #input-lastname-icon,
-#password-confirm:hover + #input-email-icon,
-#password-confirm:hover + #input-password-icon,
-#password-confirm:hover + #input-passwordconfirm-icon,
-#password-confirm:hover + #input-firstname-icon,
-#password-confirm:hover + #input-lastname-icon, #email:focus + #input-email-icon,
-#email:focus + #input-password-icon,
-#email:focus + #input-passwordconfirm-icon,
-#email:focus + #input-firstname-icon,
-#email:focus + #input-lastname-icon,
-#email:hover + #input-email-icon,
-#email:hover + #input-password-icon,
-#email:hover + #input-passwordconfirm-icon,
-#email:hover + #input-firstname-icon,
-#email:hover + #input-lastname-icon, #firstName:focus + #input-email-icon,
-#firstName:focus + #input-password-icon,
-#firstName:focus + #input-passwordconfirm-icon,
-#firstName:focus + #input-firstname-icon,
-#firstName:focus + #input-lastname-icon,
-#firstName:hover + #input-email-icon,
-#firstName:hover + #input-password-icon,
-#firstName:hover + #input-passwordconfirm-icon,
-#firstName:hover + #input-firstname-icon,
-#firstName:hover + #input-lastname-icon, #lastName:focus + #input-email-icon,
-#lastName:focus + #input-password-icon,
-#lastName:focus + #input-passwordconfirm-icon,
-#lastName:focus + #input-firstname-icon,
-#lastName:focus + #input-lastname-icon,
-#lastName:hover + #input-email-icon,
-#lastName:hover + #input-password-icon,
-#lastName:hover + #input-passwordconfirm-icon,
-#lastName:hover + #input-firstname-icon,
-#lastName:hover + #input-lastname-icon {
-  transition: 1000ms ease !important;
-  color: #404040 !important; }
-
-.input-checkbox {
-  margin-bottom: 10px; }
-  .input-checkbox > label {
-    margin-left: 10%;
-    color: #357a41;
-    margin-bottom: 0;
-    font-weight: normal !important; }
-
-.input-submit > button {
-  margin-bottom: 10px;
-  width: 80%;
-  height: 50px;
-  border: none;
-  border-radius: 3px;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  outline: none; }
-  .input-submit > button:first-child {
-    margin-left: 10% !important; }
-  .input-submit > button:not(:last-child) {
-    margin-right: 2%; }
-  .input-submit > button:last-child {
-    margin-right: 10% !important; }
-  .input-submit > button.confirm {
-    background-color: #55C669 !important; }
-  .input-submit > button.cancel {
-    background-color: #D34545 !important; }
-
-.input-submit > button, .input-submit #kc-social-providers a {
-  transition: 300ms ease; }
-  .input-submit > button:hover, .input-submit > button:active, .input-submit #kc-social-providers a:hover, .input-submit #kc-social-providers a:active {
-    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3); }
-
-.input-submit.input-inline {
-  display: flex; }
 
 /* Authenticator page */
 ol {
