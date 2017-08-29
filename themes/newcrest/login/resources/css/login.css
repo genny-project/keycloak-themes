@@ -177,7 +177,8 @@
     align-items: flex-start !important;
     padding-top: 3vh !important; }
   #kc-form {
-    width: 100vw; }
+    width: 100vw;
+    margin-top: 0; }
     #kc-form > form {
       width: 90vw;
       margin-left: 5vw;
