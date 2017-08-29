@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "node-sass login/resources/css/login.scss login/resources/css/login.css",
+    "compile-login": "node-sass login/resources/css/login.scss login/resources/css/login.css",
+    "compile-account": "node-sass account/resources/css/account.scss account/resources/css/account.css",
     "watch-login": "node-sass --watch login/resources/css/login.scss login/resources/css/login.css",
     "watch-account": "node-sass --watch account/resources/css/account.scss account/resources/css/account.css"
   },
