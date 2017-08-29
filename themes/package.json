@@ -1,0 +1,27 @@
+{
+  "name": "genny-keycloak",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    
+    "compile:genny": "cd genny && npm run-script compile-all",
+    
+    "compile:channel40": "cd channel40 && npm run-script compile-all",
+    "compile:ai": "cd absoluteimmigration && npm run-script compile-all",
+    "compile:internmatch": "cd internmatch && npm run-script compile-all",
+    "compile:memberhub": "cd memberhub && npm run-script compile-all",
+    "compile:newcrest": "cd newcrest && npm run-script compile-all",
+
+    "compile-all": "npm-run-all compile:*"
+  },
+  "author": "conor",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "node-sass": "^4.5.3"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.1"
+  }
+}

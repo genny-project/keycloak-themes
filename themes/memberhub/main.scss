@@ -1,11 +1,7 @@
-$container-background: #fff;
+@import '../theme-resources/scss/backgrounds.scss';
+
+$login-background: $bg1;
+//$login-background: $bg2;
 
 $primary-color: #00A453;
 $secondary-color: #FF6225;
-
-$form-color: #404040;
-
-$form-gray-light: #F1F1F1;
-$form-gray-dark: #212121;
-
-$cancel-color: #D34545;
