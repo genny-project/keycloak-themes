@@ -75,7 +75,7 @@
   justify-content: center; }
   .project-title p {
     text-align: center;
-    color: #55C669;
+    color: #4EB9AA;
     font-size: 36px;
     margin-bottom: 0; }
 
@@ -91,13 +91,13 @@
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 10px;
-  color: #357a41; }
+  color: #005B4F; }
 
 .input-detail i {
   position: absolute;
   right: 13%;
   font-size: 18px;
-  color: #55C669; }
+  color: #4EB9AA; }
 
 .input-email, .input-password, .input-firstname, .input-lastname {
   display: flex;
@@ -198,7 +198,7 @@
   margin-bottom: 10px; }
   .input-checkbox > label {
     margin-left: 10%;
-    color: #357a41;
+    color: #005B4F;
     margin-bottom: 0;
     font-weight: normal !important; }
 
@@ -209,7 +209,7 @@
   height: 50px;
   border: none;
   border-radius: 3px;
-  background-color: #55C669;
+  background-color: #4EB9AA;
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -237,7 +237,7 @@
   .link > .register, .link > .login {
     margin-right: 10%; }
   .link a {
-    color: #357a41;
+    color: #005B4F;
     text-decoration: underline !important; }
 
 .social-login {
@@ -251,7 +251,7 @@
   text-align: center;
   font-size: 18px;
   margin-bottom: 10px;
-  color: #357a41; }
+  color: #005B4F; }
 
 #kc-social-providers ul {
   list-style: none;
