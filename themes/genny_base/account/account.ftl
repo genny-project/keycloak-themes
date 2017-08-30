@@ -41,37 +41,13 @@
         </div>
 
 
-
         <div id="kc-form-buttons" class=" submit">
             <div class="input-submit input-inline">
                 <#if url.referrerURI??><a href="${url.referrerURI}">${msg("backToApplication")}</a></#if>
                 <button type="submit" class="confirm" name="submitAction" value="Save">Save</button>
                 <button type="submit" class="cancel" name="submitAction" value="Cancel">Cancel</button>
             </div>
-        </div> 
-
-
-         <#-- 
-
-         <div class="input-email ${messagesPerField.printIfExists('email','has-error')}">
-            <input id="email" name="email" value="${(account.email!'')?html}" type="text" placeholder="email address" autofocus />
-            <i id="input-email-icon" class="fa fa-fw fa-envelope" aria-hidden="true"></i>
         </div>
-
-       <div class="input-firstname ${messagesPerField.printIfExists('firstName','has-error')}">
-            <input type="text" id="firstName" name="firstName" value="${(account.firstName!'')?html}" placeholder="first name" />
-            <i  id="input-firstname-icon" class="fa fa-fw fa-user" aria-hidden="true"></i>
-        </div>
-                    
-        <div class="input-lastname ${messagesPerField.printIfExists('lastName','has-error')}">
-            <input type="text" name="lastName" id="lastName" value="${(register.formData.lastName!'')?html}" placeholder="last name" />
-            <i  id="input-lastname-icon" class="fa fa-fw fa-users" aria-hidden="true"></i>
-        </div>
-
-       
-
-        -->
-
 
     </form>
 

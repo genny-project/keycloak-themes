@@ -1,31 +1,28 @@
 <#import "template.ftl" as layout>
 <@layout.mainLayout active='social' bodyClass='social'; section>
 
-    <div class="row">
-        <div class="col-md-10">
-            <h2>${msg("federatedIdentitiesHtmlTitle")}</h2>
-        </div>
+    <div class="page-title">
+        <h2>${msg("federatedIdentitiesHtmlTitle")}</h2>
     </div>
 
-    <form action="${url.passwordUrl}" class="form-horizontal" method="post">
+    <form action="${url.passwordUrl}" class="input-detail input-wrap" method="post">
         <#list federatedIdentity.identities as identity>
-            <div class="form-group">
-                <div class="col-sm-2 col-md-2">
-                    <label for="${identity.providerId!}" class="control-label">${identity.displayName!}</label>
+
+                <div class="add-identity">
+                    <input disabled="true" id="add-${identity.providerId!}" placeholder="${identity.displayName!}" value="${identity.userName!}"/>
+                    <i  id="input-add-${identity.providerId!}-icon" class="fa fa-fw fa-${identity.providerId!}" aria-hidden="true"></i>
                 </div>
-                <div class="col-sm-5 col-md-5">
-                    <input disabled="true" class="form-control" value="${identity.userName!}">
-                </div>
-                <div class="col-sm-5 col-md-5">
+
+                <div class="input-submit input-inline">
                     <#if identity.connected>
                         <#if federatedIdentity.removeLinkPossible>
-                            <a href="${identity.actionUrl}" type="submit" id="remove-${identity.providerId!}" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}">${msg("doRemove")}</a>
+                            <a href="${identity.actionUrl}" type="submit" id="remove-${identity.providerId!}" class="cancel">${msg("doRemove")}</a>
                         </#if>
                     <#else>
-                        <a href="${identity.actionUrl}" type="submit" id="add-${identity.providerId!}" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}">${msg("doAdd")}</a>
+                        <a href="${identity.actionUrl}" type="submit" id="add-${identity.providerId!}" class="confirm">${msg("doAdd")}</a>
                     </#if>
                 </div>
-            </div>
+
         </#list>
     </form>
 
