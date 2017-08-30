@@ -18,21 +18,22 @@
             <script type="text/javascript" src="${url.resourcesPath}/${script}"></script>
         </#list>
     </#if>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
 
     <div class="${bodyClass}">
 
-        <nav class="navbar navbar-main" role="navigation">
+        <nav class="header" role="navigation">
 
-            <div class="nav-content">
-                <div class="navbar-header">
+            <div class="header-content contain-width">
+                <div class="header-title">
                     <div class="project-logo"></div>
-                    <h1 class="navbar-title">WELCOME TO ${properties.themeTitle!}</h1>
+                    <h1 class="project-title">WELCOME TO ${properties.themeTitle!}</h1>
                 </div>
 
                 <div class="navbar-collapse">
-                    <ul class="nav navbar-nav navbar-utility">
+                    <ul class="header-menu">
                         <#if realm.internationalizationEnabled>
                             <li>
                                 <div class="kc-dropdown" id="kc-locale-dropdown">
@@ -54,9 +55,9 @@
 
         </nav>
 
-        <div class="container body">
+        <div class="body-content contain-width">
 
-            <div class="bs-sidebar">
+            <div class="sidebar">
 
                 <ul>
                     <li class="<#if active=='account'>active</#if>"><a href="${url.accountUrl}">${msg("account")}</a></li>
@@ -70,12 +71,13 @@
 
             </div>
 
-            <div class="content-area">
+            <div class="main-content">
 
                 <#if message?has_content>
                     <div class="alert alert-${message.type}">
-                        <#if message.type=='success' ><span class="pficon pficon-ok"></span></#if>
-                        <#if message.type=='error' ><span class="pficon pficon-error-octagon"></span><span class="pficon pficon-error-exclamation"></span></#if>
+                        <#if message.type = 'success'><i class="fa fa-check-circle" aria-hidden="true"></i></#if>
+                        <#if message.type = 'warning'><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></#if>
+                        <#if message.type = 'error'><i class="fa fa-exclamation-circle" aria-hidden="true"></i></#if>
                         ${message.summary}
                     </div>
                 </#if>

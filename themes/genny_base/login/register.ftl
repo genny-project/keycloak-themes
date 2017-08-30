@@ -52,7 +52,7 @@
                         </div>
                         <div class="input-password">
                             <input type="password" id="password-confirm"  name="password-confirm" placeholder="password-confirm" />
-                            <i  id="input-passwordconfirm-icon" class="fa fa-fw fa-lock" aria-hidden="true"></i>
+                            <i  id="input-password-confirm-icon" class="fa fa-fw fa-lock" aria-hidden="true"></i>
                         </div>
                     </#if>
             

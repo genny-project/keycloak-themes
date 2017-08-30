@@ -4,28 +4,48 @@
 //      F O R M   F I E L D S   S T Y L I NG     //
 //-----------------------------------------------//
 
-    .input-detail i {
-        position: absolute;
-        right: 13%;
-        font-size: 18px;
-        color: $primary-color;
+    .input-detail {
+        
+        i {
+            position: absolute;
+            right: 13%;
+            font-size: 18px;
+        }
     }
 
-    .input-email, .input-password, .input-firstname, .input-lastname {
+    .input-wrap {
+        display:flex;
+        flex-wrap: wrap;
+
+        i {
+            right: 3% !important;
+        }
+
+        input {
+            width: 90% !important; 
+        }
+
+        
+    }
+
+    .input-email, .input-password, .input-firstname, .input-lastname, .add-identity {
         display: flex;
         align-items: center;
         position: relative;
         top: 0;
         bottom: 0;
         margin-bottom: 10px;
-        
+        flex-shrink: 0;
+        min-width: 80%;
 
         >input, >input:-webkit-autofill {
+            
             height: 50px;
             width: 80%;
             margin-left: 10%;
             border-radius: 5px;
-            color: $form-gray-dark;
+            color: $form-gray-mid !important;
+            -webkit-text-fill-color: $form-gray-mid;
             background-color: $form-gray-light;
             font-size: 16px;
             padding: 10px;
@@ -53,24 +73,59 @@
                 }
             }
         }
+
+        >input[disabled], >input[disabled]:-webkit-autofill {
+            cursor: not-allowed;
+
+            &:hover {
+                border: 1px solid rgba(0, 0, 0, 0);
+                color: $form-gray-mid !important;
+                -webkit-text-fill-color: $form-gray-mid !important;
+            }
+        }
     }
 
-    #username,  #password, #password-confirm, #email, #firstName, #lastName {
+    #username,
+    #password,
+    #password-new,
+    #password-confirm,
+    #email,
+    #firstName,
+    #lastName,
+    #add-facebook,
+    #add-google,
+    #add-linkedin {
 
-        + #input-email-icon, + #input-password-icon, + #input-passwordconfirm-icon, + #input-firstname-icon, + #input-lastname-icon {
+        + #input-email-icon,
+        + #input-password-icon,
+        + #input-password-new-icon,
+        + #input-password-confirm-icon,
+        + #input-firstname-icon,
+        + #input-lastname-icon,
+        + #input-add-facebook-icon,
+        + #input-add-google-icon,
+        + #input-add-linkedin-icon
+         {
             color: $form-gray-dark !important;
         }
         
         &:focus + #input-email-icon,
-        &:focus + #input-password-icon,
-        &:focus + #input-passwordconfirm-icon,
-        &:focus + #input-firstname-icon,
-        &:focus + #input-lastname-icon,
         &:hover + #input-email-icon,
+        &:focus + #input-password-icon,
         &:hover + #input-password-icon,
-        &:hover + #input-passwordconfirm-icon,
+        &:focus + #input-password-new-icon,
+        &:hover + #input-password-new-icon,
+        &:focus + #input-password-confirm-icon,
         &:hover + #input-firstname-icon,
-        &:hover + #input-lastname-icon {
+        &:focus + #input-firstname-icon,
+        &:hover + #input-lastname-icon,
+        &:focus + #input-lastname-icon,
+        &:hover + #input-add-facebook-icon,
+        &:focus + #input-add-facebook-icon,
+        &:hover + #input-add-google-icon,
+        &:focus + #input-add-google-icon,
+        &:hover + #input-add-linkedin-icon,
+        &:focus + #input-add-linkedin-icon {
             transition: 1000ms ease !important;
             color: $form-color !important;
         }
@@ -88,8 +143,10 @@
     }
 
     .input-submit {
+        flex-shrink: 0;
+        min-width: 10%;
 
-        >button {
+        >button, >a {
             margin-bottom: 10px;
             width: 80%;
             height: 50px;
@@ -99,6 +156,7 @@
             font-size: 16px;
             cursor: pointer;
             outline: none;
+
 
             &:first-child {
                 margin-left: 10% !important;
@@ -113,7 +171,7 @@
             }
 
             &.confirm {
-                background-color: $primary-color !important;
+                background-color: $confirm-color !important;
             }
             &.cancel {
                 background-color: $cancel-color !important;
@@ -128,8 +186,48 @@
             }
         }
 
-
         &.input-inline{
             display: flex;
         }
+
+        > a {
+        
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+//-----------------------------------//
+//      A L E R T   S T Y L I NG     //
+//-----------------------------------//
+
+    .alert {
+        padding: 10px !important;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;    
+        margin-bottom: 20px;
+        padding: 10px !important;
+        padding-left: 20px !important;
+        font-size: 12px;
+        color: #fff;
+
+        i {
+            color: #fff;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+    }
+
+    .alert-success {
+        background-color: $alert-success;
+    }
+
+    .alert-warning {
+        background-color: $alert-warning;
+    }
+
+    .alert-error {
+        background-color: $alert-error;
     }
