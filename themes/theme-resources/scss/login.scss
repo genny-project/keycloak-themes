@@ -48,8 +48,7 @@
 
     .login-container {
         width: inherit; 
-        padding-top: 50px;
-        padding-bottom: 40px;
+        padding: 50px 10% 40px;
         background-color: $container-background;
         border-radius: 10px;
     }
@@ -159,11 +158,10 @@
 
         >.forget-password {
             width: 50%;
-            margin-left: 10%;
         }
 
         >.register, >.login {
-            margin-right: 10%;
+            // margin-right: 10%;
         }
 
         a {
@@ -177,8 +175,6 @@
     //--------------------------------------------------------------//
 
     .social-login {
-        margin-left: 10%;
-        margin-right: 10%;
 
         >ul>li {
             list-style: none;

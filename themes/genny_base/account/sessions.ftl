@@ -1,14 +1,14 @@
 <#import "template.ftl" as layout>
 <@layout.mainLayout active='sessions' bodyClass='sessions'; section>
 
-    <div class="row">
-        <div class="col-md-10">
-            <h2>${msg("sessionsHtmlTitle")}</h2>
-        </div>
+    <div class="page-title">
+        <h2>${msg("sessionsHtmlTitle")}</h2>
     </div>
 
-    <table class="table table-striped table-bordered">
-        <thead>
+    <hr/>
+
+    <table class="table table-container">
+        <thead class="table-header">
         <tr>
             <td>${msg("ip")}</td>
             <td>${msg("started")}</td>
@@ -18,7 +18,7 @@
         </tr>
         </thead>
 
-        <tbody>
+        <tbody class="table-body">
         <#list sessions.sessions as session>
             <tr>
                 <td>${session.ipAddress}</td>
@@ -36,6 +36,9 @@
 
     </table>
 
-    <a id="logout-all-sessions" href="${url.sessionsLogoutUrl}">${msg("doLogOutAllSessions")}</a>
+    <div class="input-button">
+        <a id="logout-all-sessions" class="cancel" href="${url.sessionsLogoutUrl}">${msg("doLogOutAllSessions")}</a>
+    </div>
+
 
 </@layout.mainLayout>

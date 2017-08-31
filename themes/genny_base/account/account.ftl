@@ -5,6 +5,8 @@
         <h2>${msg("editAccountHtmlTitle")}</h2>
     </div>
 
+    <hr/>
+    
     <form action="${url.accountUrl}" class="input-detail" method="post">
 
         <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker?html}">

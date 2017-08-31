@@ -26,7 +26,7 @@
 
         <nav class="header" role="navigation">
 
-            <div class="header-content contain-width">
+            <div class="header-content width-contain">
                 <div class="header-title">
                     <div class="project-logo"></div>
                     <h1 class="project-title">WELCOME TO ${properties.themeTitle!}</h1>
@@ -55,18 +55,50 @@
 
         </nav>
 
-        <div class="body-content contain-width">
+        <div class="body-content width-contain">
 
             <div class="sidebar">
 
                 <ul>
-                    <li class="<#if active=='account'>active</#if>"><a href="${url.accountUrl}">${msg("account")}</a></li>
-                    <#if features.passwordUpdateSupported><li class="<#if active=='password'>active</#if>"><a href="${url.passwordUrl}">${msg("password")}</a></li></#if>
-                    <li class="<#if active=='totp'>active</#if>"><a href="${url.totpUrl}">${msg("authenticator")}</a></li>
-                    <#if features.identityFederation><li class="<#if active=='social'>active</#if>"><a href="${url.socialUrl}">${msg("federatedIdentity")}</a></li></#if>
-                    <li class="<#if active=='sessions'>active</#if>"><a href="${url.sessionsUrl}">${msg("sessions")}</a></li>
-                    <li class="<#if active=='applications'>active</#if>"><a href="${url.applicationsUrl}">${msg("applications")}</a></li>
-                    <#if features.log><li class="<#if active=='log'>active</#if>"><a href="${url.logUrl}">${msg("log")}</a></li></#if>
+                    <li class="<#if active=='account'>active</#if>">
+                        <a href="${url.accountUrl}">${msg("account")}</a>
+                        <i id="" class="fa fa-fw fa-user" aria-hidden="true"></i>
+                    </li>
+                    
+                    <#if features.passwordUpdateSupported>
+                        <li class="<#if active=='password'>active</#if>">
+                            <a href="${url.passwordUrl}">${msg("password")}</a>
+                            <i id="" class="fa fa-fw fa-lock" aria-hidden="true"></i>
+                        </li>
+                    </#if>
+                    
+                    <li class="<#if active=='totp'>active</#if>">
+                        <a href="${url.totpUrl}">${msg("authenticator")}</a>
+                        <i id="" class="fa fa-fw fa-qrcode" aria-hidden="true"></i>
+                    </li>
+                    
+                    <#if features.identityFederation>
+                        <li class="<#if active=='social'>active</#if>">
+                            <a href="${url.socialUrl}">${msg("federatedIdentity")}</a>
+                            <i id="" class="fa fa-fw fa-id-card-o" aria-hidden="true"></i>
+                        </li>
+                    </#if>
+                    
+                    <li class="<#if active=='sessions'>active</#if>">
+                        <a href="${url.sessionsUrl}">${msg("sessions")}</a>
+                        <i id="" class="fa fa-fw fa-desktop" aria-hidden="true"></i>
+                    </li>
+                    
+                    <li class="<#if active=='applications'>active</#if>">
+                        <a href="${url.applicationsUrl}">${msg("applications")}</a>
+                        <i id="" class="fa fa-fw fa-list-alt" aria-hidden="true"></i>
+                    </li>
+                    
+                    <#if features.log>
+                        <li class="<#if active=='log'>active</#if>">
+                            <a href="${url.logUrl}">${msg("log")}</a>
+                        </li>
+                    </#if>
                 </ul>
 
             </div>
