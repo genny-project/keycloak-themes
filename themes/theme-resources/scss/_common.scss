@@ -8,7 +8,7 @@
         
         i {
             position: absolute;
-            right: 13%;
+            right: 3%;
             font-size: 18px;
         }
     }
@@ -17,12 +17,22 @@
         display:flex;
         flex-wrap: wrap;
 
+        .input-submit {
+            min-width: 10%;
+            margin-left: 2%;
+
+        }
+
         i {
             right: 3% !important;
         }
 
         input {
-            width: 90% !important; 
+            width: 100% !important;
+        }
+
+        .input-email, .input-password, .input-firstname, .input-lastname, .add-identity {
+            min-width: 88%;
         }
 
         
@@ -41,8 +51,8 @@
         >input, >input:-webkit-autofill {
             
             height: 50px;
-            width: 80%;
-            margin-left: 10%;
+            width: 100% !important;
+            // margin-left: 10%;
             border-radius: 5px;
             color: $form-gray-mid !important;
             -webkit-text-fill-color: $form-gray-mid;
@@ -135,23 +145,23 @@
         margin-bottom: 10px;
 
         >label{
-            margin-left: 10%;
+            // margin-left: 10%;
             color: $secondary-color;
             margin-bottom: 0;
             font-weight: normal !important;
         }
     }
 
-    .input-submit {
+    .input-submit, .input-button {
         flex-shrink: 0;
         min-width: 10%;
 
         >button, >a {
             margin-bottom: 10px;
-            width: 80%;
+            width: 100% !important;
             height: 50px;
             border: none;
-            border-radius: 3px;
+            border-radius: 5px;
             color: white;
             font-size: 16px;
             cursor: pointer;
@@ -159,15 +169,15 @@
 
 
             &:first-child {
-                margin-left: 10% !important;
+                // margin-left: 10% !important;
             }
 
             &:not(:last-child) {
-                margin-right: 2%;
+                margin-right: 1%;
             }
 
             &:last-child {
-                margin-right: 10% !important;
+                // margin-right: 10% !important;
             }
 
             &.confirm {
@@ -197,6 +207,33 @@
             justify-content: center;
         }
     }
+
+    .form-list {
+
+        p {
+            margin-bottom: 0 !important;
+        }
+
+    }
+
+    .form-code {
+
+        height: 50px !important;
+        width: 60% !important;
+        margin-left: 20%;
+        background-color: $form-gray-light;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        outline: none;
+        color: $form-gray-mid !important;
+
+        span {
+           
+        }
+    }
+
 
 //-----------------------------------//
 //      A L E R T   S T Y L I NG     //
@@ -231,3 +268,70 @@
     .alert-error {
         background-color: $alert-error;
     }
+
+
+//-----------------------------------//
+//      T A B L E   S T Y L I NG     //
+//-----------------------------------//
+
+    .table-container {
+
+        border: 1px solid rgba(0,0,0,0.1) !important;
+        border-radius: 5px !important;
+
+    }
+
+    .table-header{
+        background-color: $form-gray-light !important;
+        background-image: none !important;
+        box-shadow: 0 3px 15px 0 rgba(0,0,0,0.15);
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        text-align: center;
+     
+        td {
+            border-right: 1px solid rgba(0,0,0,0.05);
+        }
+
+
+    }
+
+    .table-body {
+
+        tr {
+            // background-color: white;
+
+            &:nth-child(2) {
+
+                background-color: $form-gray-light !important;
+
+            }
+        }
+
+        td {
+            border-top: none !important;
+            border-right: 1px solid rgba(0,0,0,0.05);
+            vertical-align: middle !important;
+
+        }
+
+        .table-button {
+            margin-bottom: 10px;
+            margin-top: 10px;
+            width: 100% !important;
+            border: none;
+            border-radius: 5px;
+            background-color: $confirm-color !important;
+            cursor: pointer;
+            outline: none;
+            padding: 8px;
+            text-align: center;
+
+            a {
+                color: white;
+                    
+            }
+        }
+
+    }
+
+    

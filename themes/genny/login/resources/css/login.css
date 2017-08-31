@@ -1,15 +1,20 @@
 .input-detail i {
   position: absolute;
-  right: 13%;
+  right: 3%;
   font-size: 18px; }
 
 .input-wrap {
   display: flex;
   flex-wrap: wrap; }
+  .input-wrap .input-submit {
+    min-width: 10%;
+    margin-left: 2%; }
   .input-wrap i {
     right: 3% !important; }
   .input-wrap input {
-    width: 90% !important; }
+    width: 100% !important; }
+  .input-wrap .input-email, .input-wrap .input-password, .input-wrap .input-firstname, .input-wrap .input-lastname, .input-wrap .add-identity {
+    min-width: 88%; }
 
 .input-email, .input-password, .input-firstname, .input-lastname, .add-identity {
   display: flex;
@@ -22,8 +27,7 @@
   min-width: 80%; }
   .input-email > input, .input-email > input:-webkit-autofill, .input-password > input, .input-password > input:-webkit-autofill, .input-firstname > input, .input-firstname > input:-webkit-autofill, .input-lastname > input, .input-lastname > input:-webkit-autofill, .add-identity > input, .add-identity > input:-webkit-autofill {
     height: 50px;
-    width: 80%;
-    margin-left: 10%;
+    width: 100% !important;
     border-radius: 5px;
     color: #808080 !important;
     -webkit-text-fill-color: #808080;
@@ -322,44 +326,54 @@
 .input-checkbox {
   margin-bottom: 10px; }
   .input-checkbox > label {
-    margin-left: 10%;
     color: #357a41;
     margin-bottom: 0;
     font-weight: normal !important; }
 
-.input-submit {
+.input-submit, .input-button {
   flex-shrink: 0;
   min-width: 10%; }
-  .input-submit > button, .input-submit > a {
+  .input-submit > button, .input-submit > a, .input-button > button, .input-button > a {
     margin-bottom: 10px;
-    width: 80%;
+    width: 100% !important;
     height: 50px;
     border: none;
-    border-radius: 3px;
+    border-radius: 5px;
     color: white;
     font-size: 16px;
     cursor: pointer;
     outline: none; }
-    .input-submit > button:first-child, .input-submit > a:first-child {
-      margin-left: 10% !important; }
-    .input-submit > button:not(:last-child), .input-submit > a:not(:last-child) {
-      margin-right: 2%; }
-    .input-submit > button:last-child, .input-submit > a:last-child {
-      margin-right: 10% !important; }
-    .input-submit > button.confirm, .input-submit > a.confirm {
+    .input-submit > button:not(:last-child), .input-submit > a:not(:last-child), .input-button > button:not(:last-child), .input-button > a:not(:last-child) {
+      margin-right: 1%; }
+    .input-submit > button.confirm, .input-submit > a.confirm, .input-button > button.confirm, .input-button > a.confirm {
       background-color: #55C669 !important; }
-    .input-submit > button.cancel, .input-submit > a.cancel {
+    .input-submit > button.cancel, .input-submit > a.cancel, .input-button > button.cancel, .input-button > a.cancel {
       background-color: #D34545 !important; }
-  .input-submit > button, .input-submit #kc-social-providers a {
+  .input-submit > button, .input-submit #kc-social-providers a, .input-button > button, .input-button #kc-social-providers a {
     transition: 300ms ease; }
-    .input-submit > button:hover, .input-submit > button:active, .input-submit #kc-social-providers a:hover, .input-submit #kc-social-providers a:active {
+    .input-submit > button:hover, .input-submit > button:active, .input-submit #kc-social-providers a:hover, .input-submit #kc-social-providers a:active, .input-button > button:hover, .input-button > button:active, .input-button #kc-social-providers a:hover, .input-button #kc-social-providers a:active {
       box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3); }
-  .input-submit.input-inline {
+  .input-submit.input-inline, .input-button.input-inline {
     display: flex; }
-  .input-submit > a {
+  .input-submit > a, .input-button > a {
     display: flex;
     align-items: center;
     justify-content: center; }
+
+.form-list p {
+  margin-bottom: 0 !important; }
+
+.form-code {
+  height: 50px !important;
+  width: 60% !important;
+  margin-left: 20%;
+  background-color: #F1F1F1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  color: #808080 !important; }
 
 .alert {
   padding: 10px !important;
@@ -384,6 +398,41 @@
 
 .alert-error {
   background-color: #D34545; }
+
+.table-container {
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  border-radius: 5px !important; }
+
+.table-header {
+  background-color: #F1F1F1 !important;
+  background-image: none !important;
+  box-shadow: 0 3px 15px 0 rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: center; }
+  .table-header td {
+    border-right: 1px solid rgba(0, 0, 0, 0.05); }
+
+.table-body tr:nth-child(2) {
+  background-color: #F1F1F1 !important; }
+
+.table-body td {
+  border-top: none !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  vertical-align: middle !important; }
+
+.table-body .table-button {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 100% !important;
+  border: none;
+  border-radius: 5px;
+  background-color: #55C669 !important;
+  cursor: pointer;
+  outline: none;
+  padding: 8px;
+  text-align: center; }
+  .table-body .table-button a {
+    color: white; }
 
 .login-pf .container {
   padding-top: 40px; }
@@ -416,8 +465,7 @@
 
 .login-container {
   width: inherit;
-  padding-top: 50px;
-  padding-bottom: 40px;
+  padding: 50px 10% 40px;
   background-color: #fff;
   border-radius: 10px; }
 
@@ -477,20 +525,14 @@
   .link.link-register {
     justify-content: flex-end; }
   .link > .forget-password {
-    width: 50%;
-    margin-left: 10%; }
-  .link > .register, .link > .login {
-    margin-right: 10%; }
+    width: 50%; }
   .link a {
     color: #357a41;
     text-decoration: underline !important; }
 
-.social-login {
-  margin-left: 10%;
-  margin-right: 10%; }
-  .social-login > ul > li {
-    list-style: none;
-    float: left; }
+.social-login > ul > li {
+  list-style: none;
+  float: left; }
 
 .social-login-title {
   text-align: center;

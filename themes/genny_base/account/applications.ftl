@@ -1,18 +1,18 @@
 <#import "template.ftl" as layout>
 <@layout.mainLayout active='applications' bodyClass='applications'; section>
 
-    <div class="row">
-        <div class="col-md-10">
-            <h2>${msg("applicationsHtmlTitle")}</h2>
-        </div>
+    <div class="page-title">
+        <h2>${msg("applicationsHtmlTitle")}</h2>
     </div>
+
+    <hr/>
 
     <form action="${url.revokeClientUrl}" method="post">
         <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker?html}">
         <input type="hidden" id="referrer" name="referrer" value="${stateChecker?html}">
 
-        <table class="table table-striped table-bordered">
-            <thead>
+        <table class="table table-container">
+            <thead class="table-header">
               <tr>
                 <td>${msg("application")}</td>
                 <td>${msg("availablePermissions")}</td>
@@ -23,13 +23,17 @@
               </tr>
             </thead>
 
-            <tbody>
+            <tbody class="table-body">
               <#list applications.applications as application>
                 <tr>
                     <td>
-                        <#if application.client.baseUrl??><a href="${application.client.baseUrl}"></#if>
-                            <#if application.client.name??>${advancedMsg(application.client.name)}<#else>${application.client.clientId}</#if>
-                        <#if application.client.baseUrl??></a></#if>
+                        <#if application.client.baseUrl??>
+                            <div class="table-button">
+                                <a href="${application.client.baseUrl}"></#if>
+                                    <#if application.client.name??>${advancedMsg(application.client.name)}<#else>${application.client.clientId}</#if>
+                                <#if application.client.baseUrl??></a>
+                            </div>
+                        </#if>
                     </td>
 
                     <td>
