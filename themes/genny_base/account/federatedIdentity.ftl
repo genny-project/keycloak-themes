@@ -5,6 +5,8 @@
         <h2>${msg("federatedIdentitiesHtmlTitle")}</h2>
     </div>
 
+    <hr/>
+
     <form action="${url.passwordUrl}" class="input-detail input-wrap" method="post">
         <#list federatedIdentity.identities as identity>
 

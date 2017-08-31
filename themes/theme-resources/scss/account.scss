@@ -9,10 +9,12 @@ html {
     width:100%
 }
 
-.contain-width {
-    width: 70%;
+.width-contain {
+    width: 70% !important;
 }
-
+.width-expand {
+    width: 100% !important;
+}
 
 //-------------------------------------//
 //      H E A D E R   S T Y L I NG     //
@@ -21,7 +23,7 @@ html {
 .header {
     margin-bottom: 0;
     min-height: 50px;
-    background-color:$primary-color !important;
+    background-color: $secondary-color !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,6 +53,7 @@ html {
     width: 40px;
     height: 40px;
     margin-right: 5px;
+    border-radius: 5px;
 }
 
 .project-title {
@@ -98,23 +101,28 @@ html {
 //-----------------------------------------//
 
 .sidebar {
+    padding-top: 20px;
     background-color: $secondary-color;
-    padding-top: 44px;
-    padding-right: 0;
-    padding-left: 0;
-    /*z-index: -1;*/
     left:-10px;
     transition: 0.5s;
-    min-width: 200px;
+    // min-width: 250px;
     height:100%;
+    border-radius: 0 0 5px 5px;
 
     > ul {
         list-style: none;
-        /*padding-left: 12px;*/
+        -webkit-padding-start: none;
+        padding-left: 20px;
+        padding-right: 20px;
 
         > li {
             margin-bottom: 0.5em;
-            /*margin-left: -1em;*/
+            display: flex;
+            align-items: center;
+            position: relative;
+            top: 0;
+            bottom: 0;
+            border-radius: 5px;
 
             > a {
                 padding: 10px 8px 10px 8px;
@@ -122,27 +130,41 @@ html {
                 font-size: 14px;
                 display: block;
                 transition: 0.3s;
-                color:white;
-                /*border-width: 1px 0 1px 1px;*/
-                /*border-style: solid;*/
-                /*border-color: #f9f9f9;*/
+                color: $sb-color;
+                position: relative;
+                left: 30px;
+                min-width: 200px;
 
+                
+            }
+
+            &:not(.active) a {
+
+                color: $sb-color;
+                
                 &:hover, &:focus {
+                
                     text-decoration: none;
-                    color: #2a2a2a;
-                    /*border-right: 2px solid #aaa;*/
+                    color: $sb-highlight-color;
+                
                 }
             }
 
-            &.active > a {
-                color: #2a2a2a;
-                font-weight: bold;
-                /*background-color: #c7e5f0;*/
-                /*border-color: #56bae0;*/
-                /*font-weight: bold;*/
-                /*background-image: url(../img/icon-sidebar-active.png);*/
-                /*background-repeat: no-repeat;*/
-                /*background-position: right center;*/
+            > i {
+
+                position: absolute;
+                left: 10px;
+                font-size: 18px;
+                color: $sb-color;
+            
+            }
+
+            &.active {
+                background-color: $primary-color;
+
+                a {
+                    color: $sb-highlight-color;
+                }
 
                 &:hover {
                     border-right: none;
@@ -163,8 +185,8 @@ html {
     height:100%;
     display:block;
     width:100%;
-    padding-left:10px;
-    padding-right:10px;
+    padding-left: 5%;
+    padding-right: 5%;
     transition: margin-left .5s;
     margin-top: 20px;
 
