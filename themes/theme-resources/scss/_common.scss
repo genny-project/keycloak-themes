@@ -18,8 +18,14 @@
         flex-wrap: wrap;
 
         .input-submit {
-            min-width: 10%;
+            min-width: 20%; 
             margin-left: 2%;
+
+            i {
+                position: initial;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
 
         }
 
@@ -31,14 +37,14 @@
             width: 100% !important;
         }
 
-        .input-email, .input-password, .input-firstname, .input-lastname, .add-identity {
-            min-width: 88%;
+        .input-email, .input-password, .input-firstname, .input-lastname, .input-username, .add-identity, .input-totp {
+            min-width: 78%;
         }
 
         
     }
 
-    .input-email, .input-password, .input-firstname, .input-lastname, .add-identity {
+    .input-email, .input-password, .input-firstname, .input-lastname, .input-username, .add-identity, .input-totp {
         display: flex;
         align-items: center;
         position: relative;
@@ -104,7 +110,8 @@
     #lastName,
     #add-facebook,
     #add-google,
-    #add-linkedin {
+    #add-linkedin,
+    #totp {
 
         + #input-email-icon,
         + #input-password-icon,
@@ -112,11 +119,13 @@
         + #input-password-confirm-icon,
         + #input-firstname-icon,
         + #input-lastname-icon,
+        + #input-username-icon,
         + #input-add-facebook-icon,
         + #input-add-google-icon,
-        + #input-add-linkedin-icon
+        + #input-add-linkedin-icon,
+        + #input-totp-icon
          {
-            color: $form-gray-dark !important;
+            color: $form-gray-mid !important;
         }
         
         &:focus + #input-email-icon,
@@ -130,12 +139,16 @@
         &:focus + #input-firstname-icon,
         &:hover + #input-lastname-icon,
         &:focus + #input-lastname-icon,
+        &:hover + #input-username-icon,
+        &:focus + #input-username-icon,
         &:hover + #input-add-facebook-icon,
         &:focus + #input-add-facebook-icon,
         &:hover + #input-add-google-icon,
         &:focus + #input-add-google-icon,
         &:hover + #input-add-linkedin-icon,
-        &:focus + #input-add-linkedin-icon {
+        &:focus + #input-add-linkedin-icon,
+        &:hover + #input-totp-icon,
+        &:focus + #input-totp-icon {
             transition: 1000ms ease !important;
             color: $form-color !important;
         }
@@ -156,7 +169,7 @@
         flex-shrink: 0;
         min-width: 10%;
 
-        >button, >a {
+        >button, >a, >input {
             margin-bottom: 10px;
             width: 100% !important;
             height: 50px;
@@ -181,18 +194,19 @@
             }
 
             &.confirm {
-                background-color: $confirm-color !important;
+                background-color: $confirm-color;
             }
             &.cancel {
-                background-color: $cancel-color !important;
+                background-color: $cancel-color;
             }
         }
 
-        >button, #kc-social-providers a {
+        >button, #kc-social-providers a, >a, >input {
             transition: 300ms ease;
             
             &:hover, &:active {
                 box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+                text-decoration: none;
             }
         }
 
@@ -249,6 +263,7 @@
         padding-left: 20px !important;
         font-size: 12px;
         color: #fff;
+        border: none;
 
         i {
             color: #fff;
@@ -298,20 +313,19 @@
     .table-body {
 
         tr {
-            // background-color: white;
-
             &:nth-child(2) {
-
                 background-color: $form-gray-light !important;
-
             }
         }
 
-        td {
+        td, th {
             border-top: none !important;
             border-right: 1px solid rgba(0,0,0,0.05);
             vertical-align: middle !important;
+        }
 
+        th {
+            text-align: center;
         }
 
         .table-button {
@@ -325,13 +339,44 @@
             outline: none;
             padding: 8px;
             text-align: center;
+            transition: 300ms ease;
 
             a {
                 color: white;
-                    
+                
             }
-        }
 
+            &.cancel {
+                background-color: $cancel-color !important;
+            }
+
+            i {
+                font-size: 16px;
+                margin-left: 5px;
+            }
+
+            &:hover {
+                box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+
+                a {
+                    text-decoration: none;
+                }
+            }
+
+        }
     }
 
-    
+
+//--------------------------------------------------------------//
+//      S O C I A L   M E D I A   C O L O R   C L A S S E S     //
+//--------------------------------------------------------------//
+
+    .facebook {
+        background-color: $facebook-color !important;
+    }
+    .google {
+        background-color: $google-color !important;
+    }
+    .linkedin {
+        background-color: $linkedin-color !important;
+    }

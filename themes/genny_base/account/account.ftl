@@ -16,7 +16,7 @@
         </div> -->
 
         <#if !realm.registrationEmailAsUsername>
-            <div class="form-group ${messagesPerField.printIfExists('username','has-error')}">
+            <#-- <div class="form-group ${messagesPerField.printIfExists('username','has-error')}">
                 <div class="col-sm-2 col-md-2">
                     <label for="username" class="control-label">${msg("username")}</label> <#if realm.editUsernameAllowed><span class="required">*</span></#if>
                 </div>
@@ -24,7 +24,14 @@
                 <div class="col-sm-10 col-md-10">
                     <input type="text" class="form-control" id="username" name="username" <#if !realm.editUsernameAllowed>disabled="disabled"</#if> value="${(account.username!'')?html}"/>
                 </div>
+            </div> -->
+
+            <div class="input-username ${messagesPerField.printIfExists('username','has-error')}">
+                <input id="username"  name="username" value="${(account.username!'')?html}" type="text" placeholder="email address" <#if !realm.editUsernameAllowed>disabled="disabled"</#if> placeholder="username"/>
+                <i  id="input-firstname-icon" class="fa fa-fw fa-user" aria-hidden="true"></i>
             </div>
+
+
         </#if>
 
         <div class="input-email ${messagesPerField.printIfExists('email','has-error')}">

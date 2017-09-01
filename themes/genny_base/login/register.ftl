@@ -19,14 +19,12 @@
                 <div class="input-detail">
                   
                     <#if !realm.registrationEmailAsUsername>
-                        <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('username',properties.kcFormGroupErrorClass!)}">
-                            <div class="${properties.kcLabelWrapperClass!}">
-                                <label for="username" class="${properties.kcLabelClass!}">${msg("username")}</label>
-                            </div>
-                            <div class="${properties.kcInputWrapperClass!}">
-                                <input type="text" id="username" class="${properties.kcInputClass!}" name="username" value="${(register.formData.username!'')?html}" />
-                            </div>
+
+                        <div class="input-username">
+                            <input type="text" name="username" id="username"  value="${(register.formData.username!'')?html}" placeholder="username" />
+                            <i id="input-username-icon" class="fa fa-fw fa-user" aria-hidden="true"></i>
                         </div>
+
                     </#if>
                     
                     <div class="input-email">
