@@ -7,16 +7,20 @@
   display: flex;
   flex-wrap: wrap; }
   .input-wrap .input-submit {
-    min-width: 10%;
+    min-width: 20%;
     margin-left: 2%; }
+    .input-wrap .input-submit i {
+      position: initial;
+      padding-left: 5px;
+      padding-right: 5px; }
   .input-wrap i {
     right: 3% !important; }
   .input-wrap input {
     width: 100% !important; }
-  .input-wrap .input-email, .input-wrap .input-password, .input-wrap .input-firstname, .input-wrap .input-lastname, .input-wrap .add-identity {
-    min-width: 88%; }
+  .input-wrap .input-email, .input-wrap .input-password, .input-wrap .input-firstname, .input-wrap .input-lastname, .input-wrap .input-username, .input-wrap .add-identity, .input-wrap .input-totp {
+    min-width: 78%; }
 
-.input-email, .input-password, .input-firstname, .input-lastname, .add-identity {
+.input-email, .input-password, .input-firstname, .input-lastname, .input-username, .add-identity, .input-totp {
   display: flex;
   align-items: center;
   position: relative;
@@ -25,7 +29,7 @@
   margin-bottom: 10px;
   flex-shrink: 0;
   min-width: 80%; }
-  .input-email > input, .input-email > input:-webkit-autofill, .input-password > input, .input-password > input:-webkit-autofill, .input-firstname > input, .input-firstname > input:-webkit-autofill, .input-lastname > input, .input-lastname > input:-webkit-autofill, .add-identity > input, .add-identity > input:-webkit-autofill {
+  .input-email > input, .input-email > input:-webkit-autofill, .input-password > input, .input-password > input:-webkit-autofill, .input-firstname > input, .input-firstname > input:-webkit-autofill, .input-lastname > input, .input-lastname > input:-webkit-autofill, .input-username > input, .input-username > input:-webkit-autofill, .add-identity > input, .add-identity > input:-webkit-autofill, .input-totp > input, .input-totp > input:-webkit-autofill {
     height: 50px;
     width: 100% !important;
     border-radius: 5px;
@@ -38,22 +42,22 @@
     text-align: center;
     transition: 300ms ease !important;
     border: 1px solid transparent; }
-    .input-email > input:hover, .input-email > input:-webkit-autofill:hover, .input-password > input:hover, .input-password > input:-webkit-autofill:hover, .input-firstname > input:hover, .input-firstname > input:-webkit-autofill:hover, .input-lastname > input:hover, .input-lastname > input:-webkit-autofill:hover, .add-identity > input:hover, .add-identity > input:-webkit-autofill:hover {
+    .input-email > input:hover, .input-email > input:-webkit-autofill:hover, .input-password > input:hover, .input-password > input:-webkit-autofill:hover, .input-firstname > input:hover, .input-firstname > input:-webkit-autofill:hover, .input-lastname > input:hover, .input-lastname > input:-webkit-autofill:hover, .input-username > input:hover, .input-username > input:-webkit-autofill:hover, .add-identity > input:hover, .add-identity > input:-webkit-autofill:hover, .input-totp > input:hover, .input-totp > input:-webkit-autofill:hover {
       -webkit-text-fill-color: #404040 !important;
       color: #404040;
       border: 1px solid #404040; }
-    .input-email > input:focus, .input-email > input:-webkit-autofill:focus, .input-password > input:focus, .input-password > input:-webkit-autofill:focus, .input-firstname > input:focus, .input-firstname > input:-webkit-autofill:focus, .input-lastname > input:focus, .input-lastname > input:-webkit-autofill:focus, .add-identity > input:focus, .add-identity > input:-webkit-autofill:focus {
+    .input-email > input:focus, .input-email > input:-webkit-autofill:focus, .input-password > input:focus, .input-password > input:-webkit-autofill:focus, .input-firstname > input:focus, .input-firstname > input:-webkit-autofill:focus, .input-lastname > input:focus, .input-lastname > input:-webkit-autofill:focus, .input-username > input:focus, .input-username > input:-webkit-autofill:focus, .add-identity > input:focus, .add-identity > input:-webkit-autofill:focus, .input-totp > input:focus, .input-totp > input:-webkit-autofill:focus {
       border: 1px solid #404040;
       box-shadow: 0px 0px 5px #d3d3d3;
       outline: none;
       background-color: white !important;
       color: #404040;
       -webkit-text-fill-color: #404040 !important; }
-      .input-email > input:focus::placeholder, .input-email > input:-webkit-autofill:focus::placeholder, .input-password > input:focus::placeholder, .input-password > input:-webkit-autofill:focus::placeholder, .input-firstname > input:focus::placeholder, .input-firstname > input:-webkit-autofill:focus::placeholder, .input-lastname > input:focus::placeholder, .input-lastname > input:-webkit-autofill:focus::placeholder, .add-identity > input:focus::placeholder, .add-identity > input:-webkit-autofill:focus::placeholder {
+      .input-email > input:focus::placeholder, .input-email > input:-webkit-autofill:focus::placeholder, .input-password > input:focus::placeholder, .input-password > input:-webkit-autofill:focus::placeholder, .input-firstname > input:focus::placeholder, .input-firstname > input:-webkit-autofill:focus::placeholder, .input-lastname > input:focus::placeholder, .input-lastname > input:-webkit-autofill:focus::placeholder, .input-username > input:focus::placeholder, .input-username > input:-webkit-autofill:focus::placeholder, .add-identity > input:focus::placeholder, .add-identity > input:-webkit-autofill:focus::placeholder, .input-totp > input:focus::placeholder, .input-totp > input:-webkit-autofill:focus::placeholder {
         color: #404040 !important; }
-  .input-email > input[disabled], .input-email > input[disabled]:-webkit-autofill, .input-password > input[disabled], .input-password > input[disabled]:-webkit-autofill, .input-firstname > input[disabled], .input-firstname > input[disabled]:-webkit-autofill, .input-lastname > input[disabled], .input-lastname > input[disabled]:-webkit-autofill, .add-identity > input[disabled], .add-identity > input[disabled]:-webkit-autofill {
+  .input-email > input[disabled], .input-email > input[disabled]:-webkit-autofill, .input-password > input[disabled], .input-password > input[disabled]:-webkit-autofill, .input-firstname > input[disabled], .input-firstname > input[disabled]:-webkit-autofill, .input-lastname > input[disabled], .input-lastname > input[disabled]:-webkit-autofill, .input-username > input[disabled], .input-username > input[disabled]:-webkit-autofill, .add-identity > input[disabled], .add-identity > input[disabled]:-webkit-autofill, .input-totp > input[disabled], .input-totp > input[disabled]:-webkit-autofill {
     cursor: not-allowed; }
-    .input-email > input[disabled]:hover, .input-email > input[disabled]:-webkit-autofill:hover, .input-password > input[disabled]:hover, .input-password > input[disabled]:-webkit-autofill:hover, .input-firstname > input[disabled]:hover, .input-firstname > input[disabled]:-webkit-autofill:hover, .input-lastname > input[disabled]:hover, .input-lastname > input[disabled]:-webkit-autofill:hover, .add-identity > input[disabled]:hover, .add-identity > input[disabled]:-webkit-autofill:hover {
+    .input-email > input[disabled]:hover, .input-email > input[disabled]:-webkit-autofill:hover, .input-password > input[disabled]:hover, .input-password > input[disabled]:-webkit-autofill:hover, .input-firstname > input[disabled]:hover, .input-firstname > input[disabled]:-webkit-autofill:hover, .input-lastname > input[disabled]:hover, .input-lastname > input[disabled]:-webkit-autofill:hover, .input-username > input[disabled]:hover, .input-username > input[disabled]:-webkit-autofill:hover, .add-identity > input[disabled]:hover, .add-identity > input[disabled]:-webkit-autofill:hover, .input-totp > input[disabled]:hover, .input-totp > input[disabled]:-webkit-autofill:hover {
       border: 1px solid transparent;
       color: #808080 !important;
       -webkit-text-fill-color: #808080 !important; }
@@ -64,91 +68,122 @@
 #username + #input-password-confirm-icon,
 #username + #input-firstname-icon,
 #username + #input-lastname-icon,
+#username + #input-username-icon,
 #username + #input-add-facebook-icon,
 #username + #input-add-google-icon,
 #username + #input-add-linkedin-icon,
+#username + #input-totp-icon,
 #password + #input-email-icon,
 #password + #input-password-icon,
 #password + #input-password-new-icon,
 #password + #input-password-confirm-icon,
 #password + #input-firstname-icon,
 #password + #input-lastname-icon,
+#password + #input-username-icon,
 #password + #input-add-facebook-icon,
 #password + #input-add-google-icon,
 #password + #input-add-linkedin-icon,
+#password + #input-totp-icon,
 #password-new + #input-email-icon,
 #password-new + #input-password-icon,
 #password-new + #input-password-new-icon,
 #password-new + #input-password-confirm-icon,
 #password-new + #input-firstname-icon,
 #password-new + #input-lastname-icon,
+#password-new + #input-username-icon,
 #password-new + #input-add-facebook-icon,
 #password-new + #input-add-google-icon,
 #password-new + #input-add-linkedin-icon,
+#password-new + #input-totp-icon,
 #password-confirm + #input-email-icon,
 #password-confirm + #input-password-icon,
 #password-confirm + #input-password-new-icon,
 #password-confirm + #input-password-confirm-icon,
 #password-confirm + #input-firstname-icon,
 #password-confirm + #input-lastname-icon,
+#password-confirm + #input-username-icon,
 #password-confirm + #input-add-facebook-icon,
 #password-confirm + #input-add-google-icon,
 #password-confirm + #input-add-linkedin-icon,
+#password-confirm + #input-totp-icon,
 #email + #input-email-icon,
 #email + #input-password-icon,
 #email + #input-password-new-icon,
 #email + #input-password-confirm-icon,
 #email + #input-firstname-icon,
 #email + #input-lastname-icon,
+#email + #input-username-icon,
 #email + #input-add-facebook-icon,
 #email + #input-add-google-icon,
 #email + #input-add-linkedin-icon,
+#email + #input-totp-icon,
 #firstName + #input-email-icon,
 #firstName + #input-password-icon,
 #firstName + #input-password-new-icon,
 #firstName + #input-password-confirm-icon,
 #firstName + #input-firstname-icon,
 #firstName + #input-lastname-icon,
+#firstName + #input-username-icon,
 #firstName + #input-add-facebook-icon,
 #firstName + #input-add-google-icon,
 #firstName + #input-add-linkedin-icon,
+#firstName + #input-totp-icon,
 #lastName + #input-email-icon,
 #lastName + #input-password-icon,
 #lastName + #input-password-new-icon,
 #lastName + #input-password-confirm-icon,
 #lastName + #input-firstname-icon,
 #lastName + #input-lastname-icon,
+#lastName + #input-username-icon,
 #lastName + #input-add-facebook-icon,
 #lastName + #input-add-google-icon,
 #lastName + #input-add-linkedin-icon,
+#lastName + #input-totp-icon,
 #add-facebook + #input-email-icon,
 #add-facebook + #input-password-icon,
 #add-facebook + #input-password-new-icon,
 #add-facebook + #input-password-confirm-icon,
 #add-facebook + #input-firstname-icon,
 #add-facebook + #input-lastname-icon,
+#add-facebook + #input-username-icon,
 #add-facebook + #input-add-facebook-icon,
 #add-facebook + #input-add-google-icon,
 #add-facebook + #input-add-linkedin-icon,
+#add-facebook + #input-totp-icon,
 #add-google + #input-email-icon,
 #add-google + #input-password-icon,
 #add-google + #input-password-new-icon,
 #add-google + #input-password-confirm-icon,
 #add-google + #input-firstname-icon,
 #add-google + #input-lastname-icon,
+#add-google + #input-username-icon,
 #add-google + #input-add-facebook-icon,
 #add-google + #input-add-google-icon,
 #add-google + #input-add-linkedin-icon,
+#add-google + #input-totp-icon,
 #add-linkedin + #input-email-icon,
 #add-linkedin + #input-password-icon,
 #add-linkedin + #input-password-new-icon,
 #add-linkedin + #input-password-confirm-icon,
 #add-linkedin + #input-firstname-icon,
 #add-linkedin + #input-lastname-icon,
+#add-linkedin + #input-username-icon,
 #add-linkedin + #input-add-facebook-icon,
 #add-linkedin + #input-add-google-icon,
-#add-linkedin + #input-add-linkedin-icon {
-  color: #212121 !important; }
+#add-linkedin + #input-add-linkedin-icon,
+#add-linkedin + #input-totp-icon,
+#totp + #input-email-icon,
+#totp + #input-password-icon,
+#totp + #input-password-new-icon,
+#totp + #input-password-confirm-icon,
+#totp + #input-firstname-icon,
+#totp + #input-lastname-icon,
+#totp + #input-username-icon,
+#totp + #input-add-facebook-icon,
+#totp + #input-add-google-icon,
+#totp + #input-add-linkedin-icon,
+#totp + #input-totp-icon {
+  color: #808080 !important; }
 
 #username:focus + #input-email-icon,
 #username:hover + #input-email-icon,
@@ -161,12 +196,16 @@
 #username:focus + #input-firstname-icon,
 #username:hover + #input-lastname-icon,
 #username:focus + #input-lastname-icon,
+#username:hover + #input-username-icon,
+#username:focus + #input-username-icon,
 #username:hover + #input-add-facebook-icon,
 #username:focus + #input-add-facebook-icon,
 #username:hover + #input-add-google-icon,
 #username:focus + #input-add-google-icon,
 #username:hover + #input-add-linkedin-icon,
 #username:focus + #input-add-linkedin-icon,
+#username:hover + #input-totp-icon,
+#username:focus + #input-totp-icon,
 #password:focus + #input-email-icon,
 #password:hover + #input-email-icon,
 #password:focus + #input-password-icon,
@@ -178,12 +217,16 @@
 #password:focus + #input-firstname-icon,
 #password:hover + #input-lastname-icon,
 #password:focus + #input-lastname-icon,
+#password:hover + #input-username-icon,
+#password:focus + #input-username-icon,
 #password:hover + #input-add-facebook-icon,
 #password:focus + #input-add-facebook-icon,
 #password:hover + #input-add-google-icon,
 #password:focus + #input-add-google-icon,
 #password:hover + #input-add-linkedin-icon,
 #password:focus + #input-add-linkedin-icon,
+#password:hover + #input-totp-icon,
+#password:focus + #input-totp-icon,
 #password-new:focus + #input-email-icon,
 #password-new:hover + #input-email-icon,
 #password-new:focus + #input-password-icon,
@@ -195,12 +238,16 @@
 #password-new:focus + #input-firstname-icon,
 #password-new:hover + #input-lastname-icon,
 #password-new:focus + #input-lastname-icon,
+#password-new:hover + #input-username-icon,
+#password-new:focus + #input-username-icon,
 #password-new:hover + #input-add-facebook-icon,
 #password-new:focus + #input-add-facebook-icon,
 #password-new:hover + #input-add-google-icon,
 #password-new:focus + #input-add-google-icon,
 #password-new:hover + #input-add-linkedin-icon,
 #password-new:focus + #input-add-linkedin-icon,
+#password-new:hover + #input-totp-icon,
+#password-new:focus + #input-totp-icon,
 #password-confirm:focus + #input-email-icon,
 #password-confirm:hover + #input-email-icon,
 #password-confirm:focus + #input-password-icon,
@@ -212,12 +259,16 @@
 #password-confirm:focus + #input-firstname-icon,
 #password-confirm:hover + #input-lastname-icon,
 #password-confirm:focus + #input-lastname-icon,
+#password-confirm:hover + #input-username-icon,
+#password-confirm:focus + #input-username-icon,
 #password-confirm:hover + #input-add-facebook-icon,
 #password-confirm:focus + #input-add-facebook-icon,
 #password-confirm:hover + #input-add-google-icon,
 #password-confirm:focus + #input-add-google-icon,
 #password-confirm:hover + #input-add-linkedin-icon,
 #password-confirm:focus + #input-add-linkedin-icon,
+#password-confirm:hover + #input-totp-icon,
+#password-confirm:focus + #input-totp-icon,
 #email:focus + #input-email-icon,
 #email:hover + #input-email-icon,
 #email:focus + #input-password-icon,
@@ -229,12 +280,16 @@
 #email:focus + #input-firstname-icon,
 #email:hover + #input-lastname-icon,
 #email:focus + #input-lastname-icon,
+#email:hover + #input-username-icon,
+#email:focus + #input-username-icon,
 #email:hover + #input-add-facebook-icon,
 #email:focus + #input-add-facebook-icon,
 #email:hover + #input-add-google-icon,
 #email:focus + #input-add-google-icon,
 #email:hover + #input-add-linkedin-icon,
 #email:focus + #input-add-linkedin-icon,
+#email:hover + #input-totp-icon,
+#email:focus + #input-totp-icon,
 #firstName:focus + #input-email-icon,
 #firstName:hover + #input-email-icon,
 #firstName:focus + #input-password-icon,
@@ -246,12 +301,16 @@
 #firstName:focus + #input-firstname-icon,
 #firstName:hover + #input-lastname-icon,
 #firstName:focus + #input-lastname-icon,
+#firstName:hover + #input-username-icon,
+#firstName:focus + #input-username-icon,
 #firstName:hover + #input-add-facebook-icon,
 #firstName:focus + #input-add-facebook-icon,
 #firstName:hover + #input-add-google-icon,
 #firstName:focus + #input-add-google-icon,
 #firstName:hover + #input-add-linkedin-icon,
 #firstName:focus + #input-add-linkedin-icon,
+#firstName:hover + #input-totp-icon,
+#firstName:focus + #input-totp-icon,
 #lastName:focus + #input-email-icon,
 #lastName:hover + #input-email-icon,
 #lastName:focus + #input-password-icon,
@@ -263,12 +322,16 @@
 #lastName:focus + #input-firstname-icon,
 #lastName:hover + #input-lastname-icon,
 #lastName:focus + #input-lastname-icon,
+#lastName:hover + #input-username-icon,
+#lastName:focus + #input-username-icon,
 #lastName:hover + #input-add-facebook-icon,
 #lastName:focus + #input-add-facebook-icon,
 #lastName:hover + #input-add-google-icon,
 #lastName:focus + #input-add-google-icon,
 #lastName:hover + #input-add-linkedin-icon,
 #lastName:focus + #input-add-linkedin-icon,
+#lastName:hover + #input-totp-icon,
+#lastName:focus + #input-totp-icon,
 #add-facebook:focus + #input-email-icon,
 #add-facebook:hover + #input-email-icon,
 #add-facebook:focus + #input-password-icon,
@@ -280,12 +343,16 @@
 #add-facebook:focus + #input-firstname-icon,
 #add-facebook:hover + #input-lastname-icon,
 #add-facebook:focus + #input-lastname-icon,
+#add-facebook:hover + #input-username-icon,
+#add-facebook:focus + #input-username-icon,
 #add-facebook:hover + #input-add-facebook-icon,
 #add-facebook:focus + #input-add-facebook-icon,
 #add-facebook:hover + #input-add-google-icon,
 #add-facebook:focus + #input-add-google-icon,
 #add-facebook:hover + #input-add-linkedin-icon,
 #add-facebook:focus + #input-add-linkedin-icon,
+#add-facebook:hover + #input-totp-icon,
+#add-facebook:focus + #input-totp-icon,
 #add-google:focus + #input-email-icon,
 #add-google:hover + #input-email-icon,
 #add-google:focus + #input-password-icon,
@@ -297,12 +364,16 @@
 #add-google:focus + #input-firstname-icon,
 #add-google:hover + #input-lastname-icon,
 #add-google:focus + #input-lastname-icon,
+#add-google:hover + #input-username-icon,
+#add-google:focus + #input-username-icon,
 #add-google:hover + #input-add-facebook-icon,
 #add-google:focus + #input-add-facebook-icon,
 #add-google:hover + #input-add-google-icon,
 #add-google:focus + #input-add-google-icon,
 #add-google:hover + #input-add-linkedin-icon,
 #add-google:focus + #input-add-linkedin-icon,
+#add-google:hover + #input-totp-icon,
+#add-google:focus + #input-totp-icon,
 #add-linkedin:focus + #input-email-icon,
 #add-linkedin:hover + #input-email-icon,
 #add-linkedin:focus + #input-password-icon,
@@ -314,12 +385,37 @@
 #add-linkedin:focus + #input-firstname-icon,
 #add-linkedin:hover + #input-lastname-icon,
 #add-linkedin:focus + #input-lastname-icon,
+#add-linkedin:hover + #input-username-icon,
+#add-linkedin:focus + #input-username-icon,
 #add-linkedin:hover + #input-add-facebook-icon,
 #add-linkedin:focus + #input-add-facebook-icon,
 #add-linkedin:hover + #input-add-google-icon,
 #add-linkedin:focus + #input-add-google-icon,
 #add-linkedin:hover + #input-add-linkedin-icon,
-#add-linkedin:focus + #input-add-linkedin-icon {
+#add-linkedin:focus + #input-add-linkedin-icon,
+#add-linkedin:hover + #input-totp-icon,
+#add-linkedin:focus + #input-totp-icon,
+#totp:focus + #input-email-icon,
+#totp:hover + #input-email-icon,
+#totp:focus + #input-password-icon,
+#totp:hover + #input-password-icon,
+#totp:focus + #input-password-new-icon,
+#totp:hover + #input-password-new-icon,
+#totp:focus + #input-password-confirm-icon,
+#totp:hover + #input-firstname-icon,
+#totp:focus + #input-firstname-icon,
+#totp:hover + #input-lastname-icon,
+#totp:focus + #input-lastname-icon,
+#totp:hover + #input-username-icon,
+#totp:focus + #input-username-icon,
+#totp:hover + #input-add-facebook-icon,
+#totp:focus + #input-add-facebook-icon,
+#totp:hover + #input-add-google-icon,
+#totp:focus + #input-add-google-icon,
+#totp:hover + #input-add-linkedin-icon,
+#totp:focus + #input-add-linkedin-icon,
+#totp:hover + #input-totp-icon,
+#totp:focus + #input-totp-icon {
   transition: 1000ms ease !important;
   color: #404040 !important; }
 
@@ -333,7 +429,7 @@
 .input-submit, .input-button {
   flex-shrink: 0;
   min-width: 10%; }
-  .input-submit > button, .input-submit > a, .input-button > button, .input-button > a {
+  .input-submit > button, .input-submit > a, .input-submit > input, .input-button > button, .input-button > a, .input-button > input {
     margin-bottom: 10px;
     width: 100% !important;
     height: 50px;
@@ -343,16 +439,17 @@
     font-size: 16px;
     cursor: pointer;
     outline: none; }
-    .input-submit > button:not(:last-child), .input-submit > a:not(:last-child), .input-button > button:not(:last-child), .input-button > a:not(:last-child) {
+    .input-submit > button:not(:last-child), .input-submit > a:not(:last-child), .input-submit > input:not(:last-child), .input-button > button:not(:last-child), .input-button > a:not(:last-child), .input-button > input:not(:last-child) {
       margin-right: 1%; }
-    .input-submit > button.confirm, .input-submit > a.confirm, .input-button > button.confirm, .input-button > a.confirm {
-      background-color: #55C669 !important; }
-    .input-submit > button.cancel, .input-submit > a.cancel, .input-button > button.cancel, .input-button > a.cancel {
-      background-color: #D34545 !important; }
-  .input-submit > button, .input-submit #kc-social-providers a, .input-button > button, .input-button #kc-social-providers a {
+    .input-submit > button.confirm, .input-submit > a.confirm, .input-submit > input.confirm, .input-button > button.confirm, .input-button > a.confirm, .input-button > input.confirm {
+      background-color: #55C669; }
+    .input-submit > button.cancel, .input-submit > a.cancel, .input-submit > input.cancel, .input-button > button.cancel, .input-button > a.cancel, .input-button > input.cancel {
+      background-color: #D34545; }
+  .input-submit > button, .input-submit #kc-social-providers a, .input-submit > a, .input-submit > input, .input-button > button, .input-button #kc-social-providers a, .input-button > a, .input-button > input {
     transition: 300ms ease; }
-    .input-submit > button:hover, .input-submit > button:active, .input-submit #kc-social-providers a:hover, .input-submit #kc-social-providers a:active, .input-button > button:hover, .input-button > button:active, .input-button #kc-social-providers a:hover, .input-button #kc-social-providers a:active {
-      box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3); }
+    .input-submit > button:hover, .input-submit > button:active, .input-submit #kc-social-providers a:hover, .input-submit #kc-social-providers a:active, .input-submit > a:hover, .input-submit > a:active, .input-submit > input:hover, .input-submit > input:active, .input-button > button:hover, .input-button > button:active, .input-button #kc-social-providers a:hover, .input-button #kc-social-providers a:active, .input-button > a:hover, .input-button > a:active, .input-button > input:hover, .input-button > input:active {
+      box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
+      text-decoration: none; }
   .input-submit.input-inline, .input-button.input-inline {
     display: flex; }
   .input-submit > a, .input-button > a {
@@ -384,7 +481,8 @@
   padding: 10px !important;
   padding-left: 20px !important;
   font-size: 12px;
-  color: #fff; }
+  color: #fff;
+  border: none; }
   .alert i {
     color: #fff;
     font-size: 20px;
@@ -415,10 +513,13 @@
 .table-body tr:nth-child(2) {
   background-color: #F1F1F1 !important; }
 
-.table-body td {
+.table-body td, .table-body th {
   border-top: none !important;
   border-right: 1px solid rgba(0, 0, 0, 0.05);
   vertical-align: middle !important; }
+
+.table-body th {
+  text-align: center; }
 
 .table-body .table-button {
   margin-bottom: 10px;
@@ -430,9 +531,28 @@
   cursor: pointer;
   outline: none;
   padding: 8px;
-  text-align: center; }
+  text-align: center;
+  transition: 300ms ease; }
   .table-body .table-button a {
     color: white; }
+  .table-body .table-button.cancel {
+    background-color: #D34545 !important; }
+  .table-body .table-button i {
+    font-size: 16px;
+    margin-left: 5px; }
+  .table-body .table-button:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3); }
+    .table-body .table-button:hover a {
+      text-decoration: none; }
+
+.facebook {
+  background-color: #3b5999 !important; }
+
+.google {
+  background-color: #da4b42 !important; }
+
+.linkedin {
+  background-color: #007fb2 !important; }
 
 html {
   height: 100%;
@@ -602,7 +722,7 @@ html {
     margin-left: 8px; }
 
 .alert {
-  margin: 10px 10% 0; }
+  margin: 10px 0 0; }
 
 .feedback-aligner .alert {
   background-position: 1.27273em center;
@@ -672,3 +792,6 @@ ol {
         color: #4d5258;
         background-color: #d4edfa;
         border-color: #b3d3e7; }
+
+.provider {
+  width: 80%; }

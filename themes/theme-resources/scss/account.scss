@@ -256,7 +256,7 @@ html {
 //-----------------------------------//
 
 .alert {
-    margin: 10px 10% 0;
+    margin: 10px 0 0;
 }
 
 .feedback-aligner .alert {
@@ -351,4 +351,9 @@ ol {
             }
         }
     }
+}
+
+
+.provider {
+    width: 80%    
 }

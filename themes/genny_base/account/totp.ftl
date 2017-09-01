@@ -7,18 +7,25 @@
             <h2>${msg("authenticatorTitle")}</h2>
         </div>
 
-        <table class="table table-bordered table-striped">
-            <thead>
+        <table class="table table-container">
+            <thead class="table-header">
                 <tr>
                     <th colspan="2">${msg("configureAuthenticators")}</th>
                     </tr>
             </thead>
 
-            <tbody>
+            <tbody class="table-body">
                 <tr>
                     <td class="provider">${msg("mobile")}</td>
+                    <#-- <td class="action">
+                        <div class="table-button cancel">
+                            <a id="remove-mobile" href="${url.totpRemoveUrl}">Remove<i class="fa fa-fw fa-trash" aria-hidden="true"></i></a>
+                        </div>
+                    </td> -->
                     <td class="action">
-                        <a id="remove-mobile" href="${url.totpRemoveUrl}"><i class="pficon pficon-delete"></i></a>
+                        <div class="table-button cancel">
+                            <a id="remove-mobile" href="${url.totpRemoveUrl}">Remove<i class="fa fa-trash" aria-hidden="true"></i></a>
+                        </div>
                     </td>
                 </tr>
             </tbody>
@@ -50,10 +57,10 @@
             
             <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker?html}">
             
-            <div class="input-lastname ${messagesPerField.printIfExists('lastName','has-error')}">
+            <div class="input-totp ${messagesPerField.printIfExists('lastName','has-error')}">
                 <input type="text" name="totp" id="totp" placeholder="${msg("authenticatorCode")}" autocomplete="off" autofocus />
+                <i  id="input-totp-icon" class="fa fa-fw fa-lock" aria-hidden="true"></i>
                 <input type="hidden" id="totpSecret" name="totpSecret" value="${totp.totpSecret}" />
-                <i  id="input-lastname-icon" class="fa fa-fw fa-lock" aria-hidden="true"></i>
             </div>
 
             <div id="kc-form-buttons" class=" submit">

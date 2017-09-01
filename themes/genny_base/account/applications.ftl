@@ -26,7 +26,7 @@
             <tbody class="table-body">
               <#list applications.applications as application>
                 <tr>
-                    <td>
+                    <th>
                         <#if application.client.baseUrl??>
                             <div class="table-button">
                                 <a href="${application.client.baseUrl}"></#if>
@@ -34,7 +34,7 @@
                                 <#if application.client.baseUrl??></a>
                             </div>
                         </#if>
-                    </td>
+                    </th>
 
                     <td>
                         <#list application.realmRolesAvailable as role>

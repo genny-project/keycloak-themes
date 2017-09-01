@@ -14,7 +14,7 @@
         <#if password.passwordSet>
             <div class="input-password">
                 <input type="password" name="password" id="password" autocomplete="off" autofocus placeholder="password" />
-                <i id="input-password-icon" class="fa fa-fw fa-lock" aria-hidden="true"></i>
+                <i id="input-password-icon" class="fa fa-fw fa-unlock-alt" aria-hidden="true"></i>
             </div>
         </#if>
 
