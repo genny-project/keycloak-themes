@@ -2,14 +2,14 @@
 1 verbose cli [ '/usr/local/bin/node',
 1 verbose cli   '/usr/local/bin/npm',
 1 verbose cli   'run',
-1 verbose cli   'compile-all' ]
+1 verbose cli   'watch:genny' ]
 2 info using npm@3.10.10
 3 info using node@v6.9.5
 4 verbose stack Error: ENOENT: no such file or directory, open '/Users/conorpirie/projects/genny/keycloak-themes/package.json'
 4 verbose stack     at Error (native)
 5 verbose cwd /Users/conorpirie/projects/genny/keycloak-themes
 6 error Darwin 16.1.0
-7 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "compile-all"
+7 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "run" "watch:genny"
 8 error node v6.9.5
 9 error npm  v3.10.10
 10 error path /Users/conorpirie/projects/genny/keycloak-themes/package.json

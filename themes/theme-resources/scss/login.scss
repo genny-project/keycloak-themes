@@ -1,4 +1,5 @@
 @import 'common';
+@import 'locale';
 
     //-------------------------------------=------//
     //      C O N T A I N E R   S T Y L I N G     //
@@ -237,76 +238,10 @@
         }
     }
 
-    //--------------------------------------------------------//
-    //      K E Y C L O A K   L O C A L E   S T Y L I N G     //
-    //--------------------------------------------------------//
 
-    #kc-locale { 
-        
-        position: relative;
-        width: 200px;
-        left: -230px;
-        text-align: right;
-        z-index: 9999;
-
-        ul {
-            display: none;
-            position: absolute;
-            background-color: #fff;
-            list-style: none;
-            right: 20px;
-            top: 30px;
-            width: 200px;
-            padding: 2px;
-
-            li a {
-                display: block;
-                padding: 1px 11px;
-                color: #000 !important;
-                border: 1px solid #fff;
-                text-decoration: none;
-                display: block;
-                line-height: 20px;
-
-                &:hover {
-                    color: #4d5258;
-                    background-color: #d4edfa;
-                    border-color: #b3d3e7;
-                }
-            }
-        }
-
-        &:hover ul {
-            display: block;
-            margin: 0;
-        }
-    }
-
-    #kc-locale-dropdown a {
-        color: #fff;
-
-        &:hover {
-            text-decoration: none;
-        }
-    }
-
-    a#kc-current-locale-link {
-        display: block;
-        padding: 5px;
-
-        &:hover {
-            background-color: rgba(0, 0, 0, 0.2);
-        }
-
-        &::after {
-            content: "\2c5";
-            margin-left: 4px;
-        }
-    }
-
-    //----------------------------------------------------//
-    //      K E Y C L O A K   M I S C   S T Y L I N G     //
-    //----------------------------------------------------//
+//----------------------------------------------------//
+//      K E Y C L O A K   M I S C   S T Y L I N G     //
+//----------------------------------------------------//
 
     #kc-form-options span {
         display: block;

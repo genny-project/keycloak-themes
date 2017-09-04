@@ -16,7 +16,7 @@
                         <p>${properties.themeTitle!}</p>
                     </div>
 
-                    <div class="title">LOGIN TO YOUR ACCOUNT</div>
+                    <div class="title">${properties.themeSubTitle!}</div>
 
                     <div class="input-detail">
 
@@ -59,13 +59,13 @@
                         </#if>
                         
                         <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
-                            <span class="register"><a href="${url.registrationUrl}">Create an Account</a></span>
+                            <span class="register"><a href="${url.registrationUrl}">${msg("registerWithTitle")}</a></span>
                         </#if>
                     </div>
 
                     <div class="social-login">
 
-                        <div class="social-login-title">OR LOGIN WITH</div>
+                        <div class="social-login-title">${msg("loginTitle")}</div>
 
                         <#if realm.password && social.providers??>
                             <div id="kc-social-providers">

@@ -34,24 +34,36 @@
 
                 <div class="navbar-collapse">
                     <ul class="header-menu">
+
                         <#if realm.internationalizationEnabled>
-                            <li>
-                                <div class="kc-dropdown" id="kc-locale-dropdown">
-                                    <a href="#" id="kc-current-locale-link">${locale.current}</a>
-                                    <ul>
-                                        <#list locale.supported as l>
-                                            <li class="kc-dropdown-item"><a href="${l.url}">${l.label}</a></li>
-                                        </#list>
-                                    </ul>
+                            <div id="kc-locale"">
+                                <div id="kc-locale-wrapper">
+                                    <div class="kc-dropdown" id="kc-locale-dropdown">
+                                        <div class="kc-current-item">
+                                            <i class="${msg("flag")}"></i>
+                                            <p id="kc-current-locale-link">${locale.current}</p>
+                                        </div>
+                                        <ul>
+                                            <#list locale.supported as l>
+                                                <li class="kc-dropdown-item ${l.url} ${msg("flag")}">
+                                                    <i class="${l.url}"></i>
+                                                    <a href="${l.url}">${l.label}</a>
+                                                </li>
+                                            </#list>
+                                        </ul>
+                                    </div>
                                 </div>
-                            <li>
+                            </div>
                         </#if>
+
                         <#if referrer?has_content && referrer.url?has_content><li><a href="${referrer.url}" id="referrer">${msg("backTo",referrer.name)}</a></li></#if>
                         <li><a href="${url.logoutUrl}">${msg("doSignOut")}</a></li>
                     </ul>
                 </div>
 
             </div>
+
+
 
         </nav>
 
