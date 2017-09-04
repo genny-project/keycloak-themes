@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .input-detail i {
   position: absolute;
   right: 3%;
@@ -554,6 +555,118 @@
 .linkedin {
   background-color: #007fb2 !important; }
 
+#kc-locale {
+  position: absolute;
+  width: 120px;
+  top: 10px;
+  right: 20px;
+  text-align: right;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px; }
+  #kc-locale ul {
+    display: none;
+    list-style: none;
+    top: 30px;
+    padding: 5px; }
+    #kc-locale ul li a {
+      display: block;
+      padding: 1px 11px;
+      color: #fff !important;
+      text-decoration: none;
+      display: block;
+      line-height: 20px; }
+    #kc-locale ul li:hover {
+      color: #fff;
+      background-color: #00A453;
+      border-radius: 3px; }
+  #kc-locale:not(hover) {
+    opacity: 0.5; }
+  #kc-locale:hover {
+    opacity: 1; }
+    #kc-locale:hover ul {
+      display: block;
+      margin: 0; }
+
+.kc-current-item {
+  margin-left: 5px !important;
+  margin-right: 5px; }
+
+.kc-current-item, .kc-dropdown-item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 0;
+  bottom: 0; }
+  .kc-current-item i, .kc-dropdown-item i {
+    position: absolute;
+    left: 5px;
+    font-size: 18px; }
+  .kc-current-item a, .kc-current-item p, .kc-dropdown-item a, .kc-dropdown-item p {
+    padding-left: 35px !important;
+    text-align: left;
+    color: white;
+    margin: 0; }
+
+#kc-locale-dropdown a {
+  color: #fff; }
+  #kc-locale-dropdown a:hover {
+    text-decoration: none; }
+
+#kc-current-locale-link {
+  display: block;
+  padding: 5px; }
+
+i[class*="kc_locale=en"]:before, i.current-en:before {
+  content: "🇬🇧"; }
+
+i[class*="kc_locale=ca"]:before, i.current-ca:before {
+  content: "🏴󠁥󠁳󠁣󠁴󠁿"; }
+
+i[class*="kc_locale=de"]:before, i.current-de:before {
+  content: "🇩🇪"; }
+
+i[class*="kc_locale=es"]:before, i.current-es:before {
+  content: "🇪🇸"; }
+
+i[class*="kc_locale=fr"]:before, i.current-fr:before {
+  content: "🇫🇷"; }
+
+i[class*="kc_locale=it"]:before, i.current-it:before {
+  content: "🇮🇹"; }
+
+i[class*="kc_locale=ja"]:before, i.current-ja:before {
+  content: "🇯🇵"; }
+
+i[class*="kc_locale=no"]:before, i.current-no:before {
+  content: "🇳🇴"; }
+
+i[class*="kc_locale=pt-BR"]:before, i.current-pt-BR:before {
+  content: "🇧🇷"; }
+
+i[class*="kc_locale=ru"]:before, i.current-ru:before {
+  content: "🇷🇺"; }
+
+i[class*="kc_locale=sv"]:before, i.current-sv:before {
+  content: "🇸🇻"; }
+
+i[class*="kc_locale=lt"]:before, i.current-lt:before {
+  content: "🇱🇹"; }
+
+li[class*="kc_locale=en"].current-en,
+li[class*="kc_locale=ca"].current-ca,
+li[class*="kc_locale=de"].current-de,
+li[class*="kc_locale=es"].current-es,
+li[class*="kc_locale=fr"].current-fr,
+li[class*="kc_locale=it"].current-it,
+li[class*="kc_locale=ja"].current-ja,
+li[class*="kc_locale=no"].current-no,
+li[class*="kc_locale=pt-BR"].current-pt-BR,
+li[class*="kc_locale=ru"].current-ru,
+li[class*="kc_locale=sv"].current-sv,
+li[class*="kc_locale=lt"].current-lt {
+  display: none; }
+
 .login-pf .container {
   padding-top: 40px; }
 
@@ -695,51 +808,6 @@
 #kc-social-providers span {
   text-transform: capitalize;
   font-size: 1.4rem; }
-
-#kc-locale {
-  position: relative;
-  width: 200px;
-  left: -230px;
-  text-align: right;
-  z-index: 9999; }
-  #kc-locale ul {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    list-style: none;
-    right: 20px;
-    top: 30px;
-    width: 200px;
-    padding: 2px; }
-    #kc-locale ul li a {
-      display: block;
-      padding: 1px 11px;
-      color: #000 !important;
-      border: 1px solid #fff;
-      text-decoration: none;
-      display: block;
-      line-height: 20px; }
-      #kc-locale ul li a:hover {
-        color: #4d5258;
-        background-color: #d4edfa;
-        border-color: #b3d3e7; }
-  #kc-locale:hover ul {
-    display: block;
-    margin: 0; }
-
-#kc-locale-dropdown a {
-  color: #fff; }
-  #kc-locale-dropdown a:hover {
-    text-decoration: none; }
-
-a#kc-current-locale-link {
-  display: block;
-  padding: 5px; }
-  a#kc-current-locale-link:hover {
-    background-color: rgba(0, 0, 0, 0.2); }
-  a#kc-current-locale-link::after {
-    content: "\2c5";
-    margin-left: 4px; }
 
 #kc-form-options span {
   display: block; }
