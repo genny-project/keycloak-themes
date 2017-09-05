@@ -1,4 +1,14 @@
 @charset "UTF-8";
+.no-margin-bottom {
+  margin-bottom: 0 !important; }
+
+.form-text {
+  margin-bottom: 10px !important;
+  overflow: auto; }
+
+.center-text {
+  text-align: center !important; }
+
 .input-detail i {
   position: absolute;
   right: 3%;

@@ -1,5 +1,19 @@
 @import 'colors.scss';
 
+
+    .no-margin-bottom {
+        margin-bottom: 0 !important;
+    }
+
+    .form-text {
+        margin-bottom: 10px !important;
+        overflow: auto;
+    }
+
+    .center-text {
+        text-align: center !important;
+    }
+
 //-----------------------------------------------//
 //      F O R M   F I E L D S   S T Y L I NG     //
 //-----------------------------------------------//
@@ -207,6 +221,7 @@
             &:hover, &:active {
                 box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.3);
                 text-decoration: none;
+
             }
         }
 

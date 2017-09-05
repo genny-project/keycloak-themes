@@ -1,4 +1,14 @@
 @charset "UTF-8";
+.no-margin-bottom {
+  margin-bottom: 0 !important; }
+
+.form-text {
+  margin-bottom: 10px !important;
+  overflow: auto; }
+
+.center-text {
+  text-align: center !important; }
+
 .input-detail i {
   position: absolute;
   right: 3%;
@@ -670,9 +680,6 @@ li[class*="kc_locale=lt"].current-lt {
 .login-pf .container {
   padding-top: 40px; }
 
-.login-pf a:hover {
-  color: #0099d3; }
-
 #kc-container {
   height: 100vh;
   width: 100vw;
@@ -753,8 +760,6 @@ li[class*="kc_locale=lt"].current-lt {
     margin-bottom: 0; }
   .link.link-login, .link.link-reset {
     justify-content: space-between; }
-    .link.link-login > .login, .link.link-reset > .login {
-      margin-left: 10%; }
   .link.link-register {
     justify-content: flex-end; }
   .link > .forget-password {

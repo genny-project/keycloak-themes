@@ -1,1 +1,1 @@
-${msg("passwordResetBody",link, linkExpiration, realmName)}
+${msg("passwordResetBodyHtml", link, linkExpiration, realmName, "Genny", user.getUsername() )}

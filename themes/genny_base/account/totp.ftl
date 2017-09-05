@@ -17,11 +17,6 @@
             <tbody class="table-body">
                 <tr>
                     <td class="provider">${msg("mobile")}</td>
-                    <#-- <td class="action">
-                        <div class="table-button cancel">
-                            <a id="remove-mobile" href="${url.totpRemoveUrl}">Remove<i class="fa fa-fw fa-trash" aria-hidden="true"></i></a>
-                        </div>
-                    </td> -->
                     <td class="action">
                         <div class="table-button cancel">
                             <a id="remove-mobile" href="${url.totpRemoveUrl}">Remove<i class="fa fa-trash" aria-hidden="true"></i></a>
