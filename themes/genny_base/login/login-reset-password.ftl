@@ -26,7 +26,7 @@
 
                         <#elseif !realm.registrationEmailAsUsername>
 
-                            <input type="text" id="username" name="username" placeholder="usernameOrEmail" autofocus/>
+                            <input type="text" id="username" name="username" placeholder="username or email" autofocus/>
 
                         <#else>
 
