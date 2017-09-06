@@ -22,7 +22,6 @@
                         </#if>
                     <#else>
                         <a href="${identity.actionUrl}" type="submit" id="link-${identity.providerId!}" class="confirm ${identity.providerId!}"><span>Add</span><i id="input-link-${identity.providerId!}-icon" class="fa fa-${identity.providerId!}" aria-hidden="true"></i><span>${identity.displayName!}</span></a>
-                        
                     </#if>
                 </div>
 

@@ -16,7 +16,7 @@
 
                 <div class="title">RESET YOUR PASSWORD</div>
 
-                 <div class="input-detail">
+                <div class="input-detail">
                         
 
                     <div class="input-email">
@@ -26,7 +26,7 @@
 
                         <#elseif !realm.registrationEmailAsUsername>
 
-                            <input type="text" id="username" name="username" placeholder="usernameOrEmail" autofocus/>
+                            <input type="text" id="username" name="username" placeholder="username or email" autofocus/>
 
                         <#else>
 
@@ -41,9 +41,7 @@
                     </div>
 
                     <div class="link link-reset">
-                        <#if realm.resetPasswordAllowed>
-                             <span class="login"><a href="${url.loginUrl}">Back to login</a></span>
-                        </#if>
+                        <span class="login"><a href="${url.loginUrl}">Back to login</a></span>
                         
                         <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
                             <span class="register"><a href="${url.registrationUrl}">Create an Account</a></span>

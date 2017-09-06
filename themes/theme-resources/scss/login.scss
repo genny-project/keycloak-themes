@@ -9,10 +9,6 @@
         .container {
             padding-top: 40px;
         }
-
-        a:hover {
-            color: #0099d3;
-        }
     }
 
     #kc-container {
@@ -147,10 +143,6 @@
 
         &.link-login, &.link-reset {
             justify-content: space-between;
-
-            >.login {
-                margin-left: 10%;
-            }
         }
 
         &.link-register {
@@ -159,10 +151,6 @@
 
         >.forget-password {
             width: 50%;
-        }
-
-        >.register, >.login {
-            // margin-right: 10%;
         }
 
         a {
