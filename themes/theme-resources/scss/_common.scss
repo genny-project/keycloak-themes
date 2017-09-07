@@ -19,6 +19,8 @@
 //-----------------------------------------------//
 
     .input-detail {
+
+        //width: inherit;
         
         i {
             position: absolute;
@@ -27,20 +29,27 @@
         }
     }
 
-    .input-wrap {
+
+
+    .idenity-container {
         display:flex;
-        flex-wrap: wrap;
+        width: 100%;
 
-        .input-submit {
-            min-width: 20%; 
-            margin-left: 2%;
-
+        .input-submit, .input-lead {
+            min-width: 14%;
             i {
                 position: initial;
                 padding-left: 5px;
                 padding-right: 5px;
             }
+        }
 
+        .input-submit {
+            margin-left: 10px;
+        }
+
+        .input-lead {
+            margin-right: 10px;
         }
 
         i {
@@ -52,7 +61,8 @@
         }
 
         .input-email, .input-password, .input-firstname, .input-lastname, .input-username, .add-identity, .input-totp {
-            min-width: 78%;
+            //min-width: 70%;
+            flex-grow: 2;
         }
 
         
@@ -66,7 +76,7 @@
         bottom: 0;
         margin-bottom: 10px;
         flex-shrink: 0;
-        min-width: 80%;
+        //min-width: 80%;
 
         >input, >input:-webkit-autofill {
             
@@ -200,7 +210,7 @@
             }
 
             &:not(:last-child) {
-                margin-right: 1%;
+                margin-right: 10px;
             }
 
             &:last-child {
@@ -237,6 +247,31 @@
         }
     }
 
+    .input-lead {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        top: 0;
+        bottom: 0;
+
+        flex-shrink: 0;
+        min-width: 10%;
+        margin-bottom: 10px;
+        //width: 100% !important;
+        height: 50px;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 16px;
+        outline: none;
+
+        > span {
+            padding-left: 2px;
+            padding-right: 5px;
+        }
+    }
+
     .form-list {
 
         p {
@@ -247,7 +282,7 @@
 
     .form-code {
 
-        height: 50px !important;
+        min-height: 50px !important;
         width: 60% !important;
         margin-left: 20%;
         background-color: $form-gray-light;
@@ -258,9 +293,6 @@
         outline: none;
         color: $form-gray-mid !important;
 
-        span {
-           
-        }
     }
 
 
@@ -395,3 +427,24 @@
     .linkedin {
         background-color: $linkedin-color !important;
     }
+
+
+//-------------------------------------//
+//      M O B I L E   S T Y L I NG     //
+//-------------------------------------//
+
+
+@media (max-width: 767px) {
+    .form-code {
+        min-width: 90% !important;
+        margin-left: -0 !important;
+        margin-right: 5px !important;
+
+    }
+
+    .input-submit, .input-lead {
+        span {
+            display: none;
+        }
+    }
+}

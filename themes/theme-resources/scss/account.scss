@@ -10,12 +10,6 @@ html {
     width:100%
 }
 
-.width-contain {
-    width: 70% !important;
-}
-.width-expand {
-    width: 100% !important;
-}
 
 //-------------------------------------//
 //      H E A D E R   S T Y L I NG     //
@@ -36,6 +30,7 @@ html {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 70% !important;
 }
 
 .header-title {
@@ -76,13 +71,28 @@ html {
         > a {
             color: white;
         }
+
+        &:not(last-child) {
+            margin-right: 10px;
+        }
     }
+
 }
 
 .navbar-collapse {
     padding: 0;
+    border: none;
+    box-shadow: none;
 }
 
+
+#header-menu-icon {
+    display: none;
+    color: white;
+    font-size: 24px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 //---------------------------------//
 //      B O D Y   S T Y L I NG     //
@@ -94,6 +104,7 @@ html {
     margin: auto;
     display: flex;
     padding: 0;
+    width: 70% !important;
 }
 
 
@@ -104,11 +115,10 @@ html {
 .sidebar {
     padding-top: 20px;
     background-color: $secondary-color;
-    left:-10px;
     transition: 0.5s;
-    // min-width: 250px;
     height:100%;
     border-radius: 0 0 5px 5px;
+    display: block;
 
     > ul {
         list-style: none;
@@ -279,7 +289,7 @@ html {
 /* Authenticator page */
 
 ol {
-    padding-left: 40px;
+    padding-left: 20px;
 
     > li {
         font-size: 13px;
@@ -297,4 +307,69 @@ ol {
 
 .provider {
     width: 80%    
+}
+
+//-------------------------------------//
+//      M O B I L E   S T Y L I NG     //
+//-------------------------------------//
+
+
+@media (max-width: 767px) {
+    .width-contain {
+        width: 100% !important;
+    }
+
+    .main-content {
+        position: absolute;
+    }
+
+    .project-logo {
+        flex-shrink: 0;
+        width: 30px;
+        height: 30px;
+        margin-right: 0;
+    }
+
+    .sidebar {
+        position: relative;
+        display: none;
+        z-index: 2;
+        padding-top: 0;
+
+
+         > ul {
+
+            padding-left: 10px;
+
+            > li a {
+                font-size: 14px !important;
+                min-width: 160px;
+            }
+        }
+    }
+
+    input, a, div {
+        font-size: 14px !important;
+    }
+
+    table {
+
+        td, th {
+        
+            font-size: 10px !important;
+
+        }
+
+        input, a, div {
+            font-size: 10px !important;
+        }
+    }
+
+    .form-table {
+        overflow: scroll;
+    }
+
+    #header-menu-icon {
+        display: initial;
+    }
 }
