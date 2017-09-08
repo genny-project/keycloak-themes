@@ -12,6 +12,7 @@
 .input-detail i {
   position: absolute;
   right: 3%;
+  top: 16px;
   font-size: 18px; }
 
 .idenity-container {
@@ -25,8 +26,15 @@
       padding-right: 5px; }
   .idenity-container .input-submit {
     margin-left: 10px; }
+    .idenity-container .input-submit a {
+      padding-left: 5px;
+      padding-right: 5px; }
+    .idenity-container .input-submit span {
+      padding-left: 5px; }
   .idenity-container .input-lead {
-    margin-right: 10px; }
+    margin-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px; }
   .idenity-container i {
     right: 3% !important; }
   .idenity-container input {
@@ -42,7 +50,7 @@
   bottom: 0;
   margin-bottom: 10px;
   flex-shrink: 0; }
-  .input-email > input, .input-email > input:-webkit-autofill, .input-password > input, .input-password > input:-webkit-autofill, .input-firstname > input, .input-firstname > input:-webkit-autofill, .input-lastname > input, .input-lastname > input:-webkit-autofill, .input-username > input, .input-username > input:-webkit-autofill, .add-identity > input, .add-identity > input:-webkit-autofill, .input-totp > input, .input-totp > input:-webkit-autofill {
+  .input-email > input, .input-password > input, .input-firstname > input, .input-lastname > input, .input-username > input, .add-identity > input, .input-totp > input {
     height: 50px;
     width: 100% !important;
     border-radius: 5px;
@@ -50,23 +58,23 @@
     -webkit-text-fill-color: #808080;
     background-color: #F1F1F1;
     font-size: 16px;
-    padding: 10px;
+    padding: 10px 35px 10px 10px;
     box-sizing: border-box;
     text-align: center;
     transition: 300ms ease !important;
     border: 1px solid transparent; }
-    .input-email > input:hover, .input-email > input:-webkit-autofill:hover, .input-password > input:hover, .input-password > input:-webkit-autofill:hover, .input-firstname > input:hover, .input-firstname > input:-webkit-autofill:hover, .input-lastname > input:hover, .input-lastname > input:-webkit-autofill:hover, .input-username > input:hover, .input-username > input:-webkit-autofill:hover, .add-identity > input:hover, .add-identity > input:-webkit-autofill:hover, .input-totp > input:hover, .input-totp > input:-webkit-autofill:hover {
+    .input-email > input:hover, .input-password > input:hover, .input-firstname > input:hover, .input-lastname > input:hover, .input-username > input:hover, .add-identity > input:hover, .input-totp > input:hover {
       -webkit-text-fill-color: #404040 !important;
       color: #404040;
       border: 1px solid #404040; }
-    .input-email > input:focus, .input-email > input:-webkit-autofill:focus, .input-password > input:focus, .input-password > input:-webkit-autofill:focus, .input-firstname > input:focus, .input-firstname > input:-webkit-autofill:focus, .input-lastname > input:focus, .input-lastname > input:-webkit-autofill:focus, .input-username > input:focus, .input-username > input:-webkit-autofill:focus, .add-identity > input:focus, .add-identity > input:-webkit-autofill:focus, .input-totp > input:focus, .input-totp > input:-webkit-autofill:focus {
+    .input-email > input:focus, .input-password > input:focus, .input-firstname > input:focus, .input-lastname > input:focus, .input-username > input:focus, .add-identity > input:focus, .input-totp > input:focus {
       border: 1px solid #404040;
       box-shadow: 0px 0px 5px #d3d3d3;
       outline: none;
       background-color: white !important;
       color: #404040;
       -webkit-text-fill-color: #404040 !important; }
-      .input-email > input:focus::placeholder, .input-email > input:-webkit-autofill:focus::placeholder, .input-password > input:focus::placeholder, .input-password > input:-webkit-autofill:focus::placeholder, .input-firstname > input:focus::placeholder, .input-firstname > input:-webkit-autofill:focus::placeholder, .input-lastname > input:focus::placeholder, .input-lastname > input:-webkit-autofill:focus::placeholder, .input-username > input:focus::placeholder, .input-username > input:-webkit-autofill:focus::placeholder, .add-identity > input:focus::placeholder, .add-identity > input:-webkit-autofill:focus::placeholder, .input-totp > input:focus::placeholder, .input-totp > input:-webkit-autofill:focus::placeholder {
+      .input-email > input:focus::placeholder, .input-password > input:focus::placeholder, .input-firstname > input:focus::placeholder, .input-lastname > input:focus::placeholder, .input-username > input:focus::placeholder, .add-identity > input:focus::placeholder, .input-totp > input:focus::placeholder {
         color: #404040 !important; }
   .input-email > input[disabled], .input-email > input[disabled]:-webkit-autofill, .input-password > input[disabled], .input-password > input[disabled]:-webkit-autofill, .input-firstname > input[disabled], .input-firstname > input[disabled]:-webkit-autofill, .input-lastname > input[disabled], .input-lastname > input[disabled]:-webkit-autofill, .input-username > input[disabled], .input-username > input[disabled]:-webkit-autofill, .add-identity > input[disabled], .add-identity > input[disabled]:-webkit-autofill, .input-totp > input[disabled], .input-totp > input[disabled]:-webkit-autofill {
     cursor: not-allowed; }
@@ -595,6 +603,12 @@
   .input-submit span, .input-lead span {
     display: none; } }
 
+.input-detail i {
+  position: absolute;
+  right: 3%;
+  top: 16px;
+  font-size: 18px; }
+
 #kc-locale {
   position: absolute;
   width: 120px;
@@ -735,21 +749,9 @@ li[class*="kc_locale=lt"].current-lt {
 
 .login-container {
   width: inherit;
-  padding: 50px 10% 40px;
+  padding: 40px 10%;
   background-color: #fff;
   border-radius: 10px; }
-
-@media (max-width: 767px) {
-  #kc-content {
-    align-items: flex-start !important;
-    padding-top: 3vh !important; }
-  #kc-form {
-    width: 100vw;
-    margin-top: 0; }
-    #kc-form > form {
-      width: 90vw;
-      margin-left: 5vw;
-      margin-right: 5vw; } }
 
 .alert {
   margin-bottom: 20px; }
@@ -886,3 +888,23 @@ ol#kc-totp-settings {
 #kc-code textarea {
   width: 100%;
   height: 8em; }
+
+@media (max-width: 767px) {
+  #kc-content {
+    align-items: flex-start !important;
+    padding-top: 3vh !important; }
+  #kc-form {
+    width: 100vw;
+    margin-top: 0; }
+    #kc-form > form {
+      width: 90vw;
+      margin: 0 5vw;
+      margin-right: 5vw;
+      margin-bottom: 10px; }
+  #kc-social-providers ul {
+    flex-wrap: wrap !important; }
+  #kc-social-providers li {
+    max-width: 100% !important;
+    margin-right: 0; }
+    #kc-social-providers li:not(:last-child) {
+      margin-bottom: 10px; } }

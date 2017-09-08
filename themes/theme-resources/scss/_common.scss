@@ -25,6 +25,7 @@
         i {
             position: absolute;
             right: 3%;
+            top: 16px;
             font-size: 18px;
         }
     }
@@ -46,10 +47,20 @@
 
         .input-submit {
             margin-left: 10px;
+            a {
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+            span {
+                padding-left: 5px;
+            }
         }
 
         .input-lead {
             margin-right: 10px;
+            padding-left: 5px;
+            padding-right: 5px;
         }
 
         i {
@@ -68,6 +79,8 @@
         
     }
 
+
+
     .input-email, .input-password, .input-firstname, .input-lastname, .input-username, .add-identity, .input-totp {
         display: flex;
         align-items: center;
@@ -76,19 +89,17 @@
         bottom: 0;
         margin-bottom: 10px;
         flex-shrink: 0;
-        //min-width: 80%;
 
-        >input, >input:-webkit-autofill {
+        >input {
             
             height: 50px;
             width: 100% !important;
-            // margin-left: 10%;
             border-radius: 5px;
             color: $form-gray-mid !important;
             -webkit-text-fill-color: $form-gray-mid;
             background-color: $form-gray-light;
             font-size: 16px;
-            padding: 10px;
+            padding: 10px 35px 10px 10px;
             box-sizing: border-box;
             text-align: center;
             transition: 300ms ease !important;
@@ -448,3 +459,19 @@
         }
     }
 }
+
+
+//---------------------------------------//
+//      B R O W S E R   S T Y L I NG     //
+//---------------------------------------//
+
+
+.input-detail {
+        
+        i {
+            position: absolute;
+            right: 3%;
+            top: 16px;
+            font-size: 18px;
+        }
+    }

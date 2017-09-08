@@ -45,35 +45,11 @@
 
     .login-container {
         width: inherit; 
-        padding: 50px 10% 40px;
+        padding: 40px 10%;
         background-color: $container-background;
         border-radius: 10px;
     }
 
-    //-------------------------------------//
-    //      M O B I L E   S T Y L I NG     //
-    //-------------------------------------//
-
-    @media (max-width: 767px) {
-
-        #kc-content {
-            align-items: flex-start !important;
-            padding-top: 3vh !important;
-        }
-
-        #kc-form {
-            width: 100vw;
-            margin-top: 0;
-
-
-            >form {
-
-                width: 90vw;
-                margin-left: 5vw;
-                margin-right: 5vw;
-            }
-        }
-    }
 
     //-----------------------------------//
     //      A L E R T   S T Y L I NG     //
@@ -291,4 +267,46 @@
     #kc-code textarea {
         width: 100%;
         height: 8em;
+    }
+
+    //-------------------------------------//
+    //      M O B I L E   S T Y L I NG     //
+    //-------------------------------------//
+
+    @media (max-width: 767px) {
+
+        #kc-content {
+            align-items: flex-start !important;
+            padding-top: 3vh !important;
+        }
+
+        #kc-form {
+            width: 100vw;
+            margin-top: 0;
+
+
+            >form {
+
+                width: 90vw;
+                margin: 0 5vw;
+                margin-right: 5vw;
+                margin-bottom: 10px;
+            }
+        }
+
+
+    
+         #kc-social-providers ul {
+                flex-wrap: wrap !important;
+            }
+        
+
+        #kc-social-providers li {
+            max-width: 100% !important;
+            margin-right: 0;
+
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
     }
