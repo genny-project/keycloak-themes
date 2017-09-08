@@ -294,6 +294,17 @@
             }
         }
 
+        .project-title {
+            flex-wrap: wrap !important;
+
+            .project-logo {
+                margin-right: 0;
+            }
+
+            p {
+                max-width: 100% !important;
+            }
+        }
 
     
          #kc-social-providers ul {

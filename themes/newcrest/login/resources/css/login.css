@@ -727,7 +727,7 @@ li[class*="kc_locale=lt"].current-lt {
 #kc-container {
   height: 100vh;
   width: 100vw;
-  background-image: url("../img/background1.jpg");
+  background-image: url("../img/background2.jpg");
   background-size: cover; }
 
 #kc-content {
@@ -901,6 +901,12 @@ ol#kc-totp-settings {
       margin: 0 5vw;
       margin-right: 5vw;
       margin-bottom: 10px; }
+  .project-title {
+    flex-wrap: wrap !important; }
+    .project-title .project-logo {
+      margin-right: 0; }
+    .project-title p {
+      max-width: 100% !important; }
   #kc-social-providers ul {
     flex-wrap: wrap !important; }
   #kc-social-providers li {
