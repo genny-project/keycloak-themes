@@ -12,24 +12,35 @@
 .input-detail i {
   position: absolute;
   right: 3%;
+  top: 16px;
   font-size: 18px; }
 
-.input-wrap {
+.idenity-container {
   display: flex;
-  flex-wrap: wrap; }
-  .input-wrap .input-submit {
-    min-width: 20%;
-    margin-left: 2%; }
-    .input-wrap .input-submit i {
+  width: 100%; }
+  .idenity-container .input-submit, .idenity-container .input-lead {
+    min-width: 14%; }
+    .idenity-container .input-submit i, .idenity-container .input-lead i {
       position: initial;
       padding-left: 5px;
       padding-right: 5px; }
-  .input-wrap i {
+  .idenity-container .input-submit {
+    margin-left: 10px; }
+    .idenity-container .input-submit a {
+      padding-left: 5px;
+      padding-right: 5px; }
+    .idenity-container .input-submit span {
+      padding-left: 5px; }
+  .idenity-container .input-lead {
+    margin-right: 10px;
+    padding-left: 5px;
+    padding-right: 5px; }
+  .idenity-container i {
     right: 3% !important; }
-  .input-wrap input {
+  .idenity-container input {
     width: 100% !important; }
-  .input-wrap .input-email, .input-wrap .input-password, .input-wrap .input-firstname, .input-wrap .input-lastname, .input-wrap .input-username, .input-wrap .add-identity, .input-wrap .input-totp {
-    min-width: 78%; }
+  .idenity-container .input-email, .idenity-container .input-password, .idenity-container .input-firstname, .idenity-container .input-lastname, .idenity-container .input-username, .idenity-container .add-identity, .idenity-container .input-totp {
+    flex-grow: 2; }
 
 .input-email, .input-password, .input-firstname, .input-lastname, .input-username, .add-identity, .input-totp {
   display: flex;
@@ -38,9 +49,8 @@
   top: 0;
   bottom: 0;
   margin-bottom: 10px;
-  flex-shrink: 0;
-  min-width: 80%; }
-  .input-email > input, .input-email > input:-webkit-autofill, .input-password > input, .input-password > input:-webkit-autofill, .input-firstname > input, .input-firstname > input:-webkit-autofill, .input-lastname > input, .input-lastname > input:-webkit-autofill, .input-username > input, .input-username > input:-webkit-autofill, .add-identity > input, .add-identity > input:-webkit-autofill, .input-totp > input, .input-totp > input:-webkit-autofill {
+  flex-shrink: 0; }
+  .input-email > input, .input-password > input, .input-firstname > input, .input-lastname > input, .input-username > input, .add-identity > input, .input-totp > input {
     height: 50px;
     width: 100% !important;
     border-radius: 5px;
@@ -48,23 +58,23 @@
     -webkit-text-fill-color: #808080;
     background-color: #F1F1F1;
     font-size: 16px;
-    padding: 10px;
+    padding: 10px 35px 10px 10px;
     box-sizing: border-box;
     text-align: center;
     transition: 300ms ease !important;
     border: 1px solid transparent; }
-    .input-email > input:hover, .input-email > input:-webkit-autofill:hover, .input-password > input:hover, .input-password > input:-webkit-autofill:hover, .input-firstname > input:hover, .input-firstname > input:-webkit-autofill:hover, .input-lastname > input:hover, .input-lastname > input:-webkit-autofill:hover, .input-username > input:hover, .input-username > input:-webkit-autofill:hover, .add-identity > input:hover, .add-identity > input:-webkit-autofill:hover, .input-totp > input:hover, .input-totp > input:-webkit-autofill:hover {
+    .input-email > input:hover, .input-password > input:hover, .input-firstname > input:hover, .input-lastname > input:hover, .input-username > input:hover, .add-identity > input:hover, .input-totp > input:hover {
       -webkit-text-fill-color: #404040 !important;
       color: #404040;
       border: 1px solid #404040; }
-    .input-email > input:focus, .input-email > input:-webkit-autofill:focus, .input-password > input:focus, .input-password > input:-webkit-autofill:focus, .input-firstname > input:focus, .input-firstname > input:-webkit-autofill:focus, .input-lastname > input:focus, .input-lastname > input:-webkit-autofill:focus, .input-username > input:focus, .input-username > input:-webkit-autofill:focus, .add-identity > input:focus, .add-identity > input:-webkit-autofill:focus, .input-totp > input:focus, .input-totp > input:-webkit-autofill:focus {
+    .input-email > input:focus, .input-password > input:focus, .input-firstname > input:focus, .input-lastname > input:focus, .input-username > input:focus, .add-identity > input:focus, .input-totp > input:focus {
       border: 1px solid #404040;
       box-shadow: 0px 0px 5px #d3d3d3;
       outline: none;
       background-color: white !important;
       color: #404040;
       -webkit-text-fill-color: #404040 !important; }
-      .input-email > input:focus::placeholder, .input-email > input:-webkit-autofill:focus::placeholder, .input-password > input:focus::placeholder, .input-password > input:-webkit-autofill:focus::placeholder, .input-firstname > input:focus::placeholder, .input-firstname > input:-webkit-autofill:focus::placeholder, .input-lastname > input:focus::placeholder, .input-lastname > input:-webkit-autofill:focus::placeholder, .input-username > input:focus::placeholder, .input-username > input:-webkit-autofill:focus::placeholder, .add-identity > input:focus::placeholder, .add-identity > input:-webkit-autofill:focus::placeholder, .input-totp > input:focus::placeholder, .input-totp > input:-webkit-autofill:focus::placeholder {
+      .input-email > input:focus::placeholder, .input-password > input:focus::placeholder, .input-firstname > input:focus::placeholder, .input-lastname > input:focus::placeholder, .input-username > input:focus::placeholder, .add-identity > input:focus::placeholder, .input-totp > input:focus::placeholder {
         color: #404040 !important; }
   .input-email > input[disabled], .input-email > input[disabled]:-webkit-autofill, .input-password > input[disabled], .input-password > input[disabled]:-webkit-autofill, .input-firstname > input[disabled], .input-firstname > input[disabled]:-webkit-autofill, .input-lastname > input[disabled], .input-lastname > input[disabled]:-webkit-autofill, .input-username > input[disabled], .input-username > input[disabled]:-webkit-autofill, .add-identity > input[disabled], .add-identity > input[disabled]:-webkit-autofill, .input-totp > input[disabled], .input-totp > input[disabled]:-webkit-autofill {
     cursor: not-allowed; }
@@ -451,7 +461,7 @@
     cursor: pointer;
     outline: none; }
     .input-submit > button:not(:last-child), .input-submit > a:not(:last-child), .input-submit > input:not(:last-child), .input-button > button:not(:last-child), .input-button > a:not(:last-child), .input-button > input:not(:last-child) {
-      margin-right: 1%; }
+      margin-right: 10px; }
     .input-submit > button.confirm, .input-submit > a.confirm, .input-submit > input.confirm, .input-button > button.confirm, .input-button > a.confirm, .input-button > input.confirm {
       background-color: #55C669; }
     .input-submit > button.cancel, .input-submit > a.cancel, .input-submit > input.cancel, .input-button > button.cancel, .input-button > a.cancel, .input-button > input.cancel {
@@ -468,11 +478,31 @@
     align-items: center;
     justify-content: center; }
 
+.input-lead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  flex-shrink: 0;
+  min-width: 10%;
+  margin-bottom: 10px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  outline: none; }
+  .input-lead > span {
+    padding-left: 2px;
+    padding-right: 5px; }
+
 .form-list p {
   margin-bottom: 0 !important; }
 
 .form-code {
-  height: 50px !important;
+  min-height: 50px !important;
   width: 60% !important;
   margin-left: 20%;
   background-color: #F1F1F1;
@@ -564,6 +594,20 @@
 
 .linkedin {
   background-color: #007fb2 !important; }
+
+@media (max-width: 767px) {
+  .form-code {
+    min-width: 90% !important;
+    margin-left: -0 !important;
+    margin-right: 5px !important; }
+  .input-submit span, .input-lead span {
+    display: none; } }
+
+.input-detail i {
+  position: absolute;
+  right: 3%;
+  top: 16px;
+  font-size: 18px; }
 
 #kc-locale {
   position: absolute;
@@ -681,12 +725,6 @@ html {
   height: 100%;
   width: 100%; }
 
-.width-contain {
-  width: 70% !important; }
-
-.width-expand {
-  width: 100% !important; }
-
 .header {
   margin-bottom: 0;
   min-height: 50px;
@@ -699,7 +737,8 @@ html {
   min-height: inherit;
   display: flex;
   justify-content: space-between;
-  align-items: center; }
+  align-items: center;
+  width: 70% !important; }
 
 .header-title {
   display: flex;
@@ -731,23 +770,35 @@ html {
     list-style: none; }
     .header-menu > li > a {
       color: white; }
+    .header-menu > li:not(last-child) {
+      margin-right: 10px; }
 
 .navbar-collapse {
-  padding: 0; }
+  padding: 0;
+  border: none;
+  box-shadow: none; }
+
+#header-menu-icon {
+  display: none;
+  color: white;
+  font-size: 24px;
+  padding-left: 10px;
+  padding-right: 10px; }
 
 .body-content {
   height: 100%;
   margin: auto;
   display: flex;
-  padding: 0; }
+  padding: 0;
+  width: 70% !important; }
 
 .sidebar {
   padding-top: 20px;
   background-color: #357a41;
-  left: -10px;
   transition: 0.5s;
   height: 100%;
-  border-radius: 0 0 5px 5px; }
+  border-radius: 0 0 5px 5px;
+  display: block; }
   .sidebar > ul {
     list-style: none;
     -webkit-padding-start: none;
@@ -779,6 +830,7 @@ html {
       .sidebar > ul > li > i {
         position: absolute;
         left: 10px;
+        top: 12px;
         font-size: 18px;
         color: rgba(255, 255, 255, 0.7); }
       .sidebar > ul > li.active {
@@ -863,7 +915,7 @@ html {
 
 /* Authenticator page */
 ol {
-  padding-left: 40px; }
+  padding-left: 20px; }
   ol > li {
     font-size: 13px;
     margin-bottom: 10px;
@@ -875,3 +927,34 @@ ol {
 
 .provider {
   width: 80%; }
+
+@media (max-width: 767px) {
+  .width-contain {
+    width: 100% !important; }
+  .main-content {
+    position: absolute; }
+  .project-logo {
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    margin-right: 0; }
+  .sidebar {
+    position: relative;
+    display: none;
+    z-index: 2;
+    padding-top: 0; }
+    .sidebar > ul {
+      padding-left: 10px; }
+      .sidebar > ul > li a {
+        font-size: 14px !important;
+        min-width: 160px; }
+  input, a, div {
+    font-size: 14px !important; }
+  table td, table th {
+    font-size: 10px !important; }
+  table input, table a, table div {
+    font-size: 10px !important; }
+  .form-table {
+    overflow: scroll; }
+  #header-menu-icon {
+    display: initial; } }

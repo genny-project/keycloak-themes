@@ -5,8 +5,13 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="robots" content="noindex, nofollow">
-
+    <#if properties.meta?has_content>
+        <#list properties.meta?split(' ') as meta>
+            <meta name="${meta?split('==')[0]}" content="${meta?split('==')[1]}"/>
+        </#list>
+    </#if>
     <title>${msg("accountManagementTitle")}</title>
+    
     <link rel="icon" href="${url.resourcesPath}/img/favicon.ico">
     <#if properties.styles?has_content>
         <#list properties.styles?split(' ') as style>
@@ -19,6 +24,8 @@
         </#list>
     </#if>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -28,8 +35,9 @@
 
             <div class="header-content width-contain">
                 <div class="header-title">
+                    <i id="header-menu-icon" class="fa fa-bars" aria-hidden="true"></i>
                     <div class="project-logo"></div>
-                    <h1 class="project-title">WELCOME TO ${properties.themeTitle!}</h1>
+                    <h1 class="project-title">${properties.themeTitle!}</h1>
                 </div>
 
                 <div class="navbar-collapse">
@@ -56,7 +64,7 @@
                             </div>
                         </#if>
 
-                        <#if referrer?has_content && referrer.url?has_content><li><a href="${referrer.url}" id="referrer">${msg("backTo",referrer.name)}</a></li></#if>
+                        <#-- <#if referrer?has_content && referrer.url?has_content><li><a href="${referrer.url}" id="referrer">${msg("backTo",referrer.name)}</a></li></#if> -->
                         <li><a href="${url.logoutUrl}">${msg("doSignOut")}</a></li>
                     </ul>
                 </div>
@@ -69,7 +77,7 @@
 
         <div class="body-content width-contain">
 
-            <div class="sidebar">
+            <div id="sidebar" class="sidebar">
 
                 <ul>
                     <li class="<#if active=='account'>active</#if>">
@@ -133,6 +141,18 @@
         </div>
 
     </div>
+
+    <script type="text/javascript">
+            $("#header-menu-icon").click(function(){
+
+                if ($("#sidebar").is(":visible") ){
+                    $("#sidebar").hide();
+                } else {
+                    $("#sidebar").show();
+                }
+            });
+    </script>
+
 
 </body>
 </html>

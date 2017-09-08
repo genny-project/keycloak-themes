@@ -7,7 +7,7 @@
 
     <hr/>
 
-    <form action="${url.revokeClientUrl}" method="post">
+    <form action="${url.revokeClientUrl}" class="form-table" method="post">
         <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker?html}">
         <input type="hidden" id="referrer" name="referrer" value="${stateChecker?html}">
 
