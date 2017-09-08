@@ -957,4 +957,8 @@ ol {
   .form-table {
     overflow: scroll; }
   #header-menu-icon {
-    display: initial; } }
+    display: initial; }
+  .header-title h1 {
+    font-size: 18px !important;
+    margin-top: 0;
+    margin-bottom: 0; } }
