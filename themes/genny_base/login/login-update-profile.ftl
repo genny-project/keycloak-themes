@@ -5,54 +5,50 @@
     <#elseif section = "header">
         ${msg("loginProfileTitle")}
     <#elseif section = "form">
-        <form id="kc-update-profile-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
-            <#if user.editUsernameAllowed>
-                <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('username',properties.kcFormGroupErrorClass!)}">
-                    <div class="${properties.kcLabelWrapperClass!}">
-                        <label for="username" class="${properties.kcLabelClass!}">${msg("username")}</label>
+        <form id="kc-update-profile-form" action="${url.loginAction}" method="post">
+
+            <div class="login-container">
+
+                 <div class="project-title">
+                    <div class="project-logo"></div>
+                    <p>${properties.themeTitle!}</p>
+                </div>
+
+                <div class="title">UPDATE PROFILE</div>
+
+                 <div class="input-detail">
+
+                    <#if user.editUsernameAllowed>
+                         <div class="input-username">
+                            <input type="text" name="username" id="username"  value="${(user.username!'')?html}" placeholder="${msg("username")}" />
+                            <i id="input-username-icon" class="fa fa-fw fa-user" aria-hidden="true"></i>
+                        </div>
+                    </#if>
+
+                    <div class="input-email">
+                        <input type="text" name="email" id="email"  value="${(user.email!'')?html}" placeholder="${msg("email")}" />
+                        <i id="input-email-icon" class="fa fa-fw fa-envelope" aria-hidden="true"></i>
                     </div>
-                    <div class="${properties.kcInputWrapperClass!}">
-                        <input type="text" id="username" name="username" value="${(user.username!'')?html}" class="${properties.kcInputClass!}"/>
+
+                    <div class="input-firstname">
+                        <input type="text" id="firstName" name="firstName" value="${(user.firstName!'')?html}" placeholder="${msg("firstName")}" />
+                        <i  id="input-firstname-icon" class="fa fa-fw fa-user" aria-hidden="true"></i>
                     </div>
-                </div>
-            </#if>
-            <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('email',properties.kcFormGroupErrorClass!)}">
-                <div class="${properties.kcLabelWrapperClass!}">
-                    <label for="email" class="${properties.kcLabelClass!}">${msg("email")}</label>
-                </div>
-                <div class="${properties.kcInputWrapperClass!}">
-                    <input type="text" id="email" name="email" value="${(user.email!'')?html}" class="${properties.kcInputClass!}" />
-                </div>
-            </div>
-
-            <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('firstName',properties.kcFormGroupErrorClass!)}">
-                <div class="${properties.kcLabelWrapperClass!}">
-                    <label for="firstName" class="${properties.kcLabelClass!}">${msg("firstName")}</label>
-                </div>
-                <div class="${properties.kcInputWrapperClass!}">
-                    <input type="text" id="firstName" name="firstName" value="${(user.firstName!'')?html}" class="${properties.kcInputClass!}" />
-                </div>
-            </div>
-
-            <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('lastName',properties.kcFormGroupErrorClass!)}">
-                <div class="${properties.kcLabelWrapperClass!}">
-                    <label for="lastName" class="${properties.kcLabelClass!}">${msg("lastName")}</label>
-                </div>
-                <div class="${properties.kcInputWrapperClass!}">
-                    <input type="text" id="lastName" name="lastName" value="${(user.lastName!'')?html}" class="${properties.kcInputClass!}" />
-                </div>
-            </div>
-
-            <div class="${properties.kcFormGroupClass!}">
-                <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
-                    <div class="${properties.kcFormOptionsWrapperClass!}">
+                    
+                    <div class="input-lastname">
+                        <input type="text" name="lastName" id="lastName" value="${(user.lastName!'')?html}" placeholder="${msg("lastName")}" />
+                        <i  id="input-lastname-icon" class="fa fa-fw fa-users" aria-hidden="true"></i>
                     </div>
+
+
+                    <div class="input-submit">
+                        <input type="submit" class="confirm" value="${msg("doSubmit")}"/>
+                    </div>
+
                 </div>
 
-                <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                    <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doSubmit")}" />
-                </div>
             </div>
+
         </form>
     </#if>
 </@layout.registrationLayout>
