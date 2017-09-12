@@ -9,7 +9,7 @@
 
             <div class="login-container">
 
-                 <div class="project-title">
+                <div class="project-title">
                     <div class="project-logo"></div>
                     <p>${properties.themeTitle!}</p>
                 </div>
