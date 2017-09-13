@@ -54,8 +54,8 @@
     height: 50px;
     width: 100% !important;
     border-radius: 5px;
-    color: #808080 !important;
-    -webkit-text-fill-color: #808080;
+    color: #505050 !important;
+    -webkit-text-fill-color: #505050;
     background-color: #F1F1F1;
     font-size: 16px;
     padding: 10px 35px 10px 10px;
@@ -73,9 +73,15 @@
       outline: none;
       background-color: white !important;
       color: #404040;
-      -webkit-text-fill-color: #404040 !important; }
-      .input-email > input:focus::placeholder, .input-password > input:focus::placeholder, .input-firstname > input:focus::placeholder, .input-lastname > input:focus::placeholder, .input-username > input:focus::placeholder, .add-identity > input:focus::placeholder, .input-totp > input:focus::placeholder {
-        color: #404040 !important; }
+      -webkit-text-fill-color: #404040; }
+    .input-email > input:-webkit-autofill, .input-password > input:-webkit-autofill, .input-firstname > input:-webkit-autofill, .input-lastname > input:-webkit-autofill, .input-username > input:-webkit-autofill, .add-identity > input:-webkit-autofill, .input-totp > input:-webkit-autofill {
+      color: #808080;
+      -webkit-text-fill-color: #808080;
+      border: 1px solid #F1F1F1;
+      -webkit-box-shadow: 0 0 0px 1000px #F1F1F1 inset; }
+    .input-email > input::-webkit-input-placeholder, .input-password > input::-webkit-input-placeholder, .input-firstname > input::-webkit-input-placeholder, .input-lastname > input::-webkit-input-placeholder, .input-username > input::-webkit-input-placeholder, .add-identity > input::-webkit-input-placeholder, .input-totp > input::-webkit-input-placeholder {
+      color: #B2B2B2 !important;
+      -webkit-text-fill-color: #B2B2B2 !important; }
   .input-email > input[disabled], .input-email > input[disabled]:-webkit-autofill, .input-password > input[disabled], .input-password > input[disabled]:-webkit-autofill, .input-firstname > input[disabled], .input-firstname > input[disabled]:-webkit-autofill, .input-lastname > input[disabled], .input-lastname > input[disabled]:-webkit-autofill, .input-username > input[disabled], .input-username > input[disabled]:-webkit-autofill, .add-identity > input[disabled], .add-identity > input[disabled]:-webkit-autofill, .input-totp > input[disabled], .input-totp > input[disabled]:-webkit-autofill {
     cursor: not-allowed; }
     .input-email > input[disabled]:hover, .input-email > input[disabled]:-webkit-autofill:hover, .input-password > input[disabled]:hover, .input-password > input[disabled]:-webkit-autofill:hover, .input-firstname > input[disabled]:hover, .input-firstname > input[disabled]:-webkit-autofill:hover, .input-lastname > input[disabled]:hover, .input-lastname > input[disabled]:-webkit-autofill:hover, .input-username > input[disabled]:hover, .input-username > input[disabled]:-webkit-autofill:hover, .add-identity > input[disabled]:hover, .add-identity > input[disabled]:-webkit-autofill:hover, .input-totp > input[disabled]:hover, .input-totp > input[disabled]:-webkit-autofill:hover {

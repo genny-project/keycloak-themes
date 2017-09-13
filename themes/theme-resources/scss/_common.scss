@@ -95,8 +95,8 @@
             height: 50px;
             width: 100% !important;
             border-radius: 5px;
-            color: $form-gray-mid !important;
-            -webkit-text-fill-color: $form-gray-mid;
+            color: $form-gray-mid-dark !important;
+            -webkit-text-fill-color: $form-gray-mid-dark;
             background-color: $form-gray-light;
             font-size: 16px;
             padding: 10px 35px 10px 10px;
@@ -117,11 +117,21 @@
                 outline: none;
                 background-color: white !important;
                 color: $form-color;
-                -webkit-text-fill-color: $form-color !important;
+                -webkit-text-fill-color: $form-color;
+            }
 
-                &::placeholder {
-                    color: $form-color !important;
-                }
+            &:-webkit-autofill {
+                color: $form-gray-mid;
+                -webkit-text-fill-color: $form-gray-mid;
+                border: 1px solid $form-gray-light;
+                -webkit-box-shadow: 0 0 0px 1000px $form-gray-light inset;
+
+            }
+
+            &::-webkit-input-placeholder
+             {
+                color: $form-gray-mid-light !important;
+                -webkit-text-fill-color: $form-gray-mid-light !important;
             }
         }
 
