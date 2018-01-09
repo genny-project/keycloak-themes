@@ -638,7 +638,7 @@
       line-height: 20px; }
     #kc-locale ul li:hover {
       color: #fff;
-      background-color: #EE6C00;
+      background-color: #000;
       border-radius: 3px; }
   #kc-locale:not(hover) {
     opacity: 0.5; }
@@ -768,7 +768,7 @@ li[class*="kc_locale=lt"].current-lt {
   justify-content: center; }
   .project-title p {
     text-align: center;
-    color: #EE6C00;
+    color: #000;
     font-size: 36px;
     margin-bottom: 0;
     max-width: 50%;
@@ -789,7 +789,7 @@ li[class*="kc_locale=lt"].current-lt {
   color: #404040; }
 
 .input-submit > button {
-  background-color: #EE6C00; }
+  background-color: #000; }
 
 .link {
   display: flex;

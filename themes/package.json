@@ -5,28 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    
     "compile:genny": "cd genny && npm run-script compile-all",
     "watch:genny": "cd genny && npm run-script watch-all",
-    
     "compile:channel40": "cd channel40 && npm run-script compile-all",
     "watch:channel40": "cd channel40 && npm run-script watch-all",
-
     "compile:ai": "cd absoluteimmigration && npm run-script compile-all",
     "watch:ai": "cd absoluteimmigration && npm run-script watch-all",
-    
     "compile:internmatch": "cd internmatch && npm run-script compile-all",
     "watch:internmatch": "cd internmatch && npm run-script watch-all",
-    
     "compile:memberhub": "cd memberhub && npm run-script compile-all",
     "watch:memberhub": "cd memberhub && npm run-script watch-all",
-    
     "compile:newcrest": "cd newcrest && npm run-script compile-all",
     "watch:newcrest": "cd newcrest && npm run-script watch-all",
-
     "compile-all": "npm-run-all compile:*",
     "watch-all": "npm-run-all watch:*"
-
   },
   "author": "conor",
   "license": "UNLICENSED",

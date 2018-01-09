@@ -638,7 +638,7 @@
       line-height: 20px; }
     #kc-locale ul li:hover {
       color: #fff;
-      background-color: #EE6C00;
+      background-color: #000;
       border-radius: 3px; }
   #kc-locale:not(hover) {
     opacity: 0.5; }
@@ -840,7 +840,7 @@ html {
         font-size: 18px;
         color: rgba(255, 255, 255, 0.7); }
       .sidebar > ul > li.active {
-        background-color: #EE6C00; }
+        background-color: #000; }
         .sidebar > ul > li.active a {
           color: white; }
         .sidebar > ul > li.active:hover {
