@@ -15,6 +15,21 @@
                         <div class="project-logo"></div>
                         <p>${properties.themeTitle!}</p>
                     </div>
+                    
+                    <br/>
+                    
+
+                    <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
+                    <div class="input-submit">
+                        <a class="button-register" href="${url.registrationUrl}">${msg("registerWithTitle")}</a>
+                    </div>
+                    </#if>
+
+                    <div class='line-break'>
+                        <div></div>
+                        <span>OR</span>
+                        <div></div>
+                    </div>
 
                     <div class="title">${properties.themeSubTitle!}</div>
 
@@ -57,15 +72,22 @@
                         <#if realm.resetPasswordAllowed>
                             <span class="forget-password"> <a href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>
                         </#if>
-                        
+                        <#--
                         <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
                             <span class="register"><a href="${url.registrationUrl}">${msg("registerWithTitle")}</a></span>
                         </#if>
+                        -->
                     </div>
 
                     <div class="social-login">
 
-                        <div class="social-login-title">${msg("loginTitle")}</div>
+                        <div class='line-break'>
+                            <div></div>
+                            <span>${msg("loginTitle")}</span>
+                            <div></div>
+                        </div>
+
+                        <br/>
 
                         <#if realm.password && social.providers??>
                             <div id="kc-social-providers">

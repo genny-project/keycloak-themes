@@ -615,6 +615,18 @@
   top: 16px;
   font-size: 18px; }
 
+.line-break {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .line-break > div {
+    border-top: 1px solid #357a41;
+    flex-grow: 1; }
+  .line-break > span {
+    color: #357a41;
+    flex-grow: 0;
+    padding: 0 10px; }
+
 #kc-locale {
   position: absolute;
   width: 120px;

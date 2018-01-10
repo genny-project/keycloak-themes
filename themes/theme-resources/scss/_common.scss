@@ -485,3 +485,28 @@
             font-size: 18px;
         }
     }
+
+
+//---------------------------------------//
+//          L I N E   B R E A K          //
+//---------------------------------------//
+
+
+.line-break {
+        
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    > div {
+        border-top: 1px solid $secondary-color;
+        flex-grow: 1;
+    }
+
+    > span {
+        color: $secondary-color;
+        flex-grow: 0;
+        padding: 0 10px;
+    }
+}
+
