@@ -1,4 +1,21 @@
 @charset "UTF-8";
+@font-face {
+  font-family: Akkurat;
+  src: url(./Akkurat.ttf); }
+
+@font-face {
+  font-family: Akkurat-Bold;
+  src: url(./Akkurat-Bold.ttf); }
+
+html, body {
+  font-family: "Akkurat", "Helvetica", sans-serif; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Akkurat-Bold", "sans-serif", sans-serif; }
+
+input {
+  font-family: "Roboto Condensed", "Helvetica", sans-serif; }
+
 .no-margin-bottom {
   margin-bottom: 0 !important; }
 
