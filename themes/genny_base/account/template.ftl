@@ -37,7 +37,10 @@
                 <div class="header-title">
                     <i id="header-menu-icon" class="fa fa-bars" aria-hidden="true"></i>
                     <div class="project-logo"></div>
-                    <h1 class="project-title">${properties.themeTitle!}</h1>
+                    <#if !properties.hideTitle?? >
+                        <h1 class="project-title">${properties.themeTitle!}</h1>
+                    </#if>
+                    
                 </div>
 
                 <div class="navbar-collapse">

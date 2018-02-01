@@ -1,0 +1,27 @@
+@font-face {
+    font-family: Akkurat;
+    src: url(./Akkurat.ttf);
+}
+
+@font-face {
+    font-family: Akkurat-Bold;
+    src: url(./Akkurat-Bold.ttf);
+}
+
+$primary-font: "Akkurat";
+$primary-font-backup: "Helvetica";
+$secondary-font: "Akkurat-Bold";
+$secondary-font-backup: "sans-serif";
+
+html, body {
+    font-family: $primary-font, $primary-font-backup, sans-serif;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $secondary-font, $secondary-font-backup, sans-serif;
+}
+
+input {
+	font-family: "Roboto Condensed", "Helvetica", sans-serif;
+}
