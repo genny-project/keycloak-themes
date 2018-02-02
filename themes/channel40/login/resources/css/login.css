@@ -806,7 +806,8 @@ li[class*="kc_locale=lt"].current-lt {
 .project-logo {
   background-image: url("../img/logo.png");
   background-size: cover;
-  width: 60px;
+  background-position: center;
+  width: 80%;
   height: 60px;
   margin-right: 15px; }
 
