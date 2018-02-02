@@ -1,3 +1,7 @@
 @import '../../../main.scss';
 @import '../../../fonts/_fonts.scss';
 @import '../../../../theme-resources/scss/login.scss';
+
+.project-title p {
+    display: none;
+}

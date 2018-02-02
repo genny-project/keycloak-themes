@@ -950,3 +950,6 @@ ol#kc-totp-settings {
     margin-right: 0; }
     #kc-social-providers li:not(:last-child) {
       margin-bottom: 10px; } }
+
+.project-title p {
+  display: none; }

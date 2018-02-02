@@ -13,11 +13,8 @@
 
                     <div class="project-title">
                         <div class="project-logo"></div>
-                        <#if !properties.hideTitle?? >
-                            <p>${properties.themeTitle!}</p>
-                        </#if>
+                        <p>${properties.themeTitle!}</p>
                     </div>
-                    
                     <br/>
                     
 
