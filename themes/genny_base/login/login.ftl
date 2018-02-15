@@ -11,12 +11,19 @@
                 
                 <div class="login-container">
 
+                    <#if properties.websiteURL??>
+                        <div class="link link-login">
+                            <span class="forget-password"> <a href="${properties.websiteURL!}">${properties.websiteText!}</a></span>
+                            
+                            <br/>
+                        </div>
+                    </#if>
+
                     <div class="project-title">
                         <div class="project-logo"></div>
                         <p>${properties.themeTitle!}</p>
                     </div>
                     <br/>
-                    
 
                     <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
                     <div class="input-submit">
