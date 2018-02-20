@@ -17,6 +17,8 @@
     "watch:memberhub": "cd memberhub && npm run-script watch-all",
     "compile:newcrest": "cd newcrest && npm run-script compile-all",
     "watch:newcrest": "cd newcrest && npm run-script watch-all",
+    "compile:mentormatch": "cd mentormatch && npm run-script compile-all",
+    "watch:mentormatch": "cd mentormatch && npm run-script watch-all",
     "compile-all": "npm-run-all compile:*",
     "watch-all": "npm-run-all watch:*"
   },

@@ -1,0 +1,12 @@
+@import '../../../main.scss';
+@import '../../../fonts/_fonts.scss';
+@import '../../../../theme-resources/scss/login.scss';
+
+.project-title p {
+    display: none;
+}
+
+.project-logo {
+    height: 100px !important;
+    border-radius: 5px !important;
+}
