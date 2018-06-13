@@ -19,8 +19,8 @@
     "watch:newcrest": "cd newcrest && npm run-script watch-all",
     "compile:mentormatch": "cd mentormatch && npm run-script compile-all",
     "watch:mentormatch": "cd mentormatch && npm run-script watch-all",
-    "compile:johnholland": "cd johnholland && npm run-script compile-all",
-    "watch:johnholland": "cd johnholland && npm run-script watch-all",
+    "compile:pcss": "cd pcss && npm run-script compile-all",
+    "watch:pcss": "cd pcss && npm run-script watch-all",
     "compile-all": "npm-run-all compile:*",
     "watch-all": "npm-run-all watch:*"
   },
