@@ -449,7 +449,7 @@
 .input-checkbox {
   margin-bottom: 10px; }
   .input-checkbox > label {
-    color: #005B4F;
+    color: #3f607f;
     margin-bottom: 0;
     font-weight: normal !important; }
 
@@ -620,10 +620,10 @@
   align-items: center;
   justify-content: center; }
   .line-break > div {
-    border-top: 1px solid #005B4F;
+    border-top: 1px solid #3f607f;
     flex-grow: 1; }
   .line-break > span {
-    color: #005B4F;
+    color: #3f607f;
     flex-grow: 0;
     padding: 0 10px; }
 
@@ -650,7 +650,7 @@
       line-height: 20px; }
     #kc-locale ul li:hover {
       color: #fff;
-      background-color: #4EB9AA;
+      background-color: #243a4e;
       border-radius: 3px; }
   #kc-locale:not(hover) {
     opacity: 0.5; }
@@ -780,7 +780,7 @@ li[class*="kc_locale=lt"].current-lt {
   justify-content: center; }
   .project-title p {
     text-align: center;
-    color: #4EB9AA;
+    color: #243a4e;
     font-size: 36px;
     margin-bottom: 0;
     max-width: 50%;
@@ -799,10 +799,10 @@ li[class*="kc_locale=lt"].current-lt {
   font-size: 18px;
   margin-top: 10px;
   margin-bottom: 10px;
-  color: #005B4F; }
+  color: #3f607f; }
 
 .input-submit > button, .input-submit > a {
-  background-color: #4EB9AA; }
+  background-color: #243a4e; }
 
 .link {
   display: flex;
@@ -816,7 +816,7 @@ li[class*="kc_locale=lt"].current-lt {
   .link > .forget-password {
     width: 50%; }
   .link a {
-    color: #005B4F;
+    color: #3f607f;
     text-decoration: underline !important; }
 
 .social-login > ul > li {
@@ -827,7 +827,7 @@ li[class*="kc_locale=lt"].current-lt {
   text-align: center;
   font-size: 18px;
   margin-bottom: 10px;
-  color: #005B4F; }
+  color: #3f607f; }
 
 #kc-social-providers ul {
   list-style: none;
