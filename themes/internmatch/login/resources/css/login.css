@@ -62,7 +62,7 @@
     box-sizing: border-box;
     text-align: center;
     transition: 300ms ease !important;
-    border: 1px solid transparent; }
+    border: 1px solid rgba(0, 0, 0, 0); }
     .input-email > input:hover, .input-password > input:hover, .input-firstname > input:hover, .input-lastname > input:hover, .input-username > input:hover, .add-identity > input:hover, .input-totp > input:hover {
       -webkit-text-fill-color: #404040 !important;
       color: #404040;
@@ -85,7 +85,7 @@
   .input-email > input[disabled], .input-email > input[disabled]:-webkit-autofill, .input-password > input[disabled], .input-password > input[disabled]:-webkit-autofill, .input-firstname > input[disabled], .input-firstname > input[disabled]:-webkit-autofill, .input-lastname > input[disabled], .input-lastname > input[disabled]:-webkit-autofill, .input-username > input[disabled], .input-username > input[disabled]:-webkit-autofill, .add-identity > input[disabled], .add-identity > input[disabled]:-webkit-autofill, .input-totp > input[disabled], .input-totp > input[disabled]:-webkit-autofill {
     cursor: not-allowed; }
     .input-email > input[disabled]:hover, .input-email > input[disabled]:-webkit-autofill:hover, .input-password > input[disabled]:hover, .input-password > input[disabled]:-webkit-autofill:hover, .input-firstname > input[disabled]:hover, .input-firstname > input[disabled]:-webkit-autofill:hover, .input-lastname > input[disabled]:hover, .input-lastname > input[disabled]:-webkit-autofill:hover, .input-username > input[disabled]:hover, .input-username > input[disabled]:-webkit-autofill:hover, .add-identity > input[disabled]:hover, .add-identity > input[disabled]:-webkit-autofill:hover, .input-totp > input[disabled]:hover, .input-totp > input[disabled]:-webkit-autofill:hover {
-      border: 1px solid transparent;
+      border: 1px solid rgba(0, 0, 0, 0);
       color: #808080 !important;
       -webkit-text-fill-color: #808080 !important; }
 
