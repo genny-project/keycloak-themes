@@ -5,3 +5,9 @@ $login-background: $bg1;
 
 $primary-color: #243a4e;
 $secondary-color: #3f607f;
+
+//You have to manually put this styling in the account and login css since it's being overridden by the master style
+.project-logo {
+    background-size: "contain";
+    background-repeat: "no-repeat";
+}

@@ -788,7 +788,8 @@ li[class*="kc_locale=lt"].current-lt {
 
 .project-logo {
   background-image: url("../img/logo.png");
-  background-size: cover;
+  background-size: "contain";
+  background-repeat: "no-repeat";
   background-position: center;
   width: 80%;
   height: 60px;
