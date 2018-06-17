@@ -767,8 +767,8 @@ html {
 
 .project-logo {
   background-image: url("../img/logo.png");
-  background-size: "contain";
-  background-repeat: "no-repeat";
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
   width: 240px;
   height: 40px;
