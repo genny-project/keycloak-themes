@@ -21,6 +21,8 @@
     "watch:mentormatch": "cd mentormatch && npm run-script watch-all",
     "compile:pcss": "cd pcss && npm run-script compile-all",
     "watch:pcss": "cd pcss && npm run-script watch-all",
+    "compile:butler": "cd butler && npm run-script compile-all",
+    "watch:butler": "cd butler && npm run-script watch-all",
     "compile-all": "npm-run-all compile:*",
     "watch-all": "npm-run-all watch:*"
   },

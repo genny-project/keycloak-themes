@@ -21,7 +21,10 @@
 
                     <div class="project-title">
                         <div class="project-logo"></div>
-                        <p>${properties.themeTitle!}</p>
+                        
+                        <#if properties.themeTitle??>
+                            <p>${properties.themeTitle!}</p>
+                        </#if>
                     </div>
                     <br/>
 
@@ -29,13 +32,14 @@
                     <div class="input-submit">
                         <a class="button-register" href="${url.registrationUrl}">${msg("registerWithTitle")}</a>
                     </div>
-                    </#if>
 
                     <div class='line-break'>
                         <div></div>
                         <span>OR</span>
                         <div></div>
                     </div>
+
+                    </#if>
 
                     <div class="title">${properties.themeSubTitle!}</div>
 
@@ -87,15 +91,15 @@
 
                     <div class="social-login">
 
-                        <div class='line-break'>
-                            <div></div>
-                            <span>${msg("loginTitle")}</span>
-                            <div></div>
-                        </div>
-
-                        <br/>
-
                         <#if realm.password && social.providers??>
+                            <div class='line-break'>
+                                <div></div>
+                                <span>${msg("loginTitle")}</span>
+                                <div></div>
+                            </div>
+
+                            <br/>
+
                             <div id="kc-social-providers">
                                 <ul class="providers-container">
                                     <#list social.providers as p>
