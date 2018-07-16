@@ -13,6 +13,16 @@
     </#if>
     <title>WELCOME TO ${properties.themeTitle!}</title>
 
+     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+
+' https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+
+})(window,document,'script','dataLayer','${properties.gtmID!}');</script>
+
     <link rel="icon" href="${url.resourcesPath}/img/favicon.ico" />
     <#if properties.styles?has_content>
         <#list properties.styles?split(' ') as style>
@@ -30,9 +40,23 @@
         </#list>
     </#if>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+
+' https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+
+})(window,document,'script','dataLayer','${properties.kcGTMID!}');</script>
+
 </head>
 
 <body class="${properties.kcBodyClass!}">
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=${properties.gtmID!}"
+
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div id="kc-container" class="$">
         
