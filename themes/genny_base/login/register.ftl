@@ -65,25 +65,24 @@
                 </div>
 
                 <div class="social-login">
-                    
-                    <div class="social-login-title">OR SIGN UP WITH</div>
-                    
+                                        
                     <#if realm.password && social.providers??>
-                        <div id="kc-social-providers">
-                            <ul>
-                                <#list social.providers as p>
-                                    <li>
-                                        <a href="${p.loginUrl}" class=" ${p.providerId}">
-                                            <i class="fa fa-${p.providerId}" aria-hidden="true"></i>
-                                            <span>${p.providerId}</span>
-                                        </a>
-                                    </li>
-                                </#list>
-                            </ul>
+                        <div class="social-login-title">OR SIGN UP WITH</div>
+                            <div id="kc-social-providers">
+                                <ul>
+                                    <#list social.providers as p>
+                                        <li>
+                                            <a href="${p.loginUrl}" class=" ${p.providerId}">
+                                                <i class="fa fa-${p.providerId}" aria-hidden="true"></i>
+                                                <span>${p.providerId}</span>
+                                            </a>
+                                        </li>
+                                    </#list>
+                                </ul>
+                            </div>
                         </div>
-                    </#if>
 
-                </div>
+                    </#if>
             </div>
         </form>
     </#if>
