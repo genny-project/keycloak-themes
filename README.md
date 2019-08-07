@@ -16,6 +16,8 @@ To run keycloak on your machine, navigate to the directory and run the following
 
 `docker-compose up -d`
 
+Keycloak instance should now be running on `http://localhost:8080/`
+
 To stop the instance of keycloak, run the following command:
 
 `docker-compose down`

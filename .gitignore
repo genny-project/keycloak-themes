@@ -7,5 +7,5 @@ themes/*/node_modules/
 ./themes/*/node_modules/
 
 
-./data/
-./data/*
+data/
+data/*
