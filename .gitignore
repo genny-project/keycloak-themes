@@ -5,3 +5,7 @@ themes/*/node_modules/
 ./*/.DS_Store
 ./themes/node_modules/
 ./themes/*/node_modules/
+
+
+./data/
+./data/*

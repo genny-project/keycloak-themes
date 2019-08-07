@@ -25,13 +25,6 @@
                     <textarea class="form-control" rows="5" cols="50" id="description" name="description" data-ng-model="role.description"></textarea>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-md-2 control-label" for="scopeParamRequired">{{:: 'scope-param-required' | translate}} </label>
-                <kc-tooltip>{{:: 'scope-param-required.tooltip' | translate}}</kc-tooltip>
-                <div class="col-md-6">
-                    <input ng-model="role.scopeParamRequired" name="scopeParamRequired" id="scopeParamRequired" onoffswitch on-text="{{:: 'onText' | translate}}" off-text="{{:: 'offText' | translate}}" />
-                </div>
-            </div>
             <div class="form-group" data-ng-hide="create">
                 <label class="col-md-2 control-label" for="compositeSwitch" class="control-label">{{:: 'composite-roles' | translate}}</label>
                 <div class="col-md-6">
@@ -65,10 +58,12 @@
                         <div class="col-md-4">
                             <label class="control-label">{{:: 'available-roles' | translate}}</label>
                             <kc-tooltip>{{:: 'composite.available-roles.tooltip' | translate}}</kc-tooltip>
-                            <select id="available" class="form-control" multiple size="5"
+                            <select id="available" class="form-control overflow-select" multiple size="5"
                                     ng-multiple="true"
-                                    ng-model="selectedRealmRoles"
-                                    ng-options="r.name for r in realmRoles | orderBy:'name'">
+                                    ng-model="selectedRealmRoles">
+                                <option ng-repeat="r in realmRoles | orderBy:'name'" value="{{r}}" title="{{r.name}}">
+                                    {{r.name}}
+                                </option>
                             </select>
                             <button ng-disabled="selectedRealmRoles.length == 0" class="btn btn-default" type="submit" ng-click="addRealmRole()">
                                 {{:: 'add-selected' | translate}} <i class="fa fa-angle-double-right"></i>
@@ -77,10 +72,12 @@
                         <div class="col-md-4">
                             <label class="control-label">{{:: 'associated-roles' | translate}}</label>
                             <kc-tooltip>{{:: 'composite.associated-roles.tooltip' | translate}}</kc-tooltip>
-                            <select id="assigned" class="form-control" multiple size=5
+                            <select id="assigned" class="form-control overflow-select" multiple size=5
                                     ng-multiple="true"
-                                    ng-model="selectedRealmMappings"
-                                    ng-options="r.name for r in realmMappings | orderBy:'name'">
+                                    ng-model="selectedRealmMappings">
+                                <option ng-repeat="r in realmMappings | orderBy:'name'" value="{{r}}" title="{{r.name}}">
+                                    {{r.name}}
+                                </option>
                             </select>
                             <button ng-disabled="selectedRealmMappings.length == 0" class="btn btn-default" type="submit" ng-click="deleteRealmRole()">
                                 <i class="fa fa-angle-double-left"></i> {{:: 'remove-selected' | translate}}
@@ -104,10 +101,12 @@
                         <div class="col-md-4">
                             <label class="control-label" for="available-client">{{:: 'available-roles' | translate}}</label>
                             <kc-tooltip>{{:: 'composite.available-roles-client.tooltip' | translate}}</kc-tooltip>
-                            <select id="available-client" class="form-control" multiple size="5"
+                            <select id="available-client" class="form-control overflow-select" multiple size="5"
                                     ng-multiple="true"
-                                    ng-model="selectedClientRoles"
-                                    ng-options="r.name for r in clientRoles | orderBy:'name'">
+                                    ng-model="selectedClientRoles">
+                                <option ng-repeat="r in clientRoles | orderBy:'name'" value="{{r}}" title="{{r.name}}">
+                                    {{r.name}}
+                                </option>
                             </select>
                             <button ng-disabled="selectedClientRoles.length == 0" class="btn btn-default" type="submit" ng-click="addClientRole()">
                                 {{:: 'add-selected' | translate}} <i class="fa fa-angle-right"></i>
@@ -116,10 +115,12 @@
                         <div class="col-md-4">
                             <label class="control-label" for="assigned-client">{{:: 'associated-roles' | translate}}</label>
                             <kc-tooltip>{{:: 'composite.associated-roles-client.tooltip' | translate}}</kc-tooltip>
-                            <select id="assigned-client" class="form-control" multiple size=5
+                            <select id="assigned-client" class="form-control overflow-select" multiple size=5
                                     ng-multiple="true"
-                                    ng-model="selectedClientMappings"
-                                    ng-options="r.name for r in clientMappings | orderBy:'name'">
+                                    ng-model="selectedClientMappings">
+                                <option ng-repeat="r in clientMappings | orderBy:'name'" value="{{r}}" title="{{r.name}}">
+                                    {{r.name}}
+                                </option>
                             </select>
                             <button ng-disabled="selectedClientMappings.length == 0" class="btn btn-default" type="submit" ng-click="deleteClientRole()">
                                 <i class="fa fa-angle-left"></i> {{:: 'remove-selected' | translate}}
