@@ -33,6 +33,9 @@
 
 <body class="${properties.kcBodyClass!}">
   <div class="${properties.kcLoginClass!}">
+    <div id="kc-header" class="${properties.kcHeaderClass!}">
+      <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}">${kcSanitize(msg("loginTitleHtml",(realm.displayNameHtml!'')))?no_esc}</div>
+    </div>
     <div class="${properties.kcFormCardClass!} <#if displayWide>${properties.kcFormCardAccountClass!}</#if>">
       <header class="${properties.kcFormHeaderClass!}">
         <#if realm.internationalizationEnabled  && locale.supported?size gt 1>
@@ -49,22 +52,7 @@
                 </div>
             </div>
         </#if>
-        <#--  <h1 id="kc-page-title"><#nested "header"></h1>  -->
-        <div class="header-wrapper project-primary-color-background">
-          <#if properties.displayProjectLogo = "true">
-            <img src="${properties.projectLogo!}" />
-          </#if>
-          <#if properties.displayProjectLogo = "true" && properties.displayProjectName = "true" >
-            <div style="padding: 20px">
-            </div>
-          </#if>
-          <#if properties.displayProjectName = "true">
-            <h1 id="kc-page-title" class="project-on-primary-color">
-              ${properties.projectName!}
-            </h1>
-          </#if>
-        </div>
-        <h2 id="kc-page-title" class="project-primary-color"><#nested "subheader"></h2>
+        <h1 id="kc-page-title"><#nested "header"></h1>
       </header>
       <div id="kc-content">
         <div id="kc-content-wrapper">

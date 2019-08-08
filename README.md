@@ -25,7 +25,7 @@ To stop the instance of keycloak, run the following command:
 ### Creating a Theme
 To create a new theme, following these steps:
 
-#### 1. Copy a theme and change the directory name
+#### 1. Copy /themes/genny directory and change the directory name
 
 #### 2. Change the logo or name
 
