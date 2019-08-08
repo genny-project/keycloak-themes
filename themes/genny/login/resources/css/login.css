@@ -490,23 +490,23 @@ a.zocial  {
    --------------------------------------- */
 
 a {
-    color: #233A4E;
+    color: #41c300;
 }
 
 a:hover {
-    color: #233A4E;
+    color: #41c300;
 }
 
 input:hover, input:focus {
-    border-color:#233A4E !important;
+    border-color:#41c300 !important;
 }
 
 .project-primary-color {
-    color: #233A4E !important;
+    color: #41c300 !important;
 }
 
 .project-primary-color-background {
-    background-color: #233A4E !important;
+    background-color: #41c300 !important;
 }
 
 /* ---------------------------------------
@@ -522,7 +522,7 @@ input:hover, input:focus {
    --------------------------------------- */
 
 .login-pf body {
-    background: url("../img/background1.jpg") no-repeat center center fixed;
+    background: url("../img/background-road.jpg") no-repeat center center fixed;
     background-size: cover;
     height: 100%;
 }
