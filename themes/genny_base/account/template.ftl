@@ -20,12 +20,24 @@
     </#if>
 </head>
 <body class="admin-console user ${bodyClass}">
-        
-    <header class="navbar navbar-default navbar-pf navbar-main header">
+
+    <header class="navbar navbar-default navbar-pf navbar-main header project-primary-color-background">
         <nav class="navbar" role="navigation">
             <div class="navbar-header">
                 <div class="container">
-                    <h1 class="navbar-title">Keycloak</h1>
+                    <#if properties.displayProjectLogo = "true">
+                        <img src="${properties.projectLogo!}"  style="display: inline"/>
+                    </#if>
+                    <#if properties.displayProjectLogo = "true" && properties.displayProjectName = "true" >
+                        <div style="padding-left: 10px; display: inline">
+                        </div>
+                    </#if>
+                    <#if properties.displayProjectName = "true">
+                        <span id="kc-page-title" class="project-on-primary-color" style="margin: 0; font-size: 16px;">
+                            ${properties.projectName!}
+                        </span>
+                    </#if>
+                    </div>
                 </div>
             </div>
             <div class="navbar-collapse navbar-collapse-1">
@@ -51,17 +63,33 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="bs-content container">
         <div class="bs-sidebar col-sm-3">
             <ul>
-                <li class="<#if active=='account'>active</#if>"><a href="${url.accountUrl}">${msg("account")}</a></li>
-                <#if features.passwordUpdateSupported><li class="<#if active=='password'>active</#if>"><a href="${url.passwordUrl}">${msg("password")}</a></li></#if>
-                <li class="<#if active=='totp'>active</#if>"><a href="${url.totpUrl}">${msg("authenticator")}</a></li>
-                <#if features.identityFederation><li class="<#if active=='social'>active</#if>"><a href="${url.socialUrl}">${msg("federatedIdentity")}</a></li></#if>
-                <li class="<#if active=='sessions'>active</#if>"><a href="${url.sessionsUrl}">${msg("sessions")}</a></li>
-                <li class="<#if active=='applications'>active</#if>"><a href="${url.applicationsUrl}">${msg("applications")}</a></li>
-                <#if features.log><li class="<#if active=='log'>active</#if>"><a href="${url.logUrl}">${msg("log")}</a></li></#if>
-                <#if realm.userManagedAccessAllowed && features.authorization><li class="<#if active=='authorization'>active</#if>"><a href="${url.resourceUrl}">${msg("myResources")}</a></li></#if>
+                <li class="<#if active=='account'>active</#if>">
+                    <a href="${url.accountUrl}" class="project-primary-color project-primary-color-border">${msg("account")}</a>
+                </li>
+                <#if features.passwordUpdateSupported><li class="<#if active=='password'>active</#if>">
+                    <a href="${url.passwordUrl}" class="project-primary-color project-primary-color-border">${msg("password")}</a>
+                </li></#if>
+                <li class="<#if active=='totp'>active</#if>">
+                    <a href="${url.totpUrl}" class="project-primary-color project-primary-color-border">${msg("authenticator")}</a>
+                </li>
+                <#if features.identityFederation><li class="<#if active=='social'>active</#if>">
+                    <a href="${url.socialUrl}" class="project-primary-color project-primary-color-border">${msg("federatedIdentity")}</a>
+                </li></#if>
+                <li class="<#if active=='sessions'>active</#if>">
+                    <a href="${url.sessionsUrl}" class="project-primary-color project-primary-color-border">${msg("sessions")}</a>
+                </li>
+                <li class="<#if active=='applications'>active</#if>">
+                    <a href="${url.applicationsUrl}" class="project-primary-color project-primary-color-border">${msg("applications")}</a>
+                </li>
+                <#if features.log><li class="<#if active=='log'>active</#if>">
+                    <a href="${url.logUrl}" class="project-primary-color project-primary-color-border">${msg("log")}</a>
+                    </li></#if>
+                <#if realm.userManagedAccessAllowed && features.authorization><li class="<#if active=='authorization'>active</#if>">
+                    <a href="${url.resourceUrl}" class="project-primary-color project-primary-color-border">${msg("myResources")}</a>
+                </li></#if>
             </ul>
         </div>
 

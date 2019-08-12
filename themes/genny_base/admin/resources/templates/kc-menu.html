@@ -1,4 +1,4 @@
-<div kc-sidebar-resize class="col-sm-3 col-md-2 col-sm-pull-9 col-md-pull-10 sidebar-pf sidebar-pf-left" data-ng-controller="RealmDropdownCtrl">
+<div kc-sidebar-resize class="col-sm-3 col-md-2 col-sm-pull-9 col-md-pull-10 sidebar-pf sidebar-pf-left project-primary-color-background" data-ng-controller="RealmDropdownCtrl">
 
     <div class="realm-selector">
       <h2 data-ng-show="current.realm">{{current.realm.realm|capitalize}} <i class="fa fa-angle-down"></i></h2>
@@ -53,7 +53,7 @@
                         || path[2] == 'default-groups') && 'active'"><a href="#/realms/{{realm.realm}}/groups"><span class="pficon pficon-users"></span> {{:: 'groups' | translate}}</a></li>
             <li data-ng-show="access.queryUsers" data-ng-class="(path[1] == 'user' || path[2] == 'users' || path[2] == 'users-permissions') && 'active'"><a href="#/realms/{{realm.realm}}/users"><span class="pficon pficon-user"></span> {{:: 'users' | translate}}</a></li>
             <li data-ng-show="access.viewRealm" data-ng-class="(path[2] == 'sessions') && 'active'"><a href="#/realms/{{realm.realm}}/sessions/realm"><i class="fa fa-clock-o"></i> {{:: 'sessions' | translate}}</a></li>
-            <li data-ng-show="access.viewEvents" data-ng-class="(path[2] == 'events' 
+            <li data-ng-show="access.viewEvents" data-ng-class="(path[2] == 'events'
                         || path[2] == 'events-settings'
                         || path[2] == 'admin-events') && 'active'"><a href="#/realms/{{realm.realm}}/events"><i class="fa fa-calendar"></i> {{:: 'events' | translate}}</a></li>
             <li data-ng-show="access.manageRealm" ng-class="(path[2] =='partial-import') && 'active'"><a href="#/realms/{{realm.realm}}/partial-import"><span class="pficon pficon-import"></span> {{:: 'import' | translate}}</a></li>

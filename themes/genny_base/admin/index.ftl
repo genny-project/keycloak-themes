@@ -35,8 +35,8 @@
     <script src="${resourceUrl}/node_modules/angular-translate-loader-url/angular-translate-loader-url.min.js"></script>
     <script src="${resourceUrl}/node_modules/angular-ui-select2/src/select2.js" type="text/javascript"></script>
     <script src="${resourceUrl}/node_modules/autofill-event/autofill-event.js"></script>
-    
-    
+
+
     <!-- Unminimized versions
     <script src="${resourceUrl}/node_modules/jquery/dist/jquery.js" type="text/javascript"></script>
     <script src="${resourceUrl}/node_modules/select2/select2.js" type="text/javascript"></script>
@@ -83,7 +83,7 @@
 </head>
 <body data-ng-controller="GlobalCtrl" data-ng-cloak data-ng-show="auth.user">
 
-<nav class="navbar navbar-default navbar-pf" role="navigation" data-ng-include data-src="resourceUrl + '/partials/menu.html'">
+<nav class="navbar navbar-default navbar-pf project-primary-color-background " role="navigation" data-ng-include data-src="resourceUrl + '/partials/menu.html'">
 </nav>
 
 <div class="container-fluid">
