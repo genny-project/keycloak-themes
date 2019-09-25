@@ -4,7 +4,24 @@
         ${msg("termsTitle")}
     <#elseif section = "form">
     <div id="kc-terms-text">
-        ${kcSanitize(msg("termsText"))?no_esc}
+
+        <#if !properties.termsandconditions?has_content>
+            <p>
+                No terms and conditions content found.
+            </p>
+        </#if>
+    
+        <#if properties.termsandconditions?has_content>
+            <#list properties.termsandconditions?split('??') as content_block>
+                <h1>
+                    ${content_block?split('==')[0]}
+                </h1>
+                <p>
+                    ${content_block?split('==')[1]}
+                </p>
+            </#list>
+        </#if>
+
     </div>
     <form class="form-actions" action="${url.loginAction}" method="POST">
         <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="accept" id="kc-accept" type="submit" value="${msg("doAccept")}"/>

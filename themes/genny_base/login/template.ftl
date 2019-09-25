@@ -19,9 +19,10 @@
             <link href="${url.resourcesPath}/${style}" rel="stylesheet" />
         </#list>
     </#if>
+    <#assign myvariable= "whatawhat">
     <#if properties.scripts?has_content>
         <#list properties.scripts?split(' ') as script>
-            <script src="${url.resourcesPath}/${script}" type="text/javascript"></script>
+            <script src="${url.resourcesPath}/${script}" type="text/javascript" myvariable="${properties.projectName}"></script>
         </#list>
     </#if>
     <#if scripts??>

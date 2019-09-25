@@ -480,6 +480,12 @@ a.zocial  {
     margin-top: 0;
 }
 
+.btn {
+    background-image: none !important;
+    border-width: 0 !important;
+    box-shadow: none !important;
+}
+
 /* =======================================
             PROJECT COLOURS
    ======================================= */
@@ -525,4 +531,12 @@ input:hover, input:focus {
     background: url("../img/background-workers.jpg") no-repeat center center fixed;
     background-size: cover;
     height: 100%;
+}
+
+/* ---------------------------------------
+            SECONDARY COLOUR
+   --------------------------------------- */
+
+.project-default-color-background {
+    background-color: #ddd !important;
 }
