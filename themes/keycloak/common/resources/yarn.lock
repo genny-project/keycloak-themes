@@ -42,9 +42,13 @@ angular-ui-select2@^0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/angular-ui-select2/-/angular-ui-select2-0.0.5.tgz#15e7643afd69ca9063d405eb3be2f95dd5ec87f5"
 
-"angular@>=1.2.26 <=1.6", angular@^1.6.4:
+"angular@>=1.2.26 <=1.6":
   version "1.6.4"
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.6.4.tgz#03b7b15c01a0802d7e2cf593240e604054dc77fb"
+
+angular@^1.7.9:
+  version "1.7.9"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.7.9.tgz#e52616e8701c17724c3c238cfe4f9446fd570bc4"
 
 autofill-event@^0.0.1:
   version "0.0.1"
