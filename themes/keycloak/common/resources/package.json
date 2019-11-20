@@ -4,7 +4,7 @@
   "description": "Keycloak Admin Console",
   "license": "Apache-2.0",
   "dependencies": {
-    "angular": "^1.6.4",
+    "angular": "^1.7.9",
     "angular-cookies": "^1.6.4",
     "angular-loader": "^1.6.4",
     "angular-resource": "^1.6.4",
