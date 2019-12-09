@@ -5,13 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="robots" content="noindex, nofollow">
-    <#if properties.meta?has_content>
-        <#list properties.meta?split(' ') as meta>
-            <meta name="${meta?split('==')[0]}" content="${meta?split('==')[1]}"/>
-        </#list>
-    </#if>
+
     <title>${msg("accountManagementTitle")}</title>
-    
     <link rel="icon" href="${url.resourcesPath}/img/favicon.ico">
     <#if properties.styles?has_content>
         <#list properties.styles?split(' ') as style>
@@ -23,140 +18,93 @@
             <script type="text/javascript" src="${url.resourcesPath}/${script}"></script>
         </#list>
     </#if>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
-<body>
+<body class="admin-console user ${bodyClass}">
 
-    <div class="${bodyClass}">
-
-        <nav class="header" role="navigation">
-
-            <div class="header-content width-contain">
-                <div class="header-title">
-                    <i id="header-menu-icon" class="fa fa-bars" aria-hidden="true"></i>
-                    <div class="project-logo"></div>
-                    <#if !properties.hideTitle?? >
-                        <h1 class="project-title">${properties.themeTitle!}</h1>
+    <header class="navbar navbar-default navbar-pf navbar-main header project-primary-color-background">
+        <nav class="navbar" role="navigation">
+            <div class="navbar-header">
+                <div class="container">
+                    <#if properties.displayProjectLogo = "true">
+                        <img src="${properties.projectLogo!}"  style="display: inline"/>
                     </#if>
-                    
+                    <#if properties.displayProjectLogo = "true" && properties.displayProjectName = "true" >
+                        <div style="padding-left: 10px; display: inline">
+                        </div>
+                    </#if>
+                    <#if properties.displayProjectName = "true">
+                        <span id="kc-page-title" class="project-on-primary-color" style="margin: 0; font-size: 16px;">
+                            ${properties.projectName!}
+                        </span>
+                    </#if>
+                    </div>
                 </div>
-
-                <div class="navbar-collapse">
-                    <ul class="header-menu">
-
+            </div>
+            <div class="navbar-collapse navbar-collapse-1">
+                <div class="container">
+                    <ul class="nav navbar-nav navbar-utility">
                         <#if realm.internationalizationEnabled>
-                            <div id="kc-locale"">
-                                <div id="kc-locale-wrapper">
-                                    <div class="kc-dropdown" id="kc-locale-dropdown">
-                                        <div class="kc-current-item">
-                                            <i class="${msg("flag")}"></i>
-                                            <p id="kc-current-locale-link">${locale.current}</p>
-                                        </div>
-                                        <ul>
-                                            <#list locale.supported as l>
-                                                <li class="kc-dropdown-item ${l.url} ${msg("flag")}">
-                                                    <i class="${l.url}"></i>
-                                                    <a href="${l.url}">${l.label}</a>
-                                                </li>
-                                            </#list>
-                                        </ul>
-                                    </div>
+                            <li>
+                                <div class="kc-dropdown" id="kc-locale-dropdown">
+                                    <a href="#" id="kc-current-locale-link">${locale.current}</a>
+                                    <ul>
+                                        <#list locale.supported as l>
+                                            <li class="kc-dropdown-item"><a href="${l.url}">${l.label}</a></li>
+                                        </#list>
+                                    </ul>
                                 </div>
-                            </div>
+                            <li>
                         </#if>
-
-                        <#if referrer?has_content && referrer.url?has_content><li><a href="${referrer.url}" id="referrer">Back to ${referrer.name}</a></li></#if>
-                        
+                        <#if referrer?has_content && referrer.url?has_content><li><a href="${referrer.url}" id="referrer">${msg("backTo",referrer.name)}</a></li></#if>
                         <li><a href="${url.logoutUrl}">${msg("doSignOut")}</a></li>
                     </ul>
                 </div>
-
             </div>
-
-
-
         </nav>
+    </header>
 
-        <div class="body-content width-contain">
-
-            <div id="sidebar" class="sidebar">
-
-                <ul>
-                    <li class="<#if active=='account'>active</#if>">
-                        <a href="${url.accountUrl}">${msg("account")}</a>
-                        <i id="" class="fa fa-fw fa-user" aria-hidden="true"></i>
-                    </li>
-                    
-                    <#if features.passwordUpdateSupported>
-                        <li class="<#if active=='password'>active</#if>">
-                            <a href="${url.passwordUrl}">${msg("password")}</a>
-                            <i id="" class="fa fa-fw fa-lock" aria-hidden="true"></i>
-                        </li>
-                    </#if>
-                    
-                    <li class="<#if active=='totp'>active</#if>">
-                        <a href="${url.totpUrl}">${msg("authenticator")}</a>
-                        <i id="" class="fa fa-fw fa-qrcode" aria-hidden="true"></i>
-                    </li>
-                    
-                    <#if features.identityFederation>
-                        <li class="<#if active=='social'>active</#if>">
-                            <a href="${url.socialUrl}">${msg("federatedIdentity")}</a>
-                            <i id="" class="fa fa-fw fa-id-card-o" aria-hidden="true"></i>
-                        </li>
-                    </#if>
-                    
-                    <li class="<#if active=='sessions'>active</#if>">
-                        <a href="${url.sessionsUrl}">${msg("sessions")}</a>
-                        <i id="" class="fa fa-fw fa-desktop" aria-hidden="true"></i>
-                    </li>
-                    
-                    <li class="<#if active=='applications'>active</#if>">
-                        <a href="${url.applicationsUrl}">${msg("applications")}</a>
-                        <i id="" class="fa fa-fw fa-list-alt" aria-hidden="true"></i>
-                    </li>
-                    
-                    <#if features.log>
-                        <li class="<#if active=='log'>active</#if>">
-                            <a href="${url.logUrl}">${msg("log")}</a>
-                        </li>
-                    </#if>
-                </ul>
-
-            </div>
-
-            <div class="main-content">
-
-                <#if message?has_content>
-                    <div class="alert alert-${message.type}">
-                        <#if message.type = 'success'><i class="fa fa-check-circle" aria-hidden="true"></i></#if>
-                        <#if message.type = 'warning'><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></#if>
-                        <#if message.type = 'error'><i class="fa fa-exclamation-circle" aria-hidden="true"></i></#if>
-                        ${message.summary}
-                    </div>
-                </#if>
-
-                <#nested "content">
-
-            </div>
-
+    <div class="bs-content container">
+        <div class="bs-sidebar col-sm-3">
+            <ul>
+                <li class="<#if active=='account'>active</#if>">
+                    <a href="${url.accountUrl}" class="project-primary-color project-primary-color-border">${msg("account")}</a>
+                </li>
+                <#if features.passwordUpdateSupported><li class="<#if active=='password'>active</#if>">
+                    <a href="${url.passwordUrl}" class="project-primary-color project-primary-color-border">${msg("password")}</a>
+                </li></#if>
+                <li class="<#if active=='totp'>active</#if>">
+                    <a href="${url.totpUrl}" class="project-primary-color project-primary-color-border">${msg("authenticator")}</a>
+                </li>
+                <#if features.identityFederation><li class="<#if active=='social'>active</#if>">
+                    <a href="${url.socialUrl}" class="project-primary-color project-primary-color-border">${msg("federatedIdentity")}</a>
+                </li></#if>
+                <li class="<#if active=='sessions'>active</#if>">
+                    <a href="${url.sessionsUrl}" class="project-primary-color project-primary-color-border">${msg("sessions")}</a>
+                </li>
+                <li class="<#if active=='applications'>active</#if>">
+                    <a href="${url.applicationsUrl}" class="project-primary-color project-primary-color-border">${msg("applications")}</a>
+                </li>
+                <#if features.log><li class="<#if active=='log'>active</#if>">
+                    <a href="${url.logUrl}" class="project-primary-color project-primary-color-border">${msg("log")}</a>
+                    </li></#if>
+                <#if realm.userManagedAccessAllowed && features.authorization><li class="<#if active=='authorization'>active</#if>">
+                    <a href="${url.resourceUrl}" class="project-primary-color project-primary-color-border">${msg("myResources")}</a>
+                </li></#if>
+            </ul>
         </div>
 
+        <div class="col-sm-9 content-area">
+            <#if message?has_content>
+                <div class="alert alert-${message.type}">
+                    <#if message.type=='success' ><span class="pficon pficon-ok"></span></#if>
+                    <#if message.type=='error' ><span class="pficon pficon-error-octagon"></span><span class="pficon pficon-error-exclamation"></span></#if>
+                    ${kcSanitize(message.summary)?no_esc}
+                </div>
+            </#if>
+
+            <#nested "content">
+        </div>
     </div>
-
-    <script type="text/javascript">
-            $("#header-menu-icon").click(function(){
-
-                if ($("#sidebar").is(":visible") ){
-                    $("#sidebar").hide();
-                } else {
-                    $("#sidebar").show();
-                }
-            });
-    </script>
-
 
 </body>
 </html>

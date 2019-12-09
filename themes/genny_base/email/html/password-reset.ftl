@@ -1,5 +1,5 @@
 <html>
-	<body>
-		${msg("passwordResetBodyHtml", link, linkExpiration, realmName, "Genny", user.getEmail() )}
-	</body>
+<body>
+${kcSanitize(msg("passwordResetBodyHtml",link, linkExpiration, realmName, linkExpirationFormatter(linkExpiration)))?no_esc}
+</body>
 </html>

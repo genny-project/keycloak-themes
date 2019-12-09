@@ -1,88 +1,87 @@
 <#import "template.ftl" as layout>
-<@layout.registrationLayout displayInfo=social.displayInfo; section>
-    <#if section = "title">
-        <#-- ${msg("registerWithTitle",(realm.displayName!''))} -->
-    <#elseif section = "header">
-        <#-- ${msg("registerWithTitleHtml",(realm.displayNameHtml!''))} -->
+<@layout.registrationLayout; section>
+    <#if section = "header">
+        ${msg("doTitle")}
+    <#elseif section = "subheader">
+        ${msg("registerTitle")}
     <#elseif section = "form">
-        <form  action="${url.registrationAction}" method="post">
-            
-            <div class="login-container">
-                
-                <div class="project-title">
-                    <div class="project-logo"></div>
-                    <p>${properties.themeTitle!}</p>
+        <form id="kc-register-form" class="${properties.kcFormClass!}" action="${url.registrationAction}" method="post">
+            <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('email',properties.kcFormGroupErrorClass!)}">
+                <div class="${properties.kcLabelWrapperClass!}">
+                    <label for="email" class="${properties.kcLabelClass!}">${msg("email")}</label>
+                </div>
+                <div class="${properties.kcInputWrapperClass!}">
+                    <input type="text" id="email" class="${properties.kcInputClass!}" name="email" value="${(register.formData.email!'')}" autocomplete="email" />
+                </div>
+            </div>
+
+            <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('firstName',properties.kcFormGroupErrorClass!)}">
+                <div class="${properties.kcLabelWrapperClass!}">
+                    <label for="firstName" class="${properties.kcLabelClass!}">${msg("firstName")}</label>
+                </div>
+                <div class="${properties.kcInputWrapperClass!}">
+                    <input type="text" id="firstName" class="${properties.kcInputClass!}" name="firstName" value="${(register.formData.firstName!'')}" />
+                </div>
+            </div>
+
+            <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('lastName',properties.kcFormGroupErrorClass!)}">
+                <div class="${properties.kcLabelWrapperClass!}">
+                    <label for="lastName" class="${properties.kcLabelClass!}">${msg("lastName")}</label>
+                </div>
+                <div class="${properties.kcInputWrapperClass!}">
+                    <input type="text" id="lastName" class="${properties.kcInputClass!}" name="lastName" value="${(register.formData.lastName!'')}" />
+                </div>
+            </div>
+
+          <#if !realm.registrationEmailAsUsername>
+            <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('username',properties.kcFormGroupErrorClass!)}">
+                <div class="${properties.kcLabelWrapperClass!}">
+                    <label for="username" class="${properties.kcLabelClass!}">${msg("username")}</label>
+                </div>
+                <div class="${properties.kcInputWrapperClass!}">
+                    <input type="text" id="username" class="${properties.kcInputClass!}" name="username" value="${(register.formData.username!'')}" autocomplete="username" />
+                </div>
+            </div>
+          </#if>
+
+            <#if passwordRequired>
+            <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('password',properties.kcFormGroupErrorClass!)}">
+                <div class="${properties.kcLabelWrapperClass!}">
+                    <label for="password" class="${properties.kcLabelClass!}">${msg("password")}</label>
+                </div>
+                <div class="${properties.kcInputWrapperClass!}">
+                    <input type="password" id="password" class="${properties.kcInputClass!}" name="password" autocomplete="new-password"/>
+                </div>
+            </div>
+
+            <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('password-confirm',properties.kcFormGroupErrorClass!)}">
+                <div class="${properties.kcLabelWrapperClass!}">
+                    <label for="password-confirm" class="${properties.kcLabelClass!}">${msg("passwordConfirm")}</label>
+                </div>
+                <div class="${properties.kcInputWrapperClass!}">
+                    <input type="password" id="password-confirm" class="${properties.kcInputClass!}" name="password-confirm" />
+                </div>
+            </div>
+            </#if>
+
+            <#if recaptchaRequired??>
+            <div class="form-group">
+                <div class="${properties.kcInputWrapperClass!}">
+                    <div class="g-recaptcha" data-size="compact" data-sitekey="${recaptchaSiteKey}"></div>
+                </div>
+            </div>
+            </#if>
+
+            <div class="${properties.kcFormGroupClass!}">
+                <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
+                    <div class="${properties.kcFormOptionsWrapperClass!}">
+                        <span><a href="${url.loginUrl}">${kcSanitize(msg("backToLogin"))?no_esc}</a></span>
+                    </div>
                 </div>
 
-                <div class="title">CREATE YOUR ACCOUNT</div>
-
-                <div class="input-detail">
-                  
-                    <#if !realm.registrationEmailAsUsername>
-
-                        <div class="input-username">
-                            <input type="text" name="username" id="username"  value="${(register.formData.username!'')?html}" placeholder="username" />
-                            <i id="input-username-icon" class="fa fa-fw fa-user" aria-hidden="true"></i>
-                        </div>
-
-                    </#if>
-                    
-                    <div class="input-email">
-                        <input type="text" name="email" id="email"  value="${(register.formData.email!'')?html}" placeholder="email" />
-                        <i id="input-email-icon" class="fa fa-fw fa-envelope" aria-hidden="true"></i>
-                    </div>
-
-                    <div class="input-firstname">
-                        <input type="text" id="firstName" name="firstName" value="${(register.formData.firstName!'')?html}" placeholder="first name" />
-                        <i  id="input-firstname-icon" class="fa fa-fw fa-user" aria-hidden="true"></i>
-                    </div>
-                    
-                    <div class="input-lastname">
-                        <input type="text" name="lastName" id="lastName" value="${(register.formData.lastName!'')?html}" placeholder="last name" />
-                        <i  id="input-lastname-icon" class="fa fa-fw fa-users" aria-hidden="true"></i>
-                    </div>
-       
-
-                    <#if passwordRequired>
-                        <div class="input-password">
-                            <input type="password" name="password" id="password" placeholder="password" />
-                            <i  id="input-password-icon" class="fa fa-fw fa-unlock-alt" aria-hidden="true"></i>
-                        </div>
-                        <div class="input-password">
-                            <input type="password" id="password-confirm"  name="password-confirm" placeholder="password-confirm" />
-                            <i  id="input-password-confirm-icon" class="fa fa-fw fa-lock" aria-hidden="true"></i>
-                        </div>
-                    </#if>
-            
-                    <div class="input-submit">
-                        <button type="submit">Create Your Account</button>
-                    </div>
-                
+                <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
+                    <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doRegister")}"/>
                 </div>
-        
-                <div class="link link-register">
-                    <span class="login"><a href="${url.loginUrl}">Already have an account?</a></span>
-                </div>
-
-                <div class="social-login">
-                                        
-                    <#if realm.password && social.providers??>
-                        <div class="social-login-title">OR SIGN UP WITH</div>
-                            <div id="kc-social-providers">
-                                <ul>
-                                    <#list social.providers as p>
-                                        <li>
-                                            <a href="${p.loginUrl}" class=" ${p.providerId}">
-                                                <i class="fa fa-${p.providerId}" aria-hidden="true"></i>
-                                                <span>${p.providerId}</span>
-                                            </a>
-                                        </li>
-                                    </#list>
-                                </ul>
-                            </div>
-                        </div>
-
-                    </#if>
             </div>
         </form>
     </#if>

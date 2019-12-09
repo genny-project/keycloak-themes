@@ -1,0 +1,21 @@
+version: '2'
+
+services:  
+
+  keycloak:
+    image: jboss/keycloak:6.0.1
+    environment:
+      - KEYCLOAK_USER=true
+      - KEYCLOAK_PASSWORD=conor
+      - KEYCLOAK_USER=conor
+      - SYS_PROPS=-Dkeycloak.profile.feature.account_api=enabled -Dkeycloak.profile.feature.account2=enabled
+    container_name: kc
+    ports:
+      - "8080:8080"
+      - "9990:9990"
+      - "9090:9090"
+    volumes:
+      - ./data:/opt/jboss/keycloak/standalone/data
+      - ./themes:/opt/jboss/keycloak/themes
+      - ./configuration:/opt/jboss/keycloak/standalone/configuration
+

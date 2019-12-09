@@ -1,61 +1,33 @@
 <#import "template.ftl" as layout>
 <@layout.registrationLayout displayInfo=true; section>
-    <#if section = "title">
-        ${msg("emailForgotTitle")}
-    <#elseif section = "header">
+    <#if section = "header">
+        ${msg("doTitle")}
+    <#elseif section = "subheader">
         ${msg("emailForgotTitle")}
     <#elseif section = "form">
-        <form id="kc-reset-password-form" action="${url.loginAction}" method="post">
-            
-            <div class="login-container">
-                
-                <div class="project-title">
-                    <div class="project-logo"></div>
-                    <p>${properties.themeTitle!}</p>
+        <form id="kc-reset-password-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
+            <div class="${properties.kcFormGroupClass!}">
+                <div class="${properties.kcLabelWrapperClass!}">
+                    <label for="username" class="${properties.kcLabelClass!}"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
                 </div>
-
-                <div class="title">RESET YOUR PASSWORD</div>
-
-                <div class="input-detail">
-                        
-
-                    <div class="input-email">
-                        <#if !realm.loginWithEmailAllowed>
-
-                            <input type="text" id="username" name="username" placeholder="username" autofocus/>
-
-                        <#elseif !realm.registrationEmailAsUsername>
-
-                            <input type="text" id="username" name="username" placeholder="username or email" autofocus/>
-
-                        <#else>
-
-                            <input type="text" id="username" name="username" placeholder="email" autofocus/>
-
-                        </#if>
-                        <i id="input-email-icon" class="fa fa-fw fa-envelope" aria-hidden="true"></i>
-                    </div>
-
-                    <div class="input-submit">
-                        <button type="submit" value="${msg("doSubmit")}">Send Reset Email</button>
-                    </div>
-
-                    <div class="link link-reset">
-                        <span class="login"><a href="${url.loginUrl}">Back to login</a></span>
-                        
-                        <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
-                            <span class="register"><a href="${url.registrationUrl}">Create an Account</a></span>
-                        </#if>
-                    </div>                    
-
+                <div class="${properties.kcInputWrapperClass!}">
+                    <input type="text" id="username" name="username" class="${properties.kcInputClass!}" autofocus/>
                 </div>
-
             </div>
 
+            <div class="${properties.kcFormGroupClass!} ${properties.kcFormSettingClass!}">
+                <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
+                    <div class="${properties.kcFormOptionsWrapperClass!}">
+                        <span><a href="${url.loginUrl}">${kcSanitize(msg("backToLogin"))?no_esc}</a></span>
+                    </div>
+                </div>
+
+                <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
+                    <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doSubmit")}"/>
+                </div>
+            </div>
         </form>
-    
     <#elseif section = "info" >
         ${msg("emailInstruction")}
     </#if>
-
 </@layout.registrationLayout>

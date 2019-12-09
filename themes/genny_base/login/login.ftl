@@ -1,122 +1,74 @@
 <#import "template.ftl" as layout>
-<@layout.registrationLayout displayInfo=social.displayInfo; section>
-    <#if section = "title"> 
-   <#-- need to make this work
-    ${msg("loginTitle",(realm.displayName!''))}  -->
-    <#elseif section = "header">
-        <#-- ${msg("loginTitleHtml",(realm.displayNameHtml!''))}  -->
+<#--  <#import "common/heading.ftl" as heading>  -->
+<@layout.registrationLayout displayInfo=social.displayInfo displayWide=(realm.password && social.providers??); section>
+    <#if section = "header">
+        ${msg("doTitle")}
+    <#elseif section = "subheader">
+        ${msg("doLogIn")}
     <#elseif section = "form">
+    <div id="kc-form" <#if realm.password && social.providers??>class="${properties.kcContentWrapperClass!}"</#if>>
+      <div id="kc-form-wrapper" <#if realm.password && social.providers??>class="${properties.kcFormSocialAccountContentClass!} ${properties.kcFormSocialAccountClass!}"</#if>>
         <#if realm.password>
-            <form  action="${url.loginAction}" method="post">
-                
-                <div class="login-container">
+            <form id="kc-form-login" onsubmit="login.disabled = true; return true;" action="${url.loginAction}" method="post">
+                <div class="${properties.kcFormGroupClass!}">
+                    <label for="username" class="${properties.kcLabelClass!}"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
 
-                    <#if properties.websiteURL??>
-                        <div class="link link-login">
-                            <span class="forget-password"> <a href="${properties.websiteURL!}">${properties.websiteText!}</a></span>
-                            
-                            <br/>
-                        </div>
+                    <#if usernameEditDisabled??>
+                        <input tabindex="1" id="username" class="${properties.kcInputClass!}" name="username" value="${(login.username!'')}" type="text" disabled />
+                    <#else>
+                        <input tabindex="1" id="username" class="${properties.kcInputClass!}" name="username" value="${(login.username!'')}"  type="text" autofocus autocomplete="off" />
                     </#if>
-
-                    <div class="project-title">
-                        <div class="project-logo"></div>
-                        
-                        <#if properties.themeTitle??>
-                            <p>${properties.themeTitle!}</p>
-                        </#if>
-                    </div>
-                    <br/>
-
-                    <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
-                    <div class="input-submit">
-                        <a class="button-register" href="${url.registrationUrl}">${msg("registerWithTitle")}</a>
-                    </div>
-
-                    <div class='line-break'>
-                        <div></div>
-                        <span>OR</span>
-                        <div></div>
-                    </div>
-
-                    </#if>
-
-                    <div class="title">${properties.themeSubTitle!}</div>
-
-                    <div class="input-detail">
-
-                       <div class="input-email">
-                            <#if usernameEditDisabled??>
-                                <input id="username"  name="username" value="${(login.username!'')?html}" type="text" placeholder="email address" disabled />
-                            <#else>
-                                <input id="username"  name="username" value="${(login.username!'')?html}" type="text" placeholder="email address" autofocus autocomplete="off" />
-                            </#if>
-                            <i id="input-email-icon" class="fa fa-fw fa-envelope" aria-hidden="true"></i>
-                        </div>
-
-                        <div class="input-password">
-                            <input type="password" name="password" id="password" autocomplete="off" placeholder="password" />
-                            <i  id="input-password-icon" class="fa fa-fw fa-lock" aria-hidden="true"></i>
-                        </div>
-
-                         <div id="kc-form-options">
-                            <#if realm.rememberMe && !usernameEditDisabled??>
-                                <div class="input-checkbox">
-                                    <label>
-                                        <#if login.rememberMe??>
-                                            <input id="rememberMe" name="rememberMe" type="checkbox" tabindex="3" checked> ${msg("rememberMe")}
-                                        <#else>
-                                            <input id="rememberMe" name="rememberMe" type="checkbox" tabindex="3"> ${msg("rememberMe")}
-                                        </#if>
-                                    </label>
-                                </div>
-                            </#if>
-                        </div>
-
-                        <div class="input-submit">
-                            <button type="submit">Login</button>
-                        </div>
-                    </div>
-
-                    <div class="link link-login">
-                        <#if realm.resetPasswordAllowed>
-                            <span class="forget-password"> <a href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>
-                        </#if>
-                        <#--
-                        <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
-                            <span class="register"><a href="${url.registrationUrl}">${msg("registerWithTitle")}</a></span>
-                        </#if>
-                        -->
-                    </div>
-
-                    <div class="social-login">
-
-                        <#if realm.password && social.providers??>
-                            <div class='line-break'>
-                                <div></div>
-                                <span>${msg("loginTitle")}</span>
-                                <div></div>
-                            </div>
-
-                            <br/>
-
-                            <div id="kc-social-providers">
-                                <ul class="providers-container">
-                                    <#list social.providers as p>
-                                        <li>
-                                            <a href="${p.loginUrl}" class=" ${p.providerId}">
-                                                <i class="fa fa-${p.providerId}" aria-hidden="true"></i>
-                                                <span>${p.providerId}</span>
-                                            </a>
-                                        </li>
-                                    </#list>
-                                </ul>
-                            </div>
-                        </#if>
-                    </div>
-
                 </div>
+
+                <div class="${properties.kcFormGroupClass!}">
+                    <label for="password" class="${properties.kcLabelClass!}">${msg("password")}</label>
+                    <input tabindex="2" id="password" class="${properties.kcInputClass!}" name="password" type="password" autocomplete="off" />
+                </div>
+
+                <div class="${properties.kcFormGroupClass!} ${properties.kcFormSettingClass!}">
+                    <div id="kc-form-options">
+                        <#if realm.rememberMe && !usernameEditDisabled??>
+                            <div class="checkbox">
+                                <label>
+                                    <#if login.rememberMe??>
+                                        <input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox" checked> ${msg("rememberMe")}
+                                    <#else>
+                                        <input tabindex="3" id="rememberMe" name="rememberMe" type="checkbox"> ${msg("rememberMe")}
+                                    </#if>
+                                </label>
+                            </div>
+                        </#if>
+                        </div>
+                        <div class="${properties.kcFormOptionsWrapperClass!}">
+                            <#if realm.resetPasswordAllowed>
+                                <span><a tabindex="5" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>
+                            </#if>
+                        </div>
+
+                  </div>
+
+                  <div id="kc-form-buttons" class="${properties.kcFormGroupClass!}">
+                    <input tabindex="4" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
+                  </div>
             </form>
         </#if>
+        </div>
+        <#if realm.password && social.providers??>
+            <div id="kc-social-providers" class="${properties.kcFormSocialAccountContentClass!} ${properties.kcFormSocialAccountClass!}">
+                <ul class="${properties.kcFormSocialAccountListClass!} <#if social.providers?size gt 4>${properties.kcFormSocialAccountDoubleListClass!}</#if>">
+                    <#list social.providers as p>
+                        <li class="${properties.kcFormSocialAccountListLinkClass!}"><a href="${p.loginUrl}" id="zocial-${p.alias}" class="zocial ${p.providerId}"> <span>${p.displayName}</span></a></li>
+                    </#list>
+                </ul>
+            </div>
+        </#if>
+      </div>
+    <#elseif section = "info" >
+        <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
+            <div id="kc-registration">
+                <span>${msg("noAccount")} <a tabindex="6" href="${url.registrationUrl}">${msg("doRegister")}</a></span>
+            </div>
+        </#if>
     </#if>
+
 </@layout.registrationLayout>

@@ -1,5 +1,5 @@
 <html>
 <body>
-${msg("eventUpdatePasswordBodyHtml",event.date, event.ipAddress, "Genny", user.getEmail() )}
+${kcSanitize(msg("eventUpdatePasswordBodyHtml",event.date, event.ipAddress))?no_esc}
 </body>
 </html>

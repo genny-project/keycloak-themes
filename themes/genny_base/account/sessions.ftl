@@ -1,14 +1,14 @@
 <#import "template.ftl" as layout>
 <@layout.mainLayout active='sessions' bodyClass='sessions'; section>
 
-    <div class="page-title">
-        <h2>${msg("sessionsHtmlTitle")}</h2>
+    <div class="row">
+        <div class="col-md-10">
+            <h2>${msg("sessionsHtmlTitle")}</h2>
+        </div>
     </div>
 
-    <hr/>
-
-    <table class="table table-container">
-        <thead class="table-header">
+    <table class="table table-striped table-bordered">
+        <thead>
         <tr>
             <td>${msg("ip")}</td>
             <td>${msg("started")}</td>
@@ -18,7 +18,7 @@
         </tr>
         </thead>
 
-        <tbody class="table-body">
+        <tbody>
         <#list sessions.sessions as session>
             <tr>
                 <td>${session.ipAddress}</td>
@@ -36,9 +36,9 @@
 
     </table>
 
-    <div class="input-button">
-        <a id="logout-all-sessions" class="cancel" href="${url.sessionsLogoutUrl}">${msg("doLogOutAllSessions")}</a>
-    </div>
-
+    <form action="${url.sessionsUrl}" method="post">
+        <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
+        <button id="logout-all-sessions" class="btn btn-default">${msg("doLogOutAllSessions")}</button>
+    </form>
 
 </@layout.mainLayout>

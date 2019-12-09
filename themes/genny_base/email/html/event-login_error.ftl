@@ -1,5 +1,5 @@
 <html>
-	<body>
-		${msg("eventLoginErrorBodyHtml", event.date, event.ipAddress, "Genny", user.getEmail() )}
-	</body>
+<body>
+${kcSanitize(msg("eventLoginErrorBodyHtml",event.date,event.ipAddress))?no_esc}
+</body>
 </html>
