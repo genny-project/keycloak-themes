@@ -51,7 +51,30 @@ The file `/login/resources/css/login.css` has the following image defined:
 
 - BACKGROUND IMAGE: The main image used for the background. You can edit the file path to a new image you place in the directory `/login/resources/img/`, or you can replace the image `background1.jpg` with your new image.
 
+---
+
+## Deploying to production
+
+To deploy your new or updated themes to the production keycloak server:
+
+SSH into the production server:
+`ssh ubuntu@keycloak11`
+
+Locate the repo and pull changes:
+`cd keycloak-themes`
+`git pull`
+
+Package the Jar files:
+`./package.sh`
+
+Copy the Jar to the docker container:
+`docker cp <theme-name>.jar keycloak:/opt/jboss/keycloak/standalone/deployments`
+
+You should now see your themes in the admin console of keycloak.
+
 ## Changelog
 
 * Initial Test of updated Themes.
 * Added documentation.
+* Added packaging script
+
