@@ -10,5 +10,4 @@ themes/*/node_modules/
 data/
 data/*
 
-deployments
 themes/tmpDir

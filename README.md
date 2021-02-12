@@ -57,6 +57,11 @@ The file `/login/resources/css/login.css` has the following image defined:
 
 To deploy your new or updated themes to the production keycloak server:
 
+Package the Jar file:
+
+`./package.sh <theme-name>`
+
+
 SSH into the production server:
 
 `ssh ubuntu@keycloak11`
@@ -67,15 +72,18 @@ Locate the repo and pull changes:
 
 `git pull`
 
-Package the Jar files:
-
-`./package.sh`
-
 Copy the Jar to the docker container:
 
 `docker cp <theme-name>.jar keycloak:/opt/jboss/keycloak/standalone/deployments`
 
 You should now see your themes in the admin console of keycloak.
+
+**Note:**
+
+Alternatively you can package all themes at once using:
+
+`./package-all.sh`
+
 
 ## Changelog
 
