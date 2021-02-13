@@ -74,7 +74,7 @@ Locate the repo and pull changes:
 
 Copy the Jar to the docker container:
 
-`docker cp <theme-name>.jar keycloak:/opt/jboss/keycloak/standalone/deployments`
+`docker cp <theme-name>.jar <keycloak-container>:/opt/jboss/keycloak/standalone/deployments`
 
 You should now see your themes in the admin console of keycloak.
 
