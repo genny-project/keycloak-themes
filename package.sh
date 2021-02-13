@@ -31,7 +31,8 @@ echo "}" >> ../tmpDir/META-INF/keycloak-themes.json
 cd ../tmpDir
 
 # create the jar file and copy to deployments dir
-jar cf $1.jar .
+rm ${1}.jar 2> /dev/null
+jar cf ${1}.jar .
 mv ${1}.jar ../../deployments
 cd ..
 
