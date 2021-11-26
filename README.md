@@ -90,4 +90,5 @@ Alternatively you can package all themes at once using:
 * Initial Test of updated Themes.
 * Added documentation.
 * Added packaging script
+* Updated package.json 
 
