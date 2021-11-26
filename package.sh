@@ -23,7 +23,12 @@ echo "		\"name\" : \"${1}\"," >> ../tmpDir/META-INF/keycloak-themes.json
 echo "		\"types\": [ " >> ../tmpDir/META-INF/keycloak-themes.json
 for t in */ ; do
 	t=${t%*/}
-	echo "			\"$t\"," >> ../tmpDir/META-INF/keycloak-themes.json
+	if [ $t == "welcome" ]
+	then
+		echo "			\"$t\"" >> ../tmpDir/META-INF/keycloak-themes.json
+	else
+		echo "			\"$t\"," >> ../tmpDir/META-INF/keycloak-themes.json
+	fi
 done
 echo "		]" >> ../tmpDir/META-INF/keycloak-themes.json
 echo "	}]" >> ../tmpDir/META-INF/keycloak-themes.json
