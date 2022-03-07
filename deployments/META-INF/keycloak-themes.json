@@ -1,0 +1,13 @@
+{
+	"themes": [{
+		"name" : "mentormatchv10",
+		"types": [ 
+			"account",
+			"admin",
+			"common",
+			"email",
+			"login",
+			"welcome"
+		]
+	}]
+}
