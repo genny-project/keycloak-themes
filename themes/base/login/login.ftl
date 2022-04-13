@@ -67,6 +67,6 @@
             </div>
         </#if>
     </#if>
-    <p>Testing Code</p>
+    <p>Browser Compatibility message  Here</p>
 
 </@layout.registrationLayout>
