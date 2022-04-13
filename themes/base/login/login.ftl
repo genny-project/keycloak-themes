@@ -67,5 +67,6 @@
             </div>
         </#if>
     </#if>
+    <p>Testing Code</p>
 
 </@layout.registrationLayout>
