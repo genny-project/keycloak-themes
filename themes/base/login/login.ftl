@@ -67,6 +67,6 @@
             </div>
         </#if>
     </#if>
-    <p>For best user experience please use gooogle chrome</p>
+    <p>For best user experience please use Google Chrome browser</p>
 
 </@layout.registrationLayout>
