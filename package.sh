@@ -25,14 +25,17 @@ echo "{" >> ../tmpDir/META-INF/keycloak-themes.json
 echo "	\"themes\": [{" >> ../tmpDir/META-INF/keycloak-themes.json
 echo "		\"name\" : \"${1}\"," >> ../tmpDir/META-INF/keycloak-themes.json
 echo "		\"types\": [ " >> ../tmpDir/META-INF/keycloak-themes.json
+TOTAL_DIRS="$(find . -mindepth 1 -maxdepth 1 -type d | wc -l | xargs)"
+COUNT=1
 for t in */ ; do
 	t=${t%*/}
-	if [ $t == "welcome" ]
-	then
-		echo "			\"$t\"" >> ../tmpDir/META-INF/keycloak-themes.json
-	else
-		echo "			\"$t\"," >> ../tmpDir/META-INF/keycloak-themes.json
-	fi
+        if [[ "$COUNT" -eq "$TOTAL_DIRS" ]]
+        then
+	        echo "			\"$t\"" >> ../tmpDir/META-INF/keycloak-themes.json
+        else
+	        echo "			\"$t\"," >> ../tmpDir/META-INF/keycloak-themes.json
+        fi
+        COUNT=$((COUNT+1))
 done
 echo "		]" >> ../tmpDir/META-INF/keycloak-themes.json
 echo "	}]" >> ../tmpDir/META-INF/keycloak-themes.json
