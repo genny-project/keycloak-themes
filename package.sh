@@ -1,4 +1,8 @@
 #!/bin/bash
+if [[ -z $1 ]];then
+	echo "Please pass your theme name as argument, e.g ./package.sh internmatch"
+	exit 1
+fi
 
 # Clear the deployments directory
 rm -rf deployments
