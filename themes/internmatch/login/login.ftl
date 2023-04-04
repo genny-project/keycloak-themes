@@ -1,6 +1,9 @@
 <#import "template.ftl" as layout>
+<#--  <#import "common/heading.ftl" as heading>  -->
 <@layout.registrationLayout displayInfo=social.displayInfo displayWide=(realm.password && social.providers??); section>
     <#if section = "header">
+        ${msg("doTitle")}
+    <#elseif section = "subheader">
         ${msg("doLogIn")}
     <#elseif section = "form">
     <div id="kc-form" <#if realm.password && social.providers??>class="${properties.kcContentWrapperClass!}"</#if>>
@@ -63,10 +66,9 @@
     <#elseif section = "info" >
         <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
             <div id="kc-registration">
-                <span>${msg("noAccount")} <a tabindex="6" href="${properties.registrationUrl}">${msg("doRegister")}</a></span>
+                <span>${msg("noAccount")} <a tabindex="6" href="${properties.registrationUrl}" data-testid="register">${msg("doRegister")}</a></span>
             </div>
         </#if>
     </#if>
-    <p>For best user experience please use Google Chrome browser</p>
 
 </@layout.registrationLayout>
